@@ -1,0 +1,48 @@
+create table Tipo_Usuario (
+id int primary key identity(1,1),
+tipo varchar(45),
+descricao varchar(200)
+);
+
+create table Endereco (
+idEndereco int primary key identity(100,1),
+rua varchar(45),
+bairro varchar(45),
+cidade varchar(45),
+estado varchar(45)
+);
+
+create table Instituicao(
+idInstituicao int primary key identity(1000,1),
+nome varchar(100),
+numeroEndereco int,
+Endereco int,
+foreign key (Endereco) references Endereco(idEndereco)
+);
+
+create table Usuario (
+idUsuario int primary key identity (1,1),
+nome varchar(45),
+idade int,
+CodigoInstituicao varchar(50),
+email varchar(50),
+senha varchar(50),
+fkTipo_Usuario int,
+fkInstituicao int,
+foreign key (fkTipo_Usuario) references Tipo_Usuario(id),
+foreign key (fkInstituicao) references Instituicao(idInstituicao)
+);
+
+create table Maquina (
+idMaquina int primary key identity(1000,1),
+identificacao varchar(100)
+);
+
+create table Logs (
+usuario int,
+maquina int,
+horarioUso DATETIME DEFAULT current_timestamp,
+primary key (usuario, maquina, horarioUso),
+foreign key (usuario) references Usuario(idUsuario),
+foreign key (maquina) references Maquina(idMaquina)
+);
