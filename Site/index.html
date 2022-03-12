@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Projeto ControlTec </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="" class="brand"> ControlTec </a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href=""> Home </a>
+                <a href=""> Quem Somos </a>
+                <a href=""> Cadastro </a>
+                <a href=""> Login </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide" src="video3.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="video2.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="video1.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1> Monitore as máquinas de sua instituição com a <br> <span> CONTROL TEC</span> </h1>
+            <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for
+                previewing layouts and visual mockups.</p>
+            <a class="botao" href=""> Cadastre-se </a>
+        </div>
+        <div class="content">
+            <h1> Por que a <span> CONTROL TEC ?</span> </h1>
+            <p> Convido a todos para conhecer nossa empresa </p>
+            <p> <img class="imagem" src="monitoramento.png" alt=""> Monitoramento  </p>
+            <a class="botao" href=""> Saiba mais </a>
+        </div>
+        <div class="content">
+            <h1> Monitore com segurança e resultados.</h1>
+            <br><br><br>
+            <h2> ÁREA DO CLIENTE </h2>
+            <br><br>
+            <p> Login </p>
+            <p> FAQ </p>
+            <p> Termos de Uso </p>
+            <p> Política de Privacidade </p>
+
+        </div>
+        <div class="media-icons">
+            <a href=""> <i class="fa-brands fa-facebook-f"></i> </a>
+            <a href=""> <i class="fa-brands fa-twitter"></i> </a>
+            <a href=""> <i class="fa-brands fa-instagram"></i> </a>
+        </div>
+
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+
+        </div>
+    </section>
+
+ 
+</body>
+
+</html>
+<script>
+
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+    })
+
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+    var sliderNav = function (manual) {
+
+        btns.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+        slides.forEach((slides) => {
+            slides.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+            content.classList.remove("active");
+        });
+
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+    }
+    btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+            sliderNav(i);
+        })
+    })
+
+
+</script>
