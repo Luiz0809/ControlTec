@@ -16,10 +16,10 @@ function entrar(email, senha) {
     return database.executar(instrucao);
 }
 
-function cadastrar(nome, email, senha, estado, bairro, cep, cidade, rua, pontodereferencia, complemento, instituicao, numero) {
+function cadastrar(nome, email, senha, estado, bairro, cep, cidade, rua, pontodereferencia, complemento, numero) {
     var instrucao = `
-        INSERT INTO usuario (nome, numero, Rua, Bairro, Cidade, Estado, CEP, Complemento, PontoReferencia) VALUES ('${nome}', '${numero}', 
-        '${Rua}','${Bairro}','${Cidade}','${Estado}','${Estado}','${CEP}','${Complememto}','${PontoReferencia}');
+        INSERT INTO instituicao (nome, numero, Rua, Bairro, Cidade, Estado, CEP, Complemento, PontoReferencia) VALUES ('${nome}', '${numero}', 
+        '${rua}','${bairro}','${cidade}','${estado}','${cep}','${complemento}','${pontodereferencia}');
     `;
     console.log("Executando a instrução SQL: \n"+instrucao);
     return database.executar(instrucao);

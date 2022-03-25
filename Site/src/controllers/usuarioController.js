@@ -2,6 +2,11 @@ var usuarioModel = require("../models/usuarioModel");
 
 var sessoes = [];
 
+function testar (req, res) {
+    console.log("ENTRAMOS NA usuarioController");
+    res.json("ESTAMOS FUNCIONANDO!");
+}
+
 function listar(req, res) {
     usuarioModel.listar()
     .then(function (resultado) {
@@ -61,11 +66,10 @@ function cadastrar(req, res) {
     var estado = req.body.estado;
     var bairro = req.body.bairro;
     var cep = req.body.cep;
-    var cidade = req.body.cidad;
+    var cidade = req.body.cidade;
     var rua = req.body.rua;
     var pontodereferencia = req.body.pontodereferencia;
     var complemento = req.body.complemento;
-    var instituicao = req.body.instituicao;
     var numero = req.body.numero;
 
     if (nome == undefined) {
@@ -88,12 +92,10 @@ function cadastrar(req, res) {
         res.status(400).send("Seu ponto de referencia está undefined!");
     }else if (complemento == undefined) {
         res.status(400).send("Seu complemento está undefined!");
-    }else if (instituicao == undefined) {
-        res.status(400).send("Sua instituicao está undefined!");
     }else if (numero == undefined) {
         res.status(400).send("Seu numero está undefined!");
     } else {
-        usuarioModel.cadastrar(nome, email, senha, estado, bairro, cep, cidade, rua, numero, pontodereferencia, complemento, instituicao)
+        usuarioModel.cadastrar(nome, email, senha, estado, bairro, cep, cidade, rua, numero, pontodereferencia, complemento)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -114,5 +116,5 @@ function cadastrar(req, res) {
 module.exports = {
     entrar,
     cadastrar,
-    listar
+    testar
 }

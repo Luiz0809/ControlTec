@@ -22,7 +22,7 @@
             <div class="navigation-items">
                 <a href="index.html"> Home </a>
                 <a href=""> Quem Somos </a>
-                <a href="cadastro2.html"> Cadastro/Login </a>
+                <a href="cadastro.html"> Cadastro/Login </a>
             </div>
         </div>
     </header>
@@ -53,10 +53,10 @@
                     </ul>
                 </div> social media -->
               <!-- <p class="description description-second">ou use seu e-mail para cadastro:</p> -->
-                <form class="form">
+              <form class="register-form" method="post" id="form_cadastro" onsubmit="return cadastrar()">
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
-                        <input name="instituicao" type="text" placeholder="Instituicao">
+                        <input name="nome" type="text" placeholder="Instituicao">
                     </label>
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
@@ -104,8 +104,15 @@
                     </label>
                     
                     
-                    <button class="btn btn-second"> Entrar </button>        
+                    <button  class="btn btn-second"> Cadastrar </button>        
                 </form>
+                <div id="div_aguardar" class="loading-div">
+                    
+                </div>
+
+                <div id="div_erros_login">
+                    
+                </div>
             </div><!-- second column -->
         </div><!-- first content -->
         <div class="content second-content">
@@ -146,7 +153,7 @@
                     </label>
                 
                     <a class="password" href="#">Esqueceu sua senha?</a>
-                    <button class="btn btn-second">entrar</button>
+                    <button type="submit" class="btn btn-second">entrar</button>
                 </form>
             </div><!-- second column -->
         </div><!-- second-content -->
@@ -156,6 +163,7 @@
 </html>
 
 <script>
+    
 
     function limparFormulario() {
         document.getElementById("form_cadastro").reset();
@@ -176,7 +184,6 @@
         var rua = formulario.get("rua");
         var pontodereferencia = formulario.get("pontodereferencia");
         var complemento = formulario.get("complemento");
-        var instituicao = formulario.get("instituicao");
         var senha = formulario.get("senha");
         var confirmacaoSenha = formulario.get("confirmacao-senha");
 
@@ -185,30 +192,6 @@
             
             window.alert("Preencha todos os campos para prosseguir!");
             if (nome == "")  {
-                console.log('nome está em branco')
-            }
-            if (estado == "")  {
-                console.log('nome está em branco')
-            }
-            if (bairro == "")  {
-                console.log('nome está em branco')
-            }
-            if (instituicao == "")  {
-                console.log('nome está em branco')
-            }
-            if (complemento == "")  {
-                console.log('nome está em branco')
-            }
-            if (pontodereferencia == "")  {
-                console.log('nome está em branco')
-            }
-            if (rua == "")  {
-                console.log('nome está em branco')
-            }
-            if (cidade == "")  {
-                console.log('nome está em branco')
-            }
-            if (cep == "")  {
                 console.log('nome está em branco')
             }
             if (email == "" )  {
@@ -245,7 +228,7 @@
 
             if (resposta.ok) {
                 window.alert("Cadastro realizado com sucesso!");
-                window.location = "login.html";
+                window.location = "index.html";
                 limparFormulario();
                 finalizarAguardar();
             } else {
@@ -257,6 +240,7 @@
         });
 
         return false;
+        console.log(formulario)
     }
 
 </script>
