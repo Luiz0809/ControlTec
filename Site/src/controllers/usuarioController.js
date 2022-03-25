@@ -58,6 +58,15 @@ function cadastrar(req, res) {
     var nome = req.body.nome;
     var email = req.body.email;
     var senha = req.body.senha;
+    var estado = req.body.estado;
+    var bairro = req.body.bairro;
+    var cep = req.body.cep;
+    var cidade = req.body.cidad;
+    var rua = req.body.rua;
+    var pontodereferencia = req.body.pontodereferencia;
+    var complemento = req.body.complemento;
+    var instituicao = req.body.instituicao;
+    var numero = req.body.numero;
 
     if (nome == undefined) {
         res.status(400).send("Seu nome está undefined!");
@@ -65,8 +74,26 @@ function cadastrar(req, res) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
+    }else if (estado == undefined) {
+        res.status(400).send("Seu estado está undefined!");
+    }else if (bairro == undefined) {
+        res.status(400).send("Seu bairro está undefined!");
+    }else if (cep == undefined) {
+        res.status(400).send("Seu cep está undefined!");
+    }else if (cidade == undefined) {
+        res.status(400).send("Sua cidade está undefined!");
+    }else if (rua == undefined) {
+        res.status(400).send("Sua rua está undefined!");
+    }else if (pontodereferencia == undefined) {
+        res.status(400).send("Seu ponto de referencia está undefined!");
+    }else if (complemento == undefined) {
+        res.status(400).send("Seu complemento está undefined!");
+    }else if (instituicao == undefined) {
+        res.status(400).send("Sua instituicao está undefined!");
+    }else if (numero == undefined) {
+        res.status(400).send("Seu numero está undefined!");
     } else {
-        usuarioModel.cadastrar(nome, email, senha)
+        usuarioModel.cadastrar(nome, email, senha, estado, bairro, cep, cidade, rua, numero, pontodereferencia, complemento, instituicao)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -87,6 +114,5 @@ function cadastrar(req, res) {
 module.exports = {
     entrar,
     cadastrar,
-    listar,   
-    testar
+    listar
 }

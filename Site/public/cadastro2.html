@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/cadastro2.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+        <script src="js/funcoes.js"></script>
 </head>
 <body>
 
@@ -54,48 +56,51 @@
                 <form class="form">
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
-                        <input type="text" placeholder="Empresa">
+                        <input name="instituicao" type="text" placeholder="Instituicao">
                     </label>
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
-                        <input type="text" placeholder="Estado">
+                        <input name="estado" type="text" placeholder="Estado">
                     </label>
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
-                        <input type="text" placeholder="Cidade">
+                        <input name="cidade" type="text" placeholder="Cidade">
                     </label>
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
-                        <input type="text" placeholder="CEP">
+                        <input name="cep" type="text" placeholder="CEP">
                     </label>
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
-                        <input type="text" placeholder="Rua">
+                        <input name="rua" type="text" placeholder="Rua">
                     </label>
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
-                        <input type="text" placeholder="Logradouro">
+                        <input name="pontodereferencia" type="text" placeholder="Ponto de Referência">
                     </label>
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
-                        <input type="text" placeholder="Ponto de Referência">
+                        <input name="numero" type="text" placeholder="Número">
                     </label>
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
-                        <input type="text" placeholder="Número">
+                        <input name="bairro" type="text" placeholder="Bairro">
                     </label>
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
-                        <input type="text" placeholder="CNPJ">
+                        <input name="complemento" type="text" placeholder="Complemento">
                     </label>
                     <label class="label-input" for="">
                         <i class="far fa-envelope icon-modify"></i>
-                        <input type="email" placeholder="Email">
-                    </label>
-                    
+                        <input name="email" type="email" placeholder="Email">
+                    </label>        
                     <label class="label-input" for="">
                         <i class="fas fa-lock icon-modify"></i>
-                        <input type="password" placeholder="Password">
+                        <input name="senha" type="password" placeholder="Senha">
+                    </label>
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input name="confirmacao-senha" type="password" placeholder="Confirmar Senha">
                     </label>
                     
                     
@@ -128,7 +133,7 @@
                 </div> social media -->
               <!-- <p class="description description-second">ou use sua conta de e-mail:</p> --> 
                   
-                <form class="form">
+                <form class="form" id="form_cadastro">
                 
                     <label class="label-input" for="">
                         <i class="far fa-envelope icon-modify"></i>
@@ -149,3 +154,109 @@
     <script src="app.js"></script>
 </body>
 </html>
+
+<script>
+
+    function limparFormulario() {
+        document.getElementById("form_cadastro").reset();
+    }
+
+    function cadastrar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+
+        var nome = formulario.get("nome");
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+        var estado = formulario.get("estado");
+        var bairro = formulario.get("bairro");
+        var cep = formulario.get("cep");
+        var cidade = formulario.get("cidade");
+        var rua = formulario.get("rua");
+        var pontodereferencia = formulario.get("pontodereferencia");
+        var complemento = formulario.get("complemento");
+        var instituicao = formulario.get("instituicao");
+        var senha = formulario.get("senha");
+        var confirmacaoSenha = formulario.get("confirmacao-senha");
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
+            
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (nome == "")  {
+                console.log('nome está em branco')
+            }
+            if (estado == "")  {
+                console.log('nome está em branco')
+            }
+            if (bairro == "")  {
+                console.log('nome está em branco')
+            }
+            if (instituicao == "")  {
+                console.log('nome está em branco')
+            }
+            if (complemento == "")  {
+                console.log('nome está em branco')
+            }
+            if (pontodereferencia == "")  {
+                console.log('nome está em branco')
+            }
+            if (rua == "")  {
+                console.log('nome está em branco')
+            }
+            if (cidade == "")  {
+                console.log('nome está em branco')
+            }
+            if (cep == "")  {
+                console.log('nome está em branco')
+            }
+            if (email == "" )  {
+                console.log('email está em branco')
+            }
+            if (senha == "" )  {
+                console.log('senha está em branco')
+            }
+            if (confirmacaoSenha == "" )  {
+                console.log('confirmacaoSenha está em branco')
+            }
+            finalizarAguardar();
+            return false;
+        }
+        
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            finalizarAguardar();
+            return false;
+        }
+        
+        if (senha != confirmacaoSenha) {
+            window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+            finalizarAguardar();
+            return false;
+        }
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                window.location = "login.html";
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+</script>
