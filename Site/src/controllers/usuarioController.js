@@ -2,11 +2,6 @@ var usuarioModel = require("../models/usuarioModel");
 
 var sessoes = [];
 
-function testar (req, res) {
-    console.log("ENTRAMOS NA usuarioController");
-    res.json("ESTAMOS FUNCIONANDO!");
-}
-
 function listar(req, res) {
     usuarioModel.listar()
     .then(function (resultado) {
@@ -37,7 +32,7 @@ function entrar (req, res) {
         .then(
             function (resultado) {
                 console.log(`\nResultados encontrados: ${resultado.length}`);
-                console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+                console.log(`Resultados: ${JSON.stringify(resultado)}`); 
 
                 if (resultado.length == 1) {
                     console.log(resultado);
