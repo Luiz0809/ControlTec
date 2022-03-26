@@ -95,7 +95,7 @@ function cadastrar(req, res) {
     }else if (numero == undefined) {
         res.status(400).send("Seu numero está undefined!");
     } else {
-        usuarioModel.cadastrar(nome, email, senha, estado, bairro, cep, cidade, rua, numero, pontodereferencia, complemento)
+        usuarioModel.cadastrar(nome, estado, bairro, cep, cidade, rua, pontodereferencia, complemento, numero, email, senha)
         .then(
             function (resultado) {
                 res.json(resultado);

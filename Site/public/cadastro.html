@@ -60,15 +60,7 @@
                     </label>
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
-                        <input name="estado" type="text" placeholder="Estado">
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="far fa-user icon-modify"></i>
-                        <input name="cidade" type="text" placeholder="Cidade">
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="far fa-user icon-modify"></i>
-                        <input name="cep" type="text" placeholder="CEP">
+                        <input name="numero" type="text" placeholder="Numero">
                     </label>
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
@@ -76,19 +68,27 @@
                     </label>
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
-                        <input name="pontodereferencia" type="text" placeholder="Ponto de Referência">
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="far fa-user icon-modify"></i>
-                        <input name="numero" type="text" placeholder="Número">
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="far fa-user icon-modify"></i>
                         <input name="bairro" type="text" placeholder="Bairro">
                     </label>
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
+                        <input name="cidade" type="text" placeholder="Cidade">
+                    </label>
+                    <label class="label-input" for="">
+                        <i class="far fa-user icon-modify"></i>
+                        <input name="estado" type="text" placeholder="Estado">
+                    </label>
+                    <label class="label-input" for="">
+                        <i class="far fa-user icon-modify"></i>
+                        <input name="cep" type="text" placeholder="CEP">
+                    </label>
+                    <label class="label-input" for="">
+                        <i class="far fa-user icon-modify"></i>
                         <input name="complemento" type="text" placeholder="Complemento">
+                    </label>
+                    <label class="label-input" for="">
+                        <i class="far fa-user icon-modify"></i>
+                        <input name="pontodereferencia" type="text" placeholder="Ponto de Referência">
                     </label>
                     <label class="label-input" for="">
                         <i class="far fa-envelope icon-modify"></i>
@@ -175,15 +175,15 @@
         var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
 
         var nome = formulario.get("nome");
-        var email = formulario.get("email");
-        var senha = formulario.get("senha");
-        var estado = formulario.get("estado");
-        var bairro = formulario.get("bairro");
-        var cep = formulario.get("cep");
-        var cidade = formulario.get("cidade");
+        var numero = formulario.get("numero");
         var rua = formulario.get("rua");
-        var pontodereferencia = formulario.get("pontodereferencia");
+        var bairro = formulario.get("bairro");
+        var cidade = formulario.get("cidade");
+        var estado = formulario.get("estado");
+        var cep = formulario.get("cep");
         var complemento = formulario.get("complemento");
+        var pontodereferencia = formulario.get("pontodereferencia");
+        var email = formulario.get("email");
         var senha = formulario.get("senha");
         var confirmacaoSenha = formulario.get("confirmacao-senha");
 
