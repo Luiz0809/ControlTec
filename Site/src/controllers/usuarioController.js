@@ -38,6 +38,7 @@ function entrar (req, res) {
             function (resultado) {
                 console.log(`\nResultados encontrados: ${resultado.length}`);
                 console.log(`Resultados: ${JSON.stringify(resultado)}`); 
+                console.log("logado");
 
                 if (resultado.length == 1) {
                     console.log(resultado);
