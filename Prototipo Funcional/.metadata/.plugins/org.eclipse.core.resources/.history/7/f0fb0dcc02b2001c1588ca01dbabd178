@@ -1,0 +1,18 @@
+package maincontroltec.entidades;
+
+import java.sql.Date;
+
+public class Logs {
+	
+	private Usuario usuario;
+	private Maquina maquina;
+	private Long momento;
+	private Double temperatura;
+	private Integer consumoMemoria;
+	private Integer consumoCpu;
+	private String programaUsado;
+	private Integer consumoDisco;
+	private Integer tempoEmUso;
+	private Date inicializado;
+
+}

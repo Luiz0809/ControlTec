@@ -1,0 +1,5 @@
+package controltec.conexao;
+
+public class BancoDeDados {
+
+}

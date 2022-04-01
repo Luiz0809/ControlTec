@@ -1,0 +1,16 @@
+package maincontroltec.entidades;
+
+public class Instituicao {
+	
+	private Long instituicao;
+	private String nome;
+	private Integer numero;
+	private String rua;
+	private String bairro;
+	private String cidade;
+	private String estado;
+	private String cep;
+	private String complemento;
+	private String pontoDeReferencia;
+
+}

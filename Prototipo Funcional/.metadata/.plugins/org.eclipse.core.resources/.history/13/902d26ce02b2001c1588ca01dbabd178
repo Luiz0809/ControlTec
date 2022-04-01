@@ -1,0 +1,16 @@
+package maincontroltec.entidades;
+
+public class Disco {
+	
+	private Long idDisco;
+	private String nome;
+	private String modelo;
+	private String serial;
+	private Integer tamanho;
+	private Integer leituraEmBytes;
+	private Integer escritasEmBytes;
+	private Integer tamanhoAtualDaFila;
+	private Integer tempoDeTransferencia;
+	private Maquina maquina;
+
+}

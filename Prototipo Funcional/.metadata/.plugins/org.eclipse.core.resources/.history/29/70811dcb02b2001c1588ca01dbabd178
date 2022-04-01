@@ -1,0 +1,11 @@
+package maincontroltec.entidades;
+
+public class Turma {
+	
+	private Long idTurma;
+	private String nome;
+	private String descricao;
+	private String sala;
+	private Integer fkInstituicao;
+
+}

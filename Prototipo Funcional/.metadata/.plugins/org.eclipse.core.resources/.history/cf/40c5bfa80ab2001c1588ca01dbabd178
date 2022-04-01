@@ -1,0 +1,14 @@
+package controltec.banco;
+
+
+public class TesteMysql {
+	
+	public static void main(String[] args) {
+		
+		
+		TesteBanco teste = new TesteBanco();
+		teste.getConexaoMySQL();
+		
+		
+	}
+}

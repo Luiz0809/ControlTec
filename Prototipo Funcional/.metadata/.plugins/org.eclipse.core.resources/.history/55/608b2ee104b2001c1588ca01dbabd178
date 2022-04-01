@@ -1,0 +1,10 @@
+package maincontroltec.entidades;
+
+public class Memoria {
+	
+	private Long idMemoria;
+	private Integer disponivel;
+	private Integer total;
+	private Maquina fkMaquina;
+
+}

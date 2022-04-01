@@ -1,0 +1,15 @@
+package maincontroltec.entidades;
+
+public class Usuario {
+	
+	private Long id;
+	private String nome;
+	private Integer idade;
+	private String codigoInstituicao;
+	private String email;
+	private String senha;
+	private Integer tipoUsuario;
+	private Integer fkInstituicao;
+	
+
+}

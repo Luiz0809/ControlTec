@@ -1,0 +1,9 @@
+package maincontroltec.entidades;
+
+public class Maquina {
+	
+	private Long idMaquina;
+	private String codigoMaquina;
+	private String descricao;
+
+}

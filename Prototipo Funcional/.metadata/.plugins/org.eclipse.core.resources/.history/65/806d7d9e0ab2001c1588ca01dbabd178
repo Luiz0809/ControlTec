@@ -1,0 +1,8 @@
+package controltec.banco;
+
+
+public class TesteMysql {
+	
+	TesteBanco teste = new TesteBanco();
+
+}
