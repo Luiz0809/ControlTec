@@ -10,9 +10,9 @@ public class Conexao {
 		
 		dataSource = new BasicDataSource();
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost/mydb?useTimezone=true&serverTimezone=UTC");
+		dataSource.setUrl("jdbc:mysql://localhost/teste?useTimezone=true&serverTimezone=UTC");
 		dataSource.setUsername("root");
-		dataSource.setPassword("61320459");
+		dataSource.setPassword("******");
 		
 	}
 	
