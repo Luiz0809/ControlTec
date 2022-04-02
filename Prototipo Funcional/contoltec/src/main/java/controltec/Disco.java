@@ -12,6 +12,21 @@ public class Disco {
 	private Integer tamanhoAtualDaFila;
 	private Integer tempoDeTransferencia;
 	private Maquina maquina;
+
+    public Disco(Long idDisco, String nome, String modelo, String serial, Integer tamanho, Integer leituraEmBytes, Integer escritasEmBytes, Integer tamanhoAtualDaFila, Integer tempoDeTransferencia, Maquina maquina) {
+        this.idDisco = idDisco;
+        this.nome = nome;
+        this.modelo = modelo;
+        this.serial = serial;
+        this.tamanho = tamanho;
+        this.leituraEmBytes = leituraEmBytes;
+        this.escritasEmBytes = escritasEmBytes;
+        this.tamanhoAtualDaFila = tamanhoAtualDaFila;
+        this.tempoDeTransferencia = tempoDeTransferencia;
+        this.maquina = maquina;
+    }
+        
+        
 	
 	public Long getIdDisco() {
 		return idDisco;

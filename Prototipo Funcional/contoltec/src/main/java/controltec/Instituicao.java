@@ -9,6 +9,22 @@ public class Instituicao {
 	private String bairro;
 	private String cidade;
 	private String estado;
+
+    public Instituicao(Long instituicao, String nome, Integer numero, String rua, String bairro, String cidade, String estado, String cep, String complemento, String pontoDeReferencia) {
+        this.instituicao = instituicao;
+        this.nome = nome;
+        this.numero = numero;
+        this.rua = rua;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.cep = cep;
+        this.complemento = complemento;
+        this.pontoDeReferencia = pontoDeReferencia;
+    }
+        
+        
+        
 	public Long getInstituicao() {
 		return instituicao;
 	}

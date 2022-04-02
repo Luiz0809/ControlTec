@@ -14,6 +14,21 @@ public class Logs {
 	private Integer consumoDisco;
 	private Integer tempoEmUso;
 	private Date inicializado;
+
+    public Logs(Usuario usuario, Maquina maquina, Long momento, Double temperatura, Integer consumoMemoria, Integer consumoCpu, String programaUsado, Integer consumoDisco, Integer tempoEmUso, Date inicializado) {
+        this.usuario = usuario;
+        this.maquina = maquina;
+        this.momento = momento;
+        this.temperatura = temperatura;
+        this.consumoMemoria = consumoMemoria;
+        this.consumoCpu = consumoCpu;
+        this.programaUsado = programaUsado;
+        this.consumoDisco = consumoDisco;
+        this.tempoEmUso = tempoEmUso;
+        this.inicializado = inicializado;
+    }
+        
+        
 	
 	public Usuario getUsuario() {
 		return usuario;
