@@ -14,36 +14,22 @@ public class Memoria {
         this.fkMaquina = fkMaquina;
     }
 
-    public Long getIdMemoria() {
-        return idMemoria;
-    }
+	public Long getIdMemoria() {
+		return idMemoria;
+	}
 
-    public void setIdMemoria(Long idMemoria) {
-        this.idMemoria = idMemoria;
-    }
+	public Integer getDisponivel() {
+		return disponivel;
+	}
 
-    public Integer getDisponivel() {
-        return disponivel;
-    }
+	public Integer getTotal() {
+		return total;
+	}
 
-    public void setDisponivel(Integer disponivel) {
-        this.disponivel = disponivel;
-    }
+	public Maquina getFkMaquina() {
+		return fkMaquina;
+	}
 
-    public Integer getTotal() {
-        return total;
-    }
-
-    public void setTotal(Integer total) {
-        this.total = total;
-    }
-
-    public Maquina getFkMaquina() {
-        return fkMaquina;
-    }
-
-    public void setFkMaquina(Maquina fkMaquina) {
-        this.fkMaquina = fkMaquina;
-    }
+   
 
 }

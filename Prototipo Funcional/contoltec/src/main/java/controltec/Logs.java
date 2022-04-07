@@ -93,84 +93,56 @@ public class Logs {
         }
     }
 
-    public Usuario getUsuario() {
-        return usuario;
-    }
+	public Usuario getUsuario() {
+		return usuario;
+	}
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
+	public Maquina getMaquina() {
+		return maquina;
+	}
 
-    public Maquina getMaquina() {
-        return maquina;
-    }
+	public Long getMomento() {
+		return momento;
+	}
 
-    public void setMaquina(Maquina maquina) {
-        this.maquina = maquina;
-    }
+	public Double getTemperatura() {
+		return temperatura;
+	}
 
-    public Long getMomento() {
-        return momento;
-    }
+	public Integer getConsumoMemoria() {
+		return consumoMemoria;
+	}
 
-    public void setMomento(Long momento) {
-        this.momento = momento;
-    }
+	public Integer getConsumoCpu() {
+		return consumoCpu;
+	}
 
-    public Double getTemperatura() {
-        return temperatura;
-    }
+	public String getProgramaUsado() {
+		return programaUsado;
+	}
 
-    public void setTemperatura(Double temperatura) {
-        this.temperatura = temperatura;
-    }
+	public Integer getConsumoDisco() {
+		return consumoDisco;
+	}
 
-    public Integer getConsumoMemoria() {
-        return consumoMemoria;
-    }
+	public Integer getTempoEmUso() {
+		return tempoEmUso;
+	}
 
-    public void setConsumoMemoria(Integer consumoMemoria) {
-        this.consumoMemoria = consumoMemoria;
-    }
+	public Date getInicializado() {
+		return inicializado;
+	}
 
-    public Integer getConsumoCpu() {
-        return consumoCpu;
-    }
+	public Looca getLooca() {
+		return looca;
+	}
 
-    public void setConsumoCpu(Integer consumoCpu) {
-        this.consumoCpu = consumoCpu;
-    }
+	public Conexao getConexao() {
+		return conexao;
+	}
 
-    public String getProgramaUsado() {
-        return programaUsado;
-    }
-
-    public void setProgramaUsado(String programaUsado) {
-        this.programaUsado = programaUsado;
-    }
-
-    public Integer getConsumoDisco() {
-        return consumoDisco;
-    }
-
-    public void setConsumoDisco(Integer consumoDisco) {
-        this.consumoDisco = consumoDisco;
-    }
-
-    public Integer getTempoEmUso() {
-        return tempoEmUso;
-    }
-
-    public void setTempoEmUso(Integer tempoEmUso) {
-        this.tempoEmUso = tempoEmUso;
-    }
-
-    public Date getInicializado() {
-        return inicializado;
-    }
-
-    public void setInicializado(Date inicializado) {
-        this.inicializado = inicializado;
-    }
+	public JdbcTemplate getCon() {
+		return con;
+	}
 
 }

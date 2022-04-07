@@ -26,84 +26,45 @@ public class Processador {
         this.fkMaquina = fkMaquina;
     }
 
-    public Long getIdProcessador() {
-        return idProcessador;
-    }
+	public Long getIdProcessador() {
+		return idProcessador;
+	}
 
-    public void setIdProcessador(Long idProcessador) {
-        this.idProcessador = idProcessador;
-    }
+	public String getFabricante() {
+		return fabricante;
+	}
 
-    public String getFabricante() {
-        return fabricante;
-    }
+	public String getNome() {
+		return nome;
+	}
 
-    public void setFabricante(String fabricante) {
-        this.fabricante = fabricante;
-    }
+	public String getIdentificador() {
+		return identificador;
+	}
 
-    public String getNome() {
-        return nome;
-    }
+	public String getMicroarquitetura() {
+		return microarquitetura;
+	}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	public Integer getFrequencia() {
+		return frequencia;
+	}
 
-    public String getIdentificador() {
-        return identificador;
-    }
+	public Integer getPacotesFisicos() {
+		return pacotesFisicos;
+	}
 
-    public void setIdentificador(String identificador) {
-        this.identificador = identificador;
-    }
+	public Integer getCpusFisicas() {
+		return cpusFisicas;
+	}
 
-    public String getMicroarquitetura() {
-        return microarquitetura;
-    }
+	public Integer getUso() {
+		return uso;
+	}
 
-    public void setMicroarquitetura(String microarquitetura) {
-        this.microarquitetura = microarquitetura;
-    }
+	public Maquina getFkMaquina() {
+		return fkMaquina;
+	}
 
-    public Integer getFrequencia() {
-        return frequencia;
-    }
-
-    public void setFrequencia(Integer frequencia) {
-        this.frequencia = frequencia;
-    }
-
-    public Integer getPacotesFisicos() {
-        return pacotesFisicos;
-    }
-
-    public void setPacotesFisicos(Integer pacotesFisicos) {
-        this.pacotesFisicos = pacotesFisicos;
-    }
-
-    public Integer getCpusFisicas() {
-        return cpusFisicas;
-    }
-
-    public void setCpusFisicas(Integer cpusFisicas) {
-        this.cpusFisicas = cpusFisicas;
-    }
-
-    public Integer getUso() {
-        return uso;
-    }
-
-    public void setUso(Integer uso) {
-        this.uso = uso;
-    }
-
-    public Maquina getFkMaquina() {
-        return fkMaquina;
-    }
-
-    public void setFkMaquina(Maquina fkMaquina) {
-        this.fkMaquina = fkMaquina;
-    }
 
 }
