@@ -1,9 +1,0 @@
-package controltec.conexao;
-
-public class BancoDeDados {
-	
-	private BasicDataSource dataSource;
-	
-	public 
-
-}
