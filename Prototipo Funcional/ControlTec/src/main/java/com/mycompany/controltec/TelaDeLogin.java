@@ -4,9 +4,12 @@
  */
 package com.mycompany.controltec;
 
+import com.mycompany.controltec.entidades.UsoDeMaquinas;
 import com.mycompany.controltec.entidades.Usuario;
 import com.mycompany.controltec.jdbc.Conexao;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -131,6 +134,13 @@ public class TelaDeLogin extends javax.swing.JFrame {
         }
         else {
             System.out.println("Logado com sucesso");
+            UsoDeMaquinas udm = new UsoDeMaquinas();
+            try {
+                udm.capturarDados();
+            } catch (InterruptedException ex) {
+                Logger.getLogger(TelaDeLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
         }
     }//GEN-LAST:event_btnEntrarActionPerformed
 
