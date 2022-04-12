@@ -2,7 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.login;
+package com.mycompany.controltec;
+
+import com.mycompany.controltec.entidades.Usuario;
+import com.mycompany.controltec.jdbc.Conexao;
+import java.util.List;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  *
@@ -10,6 +16,8 @@ package com.mycompany.login;
  */
 public class TelaDeLogin extends javax.swing.JFrame {
 
+    Conexao conexao = new Conexao();
+    JdbcTemplate con = new JdbcTemplate(conexao.getDataSource());
     /**
      * Creates new form TelaDeLogin
      */
@@ -27,17 +35,15 @@ public class TelaDeLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         imagensFundo = new javax.swing.JLabel();
-        labelRA = new javax.swing.JFormattedTextField();
+        lblRA = new javax.swing.JFormattedTextField();
         btnEntrar = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         nameRA = new javax.swing.JLabel();
         nameSENHA = new javax.swing.JLabel();
         labelEmpresa = new javax.swing.JLabel();
         campoEsqueciSenha = new java.awt.Checkbox();
-        labelSENHA = new javax.swing.JFormattedTextField();
+        lblSenha = new javax.swing.JFormattedTextField();
         labelImagem = new javax.swing.JLabel();
-
-        imagensFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tecnologia2.jpg"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela De Login");
@@ -46,9 +52,9 @@ public class TelaDeLogin extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        labelRA.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(labelRA);
-        labelRA.setBounds(200, 90, 120, 20);
+        lblRA.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(lblRA);
+        lblRA.setBounds(200, 90, 120, 20);
 
         btnEntrar.setBackground(new java.awt.Color(255, 255, 255));
         btnEntrar.setForeground(new java.awt.Color(0, 0, 0));
@@ -101,11 +107,10 @@ public class TelaDeLogin extends javax.swing.JFrame {
         getContentPane().add(campoEsqueciSenha);
         campoEsqueciSenha.setBounds(200, 170, 140, 20);
 
-        labelSENHA.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(labelSENHA);
-        labelSENHA.setBounds(200, 140, 120, 21);
+        lblSenha.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(lblSenha);
+        lblSenha.setBounds(200, 140, 120, 21);
 
-        labelImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tecnologia2.jpg"))); // NOI18N
         labelImagem.setMinimumSize(new java.awt.Dimension(626, 300));
         getContentPane().add(labelImagem);
         labelImagem.setBounds(-10, 0, 520, 290);
@@ -115,6 +120,18 @@ public class TelaDeLogin extends javax.swing.JFrame {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         // TODO add your handling code here:
+        String ra = lblRA.getText();
+        String senha = lblSenha.getText();
+        List<Usuario> listaDeUsuarios = con.query("select * from Usuario where email = '" + ra + "' "
+                + "AND senha = '" + senha + "';",
+                new BeanPropertyRowMapper(Usuario.class));
+        
+        if(listaDeUsuarios.isEmpty()){
+            System.out.println("Erro");
+        }
+        else {
+            System.out.println("Logado com sucesso");
+        }
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
@@ -163,8 +180,8 @@ public class TelaDeLogin extends javax.swing.JFrame {
     private javax.swing.JLabel imagensFundo;
     private javax.swing.JLabel labelEmpresa;
     private javax.swing.JLabel labelImagem;
-    private javax.swing.JFormattedTextField labelRA;
-    private javax.swing.JFormattedTextField labelSENHA;
+    private javax.swing.JFormattedTextField lblRA;
+    private javax.swing.JFormattedTextField lblSenha;
     private javax.swing.JLabel nameRA;
     private javax.swing.JLabel nameSENHA;
     // End of variables declaration//GEN-END:variables
