@@ -5,16 +5,20 @@ import com.github.britooo.looca.api.group.discos.Disco;
 import com.github.britooo.looca.api.group.discos.DiscosGroup;
 import com.mycompany.controltec.jdbc.Conexao;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class UsoDeMaquinas {
 
     private Usuario usuario;
     private Componentes componentes;
-    private Instant inicializado;
+    private LocalDateTime inicializado;
     private Long tempoEmUso;
     private Double consumoCPU;
     private Long consumoDisco;
@@ -27,7 +31,7 @@ public class UsoDeMaquinas {
     Conexao conexao = new Conexao();
     JdbcTemplate con = new JdbcTemplate(conexao.getDataSource());
 
-    public UsoDeMaquinas(Usuario usuario, Componentes componentes, Instant inicializado, Long tempoEmUso, Double consumoCPU, Long consumoDisco, Long consumoMemoria, Double temperatura, LocalDateTime hora) {
+    public UsoDeMaquinas(Usuario usuario, Componentes componentes, LocalDateTime inicializado, Long tempoEmUso, Double consumoCPU, Long consumoDisco, Long consumoMemoria, Double temperatura, LocalDateTime hora) {
         this.usuario = usuario;
         this.componentes = componentes;
         this.inicializado = inicializado;
@@ -42,46 +46,46 @@ public class UsoDeMaquinas {
     public UsoDeMaquinas() {
     }
 
-    public void capturarDados() throws InterruptedException {
+    public void capturarDados(Usuario usuario, Componentes componentes) throws InterruptedException {
         while (true) {
             Long consumo = 0L;
-            Integer contador = 0;
-            contador++;
-            inicializado = looca.getSistema().getInicializado();
+            inicializado = looca.getSistema().getInicializado().atZone(ZoneId.systemDefault()).toLocalDateTime();
             tempoEmUso = looca.getSistema().getTempoDeAtividade();
             consumoCPU = looca.getProcessador().getUso();
+
             for (Disco disco : discos) {
                 consumo += disco.getBytesDeEscritas() + disco.getBytesDeLeitura();
             }
+
             consumo = consumo - grupoDeDiscos.getTamanhoTotal();
             consumoDisco = consumo;
             consumoMemoria = looca.getMemoria().getEmUso();
             temperatura = looca.getTemperatura().getTemperatura();
             hora = LocalDateTime.now();
 
-            String insertLogs = "INSERT INTO Logs ("
-                    + "idAluno,"
-                    + "idMaquina,"
+            String insertLogs = "INSERT INTO UsoDeMaquinas ("
+                    + "idUsuario,"
+                    + "idComponentes,"
                     + "temperatura,"
                     + "consumoMemoria,"
                     + "consumoCPU,"
                     + "consumoDisco,"
-                    + "tempoEmAtividade,"
-                    + "inicializado"
+                    + "tempoEmUso,"
+                    + "inicializado,"
+                    + "hora"
                     + ") values"
-                    + " (?, ?, ?, ?, ?, ?, ?, ?)";
+                    + " (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             con.update(insertLogs,
-                    1,
-                    1,
+                    usuario.getIdUsuario(),
+                    componentes.getIdComponentes(),
                     temperatura,
                     consumoMemoria,
                     consumoCPU,
                     consumoDisco,
                     tempoEmUso,
-                    inicializado);
-            System.out.println("Contador "+contador);
-            contador++;
+                    inicializado,
+                    hora.now());
 
             Thread.sleep(2000L);
         }
@@ -95,7 +99,7 @@ public class UsoDeMaquinas {
         return componentes;
     }
 
-    public Instant getInicializado() {
+    public LocalDateTime getInicializado() {
         return inicializado;
     }
 
@@ -123,4 +127,29 @@ public class UsoDeMaquinas {
         return hora;
     }
 
+    
+    @Override
+    public String toString() {
+        return String.format("IdUsuario : %d\n"
+                + "idComponente : %d\n"
+                + "Inicializado : %s\n"
+                + "Tempo em uso : %s\n"
+                + "Consumo CPU : %d\n"
+                + "Coonsumo de Memória : %d\n"
+                + "Consumo de Disco : %d\n"
+                + "Temperatura : %.1f\n"
+                + "hora : %s\n"
+                + "-".repeat(30),
+                usuario.getIdUsuario(),                
+                componentes.getIdComponentes(),
+                inicializado.toString(),
+                tempoEmUso.toString(),
+                consumoCPU,
+                consumoMemoria,
+                consumoDisco,
+                temperatura,
+                hora.toString());
+    }
+
+    
 }

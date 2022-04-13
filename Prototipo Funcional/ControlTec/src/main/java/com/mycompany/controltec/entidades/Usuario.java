@@ -58,6 +58,44 @@ public class Usuario {
         return fkInstituicao;
     }
 
+    public void setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public void setCodigoInstituicao(String codigoInstituicao) {
+        this.codigoInstituicao = codigoInstituicao;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public void setTipoUsuario(String tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
+
+    
+
+    
+    @Override
+    public String toString() {
+        return String.format("Id do Usuario : %d\n"
+                + "nome : %s\n ", idUsuario, nome);
+                
+    }
+
     
     
 }

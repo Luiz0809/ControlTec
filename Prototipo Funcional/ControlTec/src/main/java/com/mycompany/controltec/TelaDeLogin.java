@@ -4,9 +4,12 @@
  */
 package com.mycompany.controltec;
 
+import com.mycompany.controltec.entidades.Componentes;
+import com.mycompany.controltec.entidades.Maquina;
 import com.mycompany.controltec.entidades.UsoDeMaquinas;
 import com.mycompany.controltec.entidades.Usuario;
 import com.mycompany.controltec.jdbc.Conexao;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -129,14 +132,18 @@ public class TelaDeLogin extends javax.swing.JFrame {
                 + "AND senha = '" + senha + "';",
                 new BeanPropertyRowMapper(Usuario.class));
         
+        List<Componentes> listaDeComponentes = con.query("select * from Componentes where fkMaquina = '1'",
+                new BeanPropertyRowMapper(Componentes.class));
         if(listaDeUsuarios.isEmpty()){
             System.out.println("Erro");
         }
         else {
             System.out.println("Logado com sucesso");
+//            listaDeUsuarios.forEach(usuario -> System.out.println(usuario));
+            listaDeComponentes.forEach(componentes -> System.out.println(componentes));
             UsoDeMaquinas udm = new UsoDeMaquinas();
             try {
-                udm.capturarDados();
+                udm.capturarDados(listaDeUsuarios.get(0), listaDeComponentes.get(0));
             } catch (InterruptedException ex) {
                 Logger.getLogger(TelaDeLogin.class.getName()).log(Level.SEVERE, null, ex);
             }

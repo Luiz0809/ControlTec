@@ -1,61 +1,66 @@
 package com.mycompany.controltec.entidades;
 public class Componentes {
     
-    private Long idComponente;
-    private String nomeDisco;
-    private String modeloDisco;
-    private String serialDisco;
-    private Long tamanhoDisco;
-    private Long memoriaTotal;
-    private String processador;
-    private  Maquina maquina;
+    private Long idComponentes;
+    private String nomeComponente;
+    private String modeloComponente;
+    private Long tamanhoComponente;
+    private  Maquina fkMaquina;
 
-    public Componentes(Long idComponente, String nomeDisco, String modeloDisco, String serialDisco, Long tamanhoDisco, Long memoriaTotal, String processador, Maquina maquina) {
-        this.idComponente = idComponente;
-        this.nomeDisco = nomeDisco;
-        this.modeloDisco = modeloDisco;
-        this.serialDisco = serialDisco;
-        this.tamanhoDisco = tamanhoDisco;
-        this.memoriaTotal = memoriaTotal;
-        this.processador = processador;
-        this.maquina = maquina;
+
+   public Componentes(){}
+
+    public Componentes(Long idComponentes, String nomeComponente, String modeloComponente, Long tamanhoComponente, Maquina fkMaquina) {
+        this.idComponentes = idComponentes;
+        this.nomeComponente = nomeComponente;
+        this.modeloComponente = modeloComponente;
+        this.tamanhoComponente = tamanhoComponente;
+        this.fkMaquina = fkMaquina;
     }
+
+    public Long getIdComponentes() {
+        return idComponentes;
+    }
+
+    public void setIdComponentes(Long idComponentes) {
+        this.idComponentes = idComponentes;
+    }
+
+    public String getNomeComponente() {
+        return nomeComponente;
+    }
+
+    public void setNomeComponente(String nomeComponente) {
+        this.nomeComponente = nomeComponente;
+    }
+
+    public String getModeloComponente() {
+        return modeloComponente;
+    }
+
+    public void setModeloComponente(String modeloComponente) {
+        this.modeloComponente = modeloComponente;
+    }
+
+    public Long getTamanhoComponente() {
+        return tamanhoComponente;
+    }
+
+    public void setTamanhoComponente(Long tamanhoComponente) {
+        this.tamanhoComponente = tamanhoComponente;
+    }
+
+    public Maquina getFkMaquina() {
+        return fkMaquina;
+    }
+
     
-    public Componentes(){}
 
-    public Long getIdComponente() {
-        return idComponente;
+    @Override
+    public String toString() {
+        return "idComponentes=" + idComponentes + ", nomeComponente=" + nomeComponente + ", modeloComponente=" + modeloComponente + ", tamanhoComponente=" + tamanhoComponente + ", fkMaquina=" + fkMaquina + '}';
     }
 
-    public String getNomeDisco() {
-        return nomeDisco;
-    }
-
-    public String getModeloDisco() {
-        return modeloDisco;
-    }
-
-    public String getSerialDisco() {
-        return serialDisco;
-    }
-
-    public Long getTamanhoDisco() {
-        return tamanhoDisco;
-    }
-
-    public Long getMemoriaTotal() {
-        return memoriaTotal;
-    }
-
-    public String getProcessador() {
-        return processador;
-    }
-
-    public Maquina getMaquina() {
-        return maquina;
-    }
     
-    
-    
-    
+   
 }
