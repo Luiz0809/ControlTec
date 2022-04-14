@@ -1,11 +1,15 @@
 
 package com.mycompany.controltec.entidades;
+
+import com.github.britooo.looca.api.core.Looca;
+
 public class Maquina {
     
     private Long idMaquina;
     private String identificador;
     private String sistemaOperacional;
     private Turma fkTurma;
+    private Looca looca = new Looca();
     
     public Maquina(){}
 
@@ -15,7 +19,7 @@ public class Maquina {
         this.sistemaOperacional = sistemaOperacional;
         this.fkTurma = fkTurma;
     }
-
+    
     public Long getIdMaquina() {
         return idMaquina;
     }
@@ -25,7 +29,7 @@ public class Maquina {
     }
 
     public String getSistemaOperacional() {
-        return sistemaOperacional;
+        return sistemaOperacional = looca.getSistema().getSistemaOperacional();
     }
 
     public Turma getFkTurma() {

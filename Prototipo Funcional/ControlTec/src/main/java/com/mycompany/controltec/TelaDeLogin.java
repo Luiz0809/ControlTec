@@ -11,6 +11,7 @@ import com.mycompany.controltec.entidades.Usuario;
 import com.mycompany.controltec.jdbc.Conexao;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -126,6 +127,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         // TODO add your handling code here:
+
         String ra = lblRA.getText();
         String senha = lblSenha.getText();
         List<Usuario> listaDeUsuarios = con.query("select * from Usuario where email = '" + ra + "' "
@@ -140,11 +142,12 @@ public class TelaDeLogin extends javax.swing.JFrame {
         else {
             System.out.println("Logado com sucesso");
 //            listaDeUsuarios.forEach(usuario -> System.out.println(usuario));
-            listaDeComponentes.forEach(componentes -> System.out.println(componentes));
+//            listaDeComponentes.forEach(componentes -> System.out.println(componentes));
             UsoDeMaquinas udm = new UsoDeMaquinas();
             try {
                 udm.capturarDados(listaDeUsuarios.get(0), listaDeComponentes.get(0));
-            } catch (InterruptedException ex) {
+            }
+            catch (Exception ex) {
                 Logger.getLogger(TelaDeLogin.class.getName()).log(Level.SEVERE, null, ex);
             }
             
