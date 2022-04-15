@@ -8,11 +8,13 @@
 
     :root {
         --color-1: #FF0000;
+        --color-2: rgb(131, 30, 131);
     }
     
     body {
         padding-top: 3vh;
-        background-color: gray;
+ /*        background-color: gray; vc esta comentado */
+        background-image: repeating-linear-gradient(blue, rgb(131, 30, 131), rgb(14, 14, 158));
     }
 
     input, label {
@@ -41,29 +43,15 @@
         margin-bottom: px;
         font-size: 1.6rem;
     }
-     
-  /*   form h3 {
-        display: block;
-        justify-content: none;
-    } */
 
-   .seila {
+   .div_container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
    }
 
-
-   /*  form {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        flex-direction: column;
-    } */
-
     .full-box {
         flex: 100%;
-        /* position: relative; */
     }
 
     .half-box {
@@ -92,7 +80,7 @@
     }
 
     input[type="submit"] {
-     background-color: #E60084;
+     background-color: var(--color-2);
      color: #FFF;
      border: none;
      border-radius: 20px;
