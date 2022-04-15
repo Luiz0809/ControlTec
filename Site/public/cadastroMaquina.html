@@ -12,9 +12,11 @@
 
  <div id="main-container">
      <h1>Cadastre seu Equipamento</h1>
-     <h3>Características Gerais</h3><br>
      
      <form>
+        <h3>Características Gerais</h3>
+       
+        <div class="seila">
         <div class="half-box">
             <input id="ipt_brand_marca" placeholder="Marca">
         </div>
@@ -27,21 +29,23 @@
         <div class="half-box">
             <input id="ipt_batery" placeholder="Duração Bateria">
         </div>
-        </form>
+        </div>
+        
+       <h3>Sistema Operacional</h3>
 
-       <h3>Sistema Operacional</h3><br>
-        <form>
-         <div class="half-box">
-             <input id="ipt_name" placeholder="Nome">
-         </div>
-         <div class="half-box">
-             <input id="ipt_version" placeholder="Versão">
-         </div>
-        </form>
+       <div class="seila">
+        <div class="half-box">
+            <input id="ipt_name" placeholder="Nome">
+        </div>
+        <div class="half-box">
+            <input id="ipt_version" placeholder="Versão">
+        </div>
+        </div>
 
-        <h3>Processador</h3><br>
-        <form>
-         <div class="half-box spacing">
+        <h3>Processador</h3>
+
+        <div class="seila">
+        <div class="half-box spacing">
             <input id="ipt_plate" placeholder="Placa Gráfica">
         </div>
         <div class="half-box spacing">
@@ -50,33 +54,33 @@
         <div class="half-box spacing">
             <input  id="ipt_qtd_nucleos" placeholder="Quantidade Núcleos">
         </div>
-        </form>
+        </div>
 
-         <h3>Disco</h3><br>
-        <form>
+        <h3>Disco</h3>
+
+        <div class="seila">
             <div class="half-box spacing">
                 <input id="ipt_capacity_disco" placeholder="Capacidade">
             </div>
-        </form>
+        </div>
 
-        <h3>Memória</h3><br>
+        <h3>Memória</h3>
 
-        <form>
+        <div class="seila">
             <div class="half-box spacing">
                 <input id="ipt_capacity_memory" placeholder="Capacidade">
             </div>
             <div class="half-box spacing">
                 <input id="ipt_type" placeholder="Tipo">
             </div>
-        </form>
         
-        <form>
         <div class="full-box">
             <input type="checkbox" id="agreement">
             <label for="agreement" id="agreement-label">Eu li e aceito os <a href="">termos de uso</a></label>
         </div>
         <div class="full-box">
             <input type="submit" id="btn-submit" value="Registrar">
+        </div>
         </div>
      </form>
  </div>

@@ -38,24 +38,32 @@
 
     #main-container h1 {
         text-align: center;
-        margin-bottom: 25px;
+        margin-bottom: px;
         font-size: 1.6rem;
     }
      
-    form h3 {
+  /*   form h3 {
         display: block;
         justify-content: none;
-    }
+    } */
 
-    form {
+   .seila {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   }
+
+
+   /*  form {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-    }
+        flex-direction: column;
+    } */
 
     .full-box {
-        flex: 1 1 100%;
-        position: relative;
+        flex: 100%;
+        /* position: relative; */
     }
 
     .half-box {
