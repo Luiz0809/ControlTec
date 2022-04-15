@@ -13,7 +13,7 @@
  <div id="main-container">
      <h1>Cadastre seu Equipamento</h1>
      
-     <form>
+     <form method="post" id="form_cadastro" onsubmit="return cadastrar()">
         <h3>Máquina</h3>
        
         <div class="div_container">
@@ -64,3 +64,82 @@
  </div>
 </body>
 </html>
+
+<script>
+    
+
+    function limparFormulario() {
+        document.getElementById("form_cadastro").reset();
+    }
+
+    function cadastrar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+
+        var ipt_identify = formulario.get("ipt_identify");
+        var ipt_system = formulario.get("ipt_system");
+        var ipt_name_disk = formulario.get("ipt_name_disk");
+        var ipt_model_disk = formulario.get("ipt_model_disk");
+        var ipt_lenth_disk = formulario.get("ipt_lenth_disk");
+        var ipt_name_memory = formulario.get("ipt_name_memory");
+        var ipt_model_memory = formulario.get("ipt_model_memory");
+        var ipt_lenth_memory = formulario.get("ipt_lenth_memory");
+
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (ipt_identify == "")  {
+                console.log('Identificador está em branco')
+            }
+            if (ipt_system == "" )  {
+                console.log('Sistema operacional está em branco')
+            }
+            if (ipt_name_disk == "" )  {
+                console.log('Nome do disco está em branco')
+            }
+            if (ipt_model_disk == "" )  {
+                console.log('Modelo do disco está em branco')
+            }
+            if (ipt_lenth_disk == "" )  {
+                console.log('Tamanho do disco está em branco')
+            }
+            if (ipt_name_memory == "" )  {
+                console.log('Nome da memoria está em branco')
+            }
+            if (ipt_model_memory == "" )  {
+                console.log('Modelo da memoria está em branco')
+            }
+            if (ipt_lenth_memory == "" )  {
+                console.log('Tamanho da memoria está em branco')
+            }
+        
+            finalizarAguardar();
+            return false;
+        }
+
+        fetch("/usuarios/cadastrar/maquinas", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+        console.log(formulario)
+
+    }
+
+
+
+</script>
