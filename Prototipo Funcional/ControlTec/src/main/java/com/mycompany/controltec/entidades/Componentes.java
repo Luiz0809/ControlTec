@@ -50,8 +50,8 @@ public class Componentes {
         this.tamanhoComponente = tamanhoComponente;
     }
 
-    public Maquina getFkMaquina() {
-        return fkMaquina;
+    public String getFkMaquina() {
+        return fkMaquina.getIdentificador();
     }
 
     

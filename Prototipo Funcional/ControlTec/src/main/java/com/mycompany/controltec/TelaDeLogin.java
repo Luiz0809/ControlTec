@@ -25,6 +25,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
 
     Conexao conexao = new Conexao();
     JdbcTemplate con = new JdbcTemplate(conexao.getDataSource());
+
     /**
      * Creates new form TelaDeLogin
      */
@@ -130,27 +131,42 @@ public class TelaDeLogin extends javax.swing.JFrame {
 
         String ra = lblRA.getText();
         String senha = lblSenha.getText();
+        Maquina maquina = new Maquina();
+        maquina.informacoesMaquina();
+        Long idMaquina = 0L;
+
         List<Usuario> listaDeUsuarios = con.query("select * from Usuario where email = '" + ra + "' "
                 + "AND senha = '" + senha + "';",
                 new BeanPropertyRowMapper(Usuario.class));
+
+        List<Maquina> listaDeMaquinas = con.query("select * from Maquina where identificador = '" + maquina.getIdentificador() + "';",
+                new BeanPropertyRowMapper(Maquina.class));
+      
+        System.out.println(listaDeMaquinas);
         
-        List<Componentes> listaDeComponentes = con.query("select * from Componentes where fkMaquina = '1'",
-                new BeanPropertyRowMapper(Componentes.class));
-        if(listaDeUsuarios.isEmpty()){
-            System.out.println("Erro");
+        for(Maquina maquinas : listaDeMaquinas){
+            idMaquina = maquinas.getIdMaquina();
         }
-        else {
+        System.out.println(idMaquina);
+        
+        List<Componentes> listaDeComponentes = con.query("select * from Componentes where fkMaquina = '" + idMaquina + "';",
+                new BeanPropertyRowMapper(Componentes.class));
+
+        if (listaDeUsuarios.isEmpty()) {
+            System.out.println("Erro");
+        } else {
             System.out.println("Logado com sucesso");
 //            listaDeUsuarios.forEach(usuario -> System.out.println(usuario));
 //            listaDeComponentes.forEach(componentes -> System.out.println(componentes));
+//            listaDeMaquinas.forEach(maquinas -> System.out.println(maquinas));
+            
             UsoDeMaquinas udm = new UsoDeMaquinas();
             try {
                 udm.capturarDados(listaDeUsuarios.get(0), listaDeComponentes.get(0));
-            }
-            catch (Exception ex) {
+            } catch (Exception ex) {
                 Logger.getLogger(TelaDeLogin.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+
         }
     }//GEN-LAST:event_btnEntrarActionPerformed
 
