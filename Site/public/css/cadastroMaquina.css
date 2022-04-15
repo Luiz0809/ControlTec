@@ -8,11 +8,7 @@
 
     :root {
         --color-1: #FF0000;
-        --color-2: #100e34;
-        --color-3: #4f48ec;
-        --color-4: #38d6eb;
-        --color-5: #eeeeee;
-     }
+    }
     
     body {
         padding-top: 3vh;
@@ -30,7 +26,6 @@
     a {
         color: var(--color-1);
     }
-
 
     #main-container {
         width: 900px;
@@ -52,7 +47,6 @@
         justify-content: none;
     }
 
-
     form {
         display: flex;
         flex-wrap: wrap;
@@ -65,8 +59,7 @@
     }
 
     .half-box {
-        flex: 40%;
-       /*  position: relative; */
+       flex: 40%;
        margin-right: 2.5%;
     }
 
