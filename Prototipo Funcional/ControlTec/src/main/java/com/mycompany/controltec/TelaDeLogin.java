@@ -132,14 +132,14 @@ public class TelaDeLogin extends javax.swing.JFrame {
         String ra = lblRA.getText();
         String senha = lblSenha.getText();
         Maquina maquina = new Maquina();
-        maquina.informacoesMaquina();
+        //maquina.informacoesMaquina();
         Long idMaquina = 0L;
 
-        List<Usuario> listaDeUsuarios = con.query("select * from Usuario where email = '" + ra + "' "
+        List<Usuario> listaDeUsuarios = con.query("select * from dbo.Usuario where email = '" + ra + "' "
                 + "AND senha = '" + senha + "';",
                 new BeanPropertyRowMapper(Usuario.class));
 
-        List<Maquina> listaDeMaquinas = con.query("select * from Maquina where identificador = '" + maquina.getIdentificador() + "';",
+        List<Maquina> listaDeMaquinas = con.query("select * from dbo.Maquina ",
                 new BeanPropertyRowMapper(Maquina.class));
       
         System.out.println(listaDeMaquinas);
@@ -149,8 +149,11 @@ public class TelaDeLogin extends javax.swing.JFrame {
         }
         System.out.println(idMaquina);
         
-        List<Componentes> listaDeComponentes = con.query("select * from Componentes where fkMaquina = '" + idMaquina + "';",
+        List<Componentes> listaDeComponentes = con.query("select * from dbo.Componentes where fkMaquina = '" + idMaquina + "'; ",
                 new BeanPropertyRowMapper(Componentes.class));
+        
+        
+        listaDeComponentes.forEach(x -> System.out.println(x.getIdComponente()));
 
         if (listaDeUsuarios.isEmpty()) {
             System.out.println("Erro");
@@ -166,7 +169,6 @@ public class TelaDeLogin extends javax.swing.JFrame {
             } catch (Exception ex) {
                 Logger.getLogger(TelaDeLogin.class.getName()).log(Level.SEVERE, null, ex);
             }
-
         }
     }//GEN-LAST:event_btnEntrarActionPerformed
 

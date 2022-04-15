@@ -62,9 +62,9 @@ public class UsoDeMaquinas {
             temperatura = looca.getTemperatura().getTemperatura();
             hora = LocalDateTime.now();
 
-            String insertLogs = "INSERT INTO UsoDeMaquinas ("
-                    + "idUsuario,"
-                    + "idComponentes,"
+            String insertLogs = "INSERT INTO dbo.UsoDeMaquina ("
+                    + "Usuario,"
+                    + "Componentes,"
                     + "temperatura,"
                     + "consumoMemoria,"
                     + "consumoCPU,"
@@ -77,7 +77,7 @@ public class UsoDeMaquinas {
 
             con.update(insertLogs,
                     usuario.getIdUsuario(),
-                    componentes.getIdComponentes(),
+                    componentes.getIdComponente(),
                     temperatura,
                     consumoMemoria,
                     consumoCPU,
@@ -139,7 +139,7 @@ public class UsoDeMaquinas {
                 + "hora : %s\n"
                 + "-".repeat(30),
                 usuario.getIdUsuario(),
-                componentes.getIdComponentes(),
+                componentes.getIdComponente(),
                 inicializado.toString(),
                 tempoEmUso.toString(),
                 consumoCPU,

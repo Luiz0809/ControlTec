@@ -1,29 +1,29 @@
 package com.mycompany.controltec.entidades;
 public class Componentes {
     
-    private Long idComponentes;
+    private Long idComponente;
     private String nomeComponente;
     private String modeloComponente;
-    private Long tamanhoComponente;
-    private  Maquina fkMaquina;
+    private Long tamanhoComponenteEmBytes;
+    private  Long fkMaquina;
 
 
    public Componentes(){}
 
-    public Componentes(Long idComponentes, String nomeComponente, String modeloComponente, Long tamanhoComponente, Maquina fkMaquina) {
-        this.idComponentes = idComponentes;
+    public Componentes(Long idComponente, String nomeComponente, String modeloComponente, Long tamanhoComponenteEmBytes, Long fkMaquina) {
+        this.idComponente = idComponente;
         this.nomeComponente = nomeComponente;
         this.modeloComponente = modeloComponente;
-        this.tamanhoComponente = tamanhoComponente;
+        this.tamanhoComponenteEmBytes = tamanhoComponenteEmBytes;
         this.fkMaquina = fkMaquina;
     }
 
-    public Long getIdComponentes() {
-        return idComponentes;
+    public Long getIdComponente() {
+        return idComponente;
     }
 
-    public void setIdComponentes(Long idComponentes) {
-        this.idComponentes = idComponentes;
+    public void setIdComponente(Long idComponente) {
+        this.idComponente = idComponente;
     }
 
     public String getNomeComponente() {
@@ -42,23 +42,25 @@ public class Componentes {
         this.modeloComponente = modeloComponente;
     }
 
-    public Long getTamanhoComponente() {
-        return tamanhoComponente;
+    public Long getTamanhoComponenteEmBytes() {
+        return tamanhoComponenteEmBytes;
     }
 
-    public void setTamanhoComponente(Long tamanhoComponente) {
-        this.tamanhoComponente = tamanhoComponente;
+    public void setTamanhoComponenteEmBytes(Long tamanhoComponenteEmBytes) {
+        this.tamanhoComponenteEmBytes = tamanhoComponenteEmBytes;
     }
 
-    public String getFkMaquina() {
-        return fkMaquina.getIdentificador();
+    public Long getFkMaquina() {
+        return fkMaquina;
     }
 
-    
+    public void setFkMaquina(Long fkMaquina) {
+        this.fkMaquina = fkMaquina;
+    }
 
     @Override
     public String toString() {
-        return "idComponentes=" + idComponentes + ", nomeComponente=" + nomeComponente + ", modeloComponente=" + modeloComponente + ", tamanhoComponente=" + tamanhoComponente + ", fkMaquina=" + fkMaquina + '}';
+        return "Componentes{" + "idComponente=" + idComponente + ", nomeComponente=" + nomeComponente + ", modeloComponente=" + modeloComponente + ", tamanhoComponenteEmBytes=" + tamanhoComponenteEmBytes + ", fkMaquina=" + fkMaquina + '}';
     }
 
     

@@ -27,7 +27,10 @@ public class Maquina {
     public void informacoesMaquina(){
         identificador = looca.getProcessador().getId();
         sistemaOperacional = looca.getSistema().getSistemaOperacional();
-        String insertMaquina = "Insert into maquina values (null,?,?,?)";
+        String insertMaquina = "Insert into dbo.maquina ("
+                + "identificador,"
+                + "sistemaOperacional,"
+                + "fkTurma) values (?,?,?)";
         con.update(insertMaquina,identificador, sistemaOperacional, 1);
     }
     public Long getIdMaquina() {

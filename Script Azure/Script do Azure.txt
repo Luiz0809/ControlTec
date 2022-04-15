@@ -1,3 +1,4 @@
+
 create table Instituicao(
 idInstituicao int primary key identity(1,1),
 nome varchar(100),
@@ -10,7 +11,7 @@ pontoReferencia varchar(100)
 );
 
 create table Turma(
-idTurma int primary key auto_increment identity(1,1),
+idTurma int primary key identity(1,1),
 nome varchar(45),
 descricao varchar(45),
 sala varchar(10),
@@ -41,21 +42,22 @@ create table Componentes (
 idComponente int primary key identity(1,1),
 nomeComponente varchar(45),
 modeloComponente varchar(45),
-tamanhoComponenteEmBytes bigint(20),
+tamanhoComponenteEmBytes bigint,
 fkMaquina int,
 foreign key (fkMaquina) references Maquina(idMaquina)
 );
 
+
 create table UsoDeMaquina (
 Usuario int,
 Componentes int,
-inicializado datetime,
-tempoEmUso bigint(20),
-consumoCPU bigint(20),
-consumoMemoria bigint(20),
-consumoDisco bigint(20),
-temperatura double,
 hora datetime,
+inicializado datetime,
+tempoEmUso bigint,
+consumoCPU bigint,
+consumoMemoria bigint,
+consumoDisco bigint,
+temperatura float,
 primary key(Usuario, Componentes, hora)
 );
 
@@ -63,9 +65,10 @@ create table LogsDeErro (
 idLogDoErro int primary key identity(1,1),
 descricao varchar(100),
 identificadorLog varchar(45),
-hora datetime current_timestamp,
+hora datetime default current_timestamp,
 Usuario int,
 foreign key (Usuario) references UsoDeMaquina(Usuario),
 Componentes int,
 foreign key (Componentes) references UsoDeMaquina(Componentes)
 );
+

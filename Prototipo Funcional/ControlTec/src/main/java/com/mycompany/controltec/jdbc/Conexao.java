@@ -8,10 +8,12 @@ public class Conexao {
 	public Conexao() {
 		
 		dataSource = new BasicDataSource();
-		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost/Teste?useTimezone=true&serverTimezone=UTC");
-		dataSource.setUsername("root");
-		dataSource.setPassword("102025fe");
+		dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		dataSource.setUrl("jdbc:sqlserver://controltec.database.windows.net:1433;database=ControlTec;"
+                        + "user=controltec@controltec;password={2ads@grupo2};encrypt=true;trustServerCertificate=false;"
+                        + "hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
+		dataSource.setUsername("controltec");
+		dataSource.setPassword("2ads@grupo2");
 		
 	}
 	
