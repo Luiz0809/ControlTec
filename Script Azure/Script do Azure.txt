@@ -1,98 +1,71 @@
-create table Tipo_Usuario (
-id int primary key identity(1,1),
-tipo varchar(45),
-descricao varchar(200)
-);
-
-create table Endereco (
-idEndereco int primary key identity(100,1),
-rua varchar(45),
-bairro varchar(45),
-cidade varchar(45),
-estado varchar(45)
-);
-
 create table Instituicao(
-idInstituicao int primary key identity(1000,1),
+idInstituicao int primary key identity(1,1),
 nome varchar(100),
 numeroEndereco int,
-Endereco int,
-foreign key (Endereco) references Endereco(idEndereco)
+Rua varchar(45),
+Bairro varchar(45),
+CEP varchar(45),
+Complemento varchar(100),
+pontoReferencia varchar(100)
+);
+
+create table Turma(
+idTurma int primary key auto_increment identity(1,1),
+nome varchar(45),
+descricao varchar(45),
+sala varchar(10),
+fkInstituicao int,
+foreign key (fkInstituicao) references Instituicao(idInstituicao)
 );
 
 create table Usuario (
 idUsuario int primary key identity (1,1),
 nome varchar(45),
-idade int,
-CodigoInstituicao varchar(50),
+dataNascimento date,
 email varchar(50),
 senha varchar(50),
-fkTipo_Usuario int,
+tipo_usuario varchar(20),
 fkInstituicao int,
-foreign key (fkTipo_Usuario) references Tipo_Usuario(id),
 foreign key (fkInstituicao) references Instituicao(idInstituicao)
 );
 
 create table Maquina (
-idMaquina int primary key identity(1000,1),
-identificacao varchar(100)
+idMaquina int primary key identity(1,1),
+identificador varchar(100),
+sistemaOperacional varchar(45),
+fkTurma int,
+foreign key (fkTurma) references Turma(idTurma)
 );
 
-create table Logs (
-usuario int,
-maquina int,
-horarioUso DATETIME DEFAULT current_timestamp,
-primary key (usuario, maquina, horarioUso),
-foreign key (usuario) references Usuario(idUsuario),
-foreign key (maquina) references Maquina(idMaquina)
+create table Componentes (
+idComponente int primary key identity(1,1),
+nomeComponente varchar(45),
+modeloComponente varchar(45),
+tamanhoComponenteEmBytes bigint(20),
+fkMaquina int,
+foreign key (fkMaquina) references Maquina(idMaquina)
 );
 
------------------------- SCRIPT PARA TESTES NO WORKBENCH -----------------------------------
-create table Tipo_Usuario (
-id int primary key auto_increment,
-tipo varchar(45),
-descricao varchar(200)
-)auto_increment=1;
-
-create table Endereco (
-idEndereco int primary key auto_increment,
-rua varchar(45),
-bairro varchar(45),
-cidade varchar(45),
-estado varchar(45)
-)auto_increment=100;
-
-create table Instituicao(
-idInstituicao int primary key auto_increment,
-nome varchar(100),
-numeroEndereco int,
-Endereco int,
-foreign key (Endereco) references Endereco(idEndereco)
-)auto_increment=1000;
-
-create table Usuario (
-idUsuario int primary key auto_increment,
-nome varchar(45),
-idade int,
-CodigoInstituicao varchar(50),
-email varchar(50),
-senha varchar(50),
-fkTipo_Usuario int,
-fkInstituicao int,
-foreign key (fkTipo_Usuario) references Tipo_Usuario(id),
-foreign key (fkInstituicao) references Instituicao(idInstituicao)
+create table UsoDeMaquina (
+Usuario int,
+Componentes int,
+inicializado datetime,
+tempoEmUso bigint(20),
+consumoCPU bigint(20),
+consumoMemoria bigint(20),
+consumoDisco bigint(20),
+temperatura double,
+hora datetime,
+primary key(Usuario, Componentes, hora)
 );
 
-create table Maquina (
-idMaquina int primary key auto_increment,
-identificacao varchar(100)
-)auto_increment=1000;
-
-create table Logs (
-usuario int,
-maquina int,
-horarioUso DATETIME DEFAULT current_timestamp,
-primary key (usuario, maquina, horarioUso),
-foreign key (usuario) references Usuario(idUsuario),
-foreign key (maquina) references Maquina(idMaquina)
+create table LogsDeErro (
+idLogDoErro int primary key identity(1,1),
+descricao varchar(100),
+identificadorLog varchar(45),
+hora datetime current_timestamp,
+Usuario int,
+foreign key (Usuario) references UsoDeMaquina(Usuario),
+Componentes int,
+foreign key (Componentes) references UsoDeMaquina(Componentes)
 );
