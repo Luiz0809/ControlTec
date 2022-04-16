@@ -44,6 +44,7 @@ public class UsoDeMaquinas {
 
     public void capturarDados(Usuario usuario, Componentes componentes) throws Exception {
         while (true) {
+            
             Long consumo = 0L;
             inicializado = looca.getSistema().getInicializado()
                     .atZone(ZoneId.systemDefault())
@@ -53,7 +54,7 @@ public class UsoDeMaquinas {
             consumoCPU = looca.getProcessador().getUso();
             
             for (Disco disco : discos) {
-                consumo += disco.getLeituras() + disco.getEscritas();
+                consumo += disco.getTamanhoAtualDaFila();
             }
 
             consumo = consumo;

@@ -134,6 +134,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
         Maquina maquina = new Maquina();
         //maquina.informacoesMaquina();
         Long idMaquina = 0L;
+        Integer contador = 0;
 
         List<Usuario> listaDeUsuarios = con.query("select * from dbo.Usuario where email = '" + ra + "' "
                 + "AND senha = '" + senha + "';",
@@ -165,7 +166,10 @@ public class TelaDeLogin extends javax.swing.JFrame {
             
             UsoDeMaquinas udm = new UsoDeMaquinas();
             try {
-                udm.capturarDados(listaDeUsuarios.get(0), listaDeComponentes.get(0));
+                for(Componentes componente : listaDeComponentes){
+                    udm.capturarDados(listaDeUsuarios.get(0), listaDeComponentes.get(contador));
+                    contador++;
+                }
             } catch (Exception ex) {
                 Logger.getLogger(TelaDeLogin.class.getName()).log(Level.SEVERE, null, ex);
             }
