@@ -1,313 +1,105 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-    <link rel="icon" href="imagens/logo_controltec-removebg-preview.png">
-    <link rel="stylesheet" href="css/cadastro2.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-
-        <script src="js/funcoes.js"></script>
+    <title> Tela de Cadastro </title>
+    <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
+    
+     <header class="header">
+         <div class="logo"> </div>
+         <div class="navbar">
+             <a class="item" href="index.html"> Menu </a>
+             <a class="item" href=""> Quem Somos </a>
+             <a class="item" href="cadastro.html"> Cadastro </a>
+             <a class="item" href="login.html"> Login </a>
+         </div>
+         
+     </header>
 
-
-    <header>
-        <a href="" class="brand"> ControlTec </a>
-        <div class="menu-btn"></div>
-        <div class="navigation">
-            <div class="navigation-items">
-                <a href="index.html"> Home </a>
-                <a href=""> Quem Somos </a>
-                <a href="cadastro.html"> Cadastro/Login </a>
+     <div class="titulo">
+        <p class="item-escrito">A criatividade é pensar coisas novas. A inovação é fazer coisas novas.</p>
+         <h1 class="item-escrito2"> Cadastre-se </h1>
+     </div>
+     <section class="sessao">
+         <div class="pre-form">
+             <form class="form">
+                <p> Instituição </p>
+                <label class="label-input">
+                    <input type="text" placeholder="ex.Escola de direito">
+               </label>
+               <p> Rua </p>
+               <label class="label-input">
+                    <input type="text" placeholder="ex.Av.Paulista">
+               </label>
+               <p> Número </p>
+               <label class="label-input">
+                     <input type="number" placeholder="ex.1000">
+               </label>
+               <p> Bairro </p>
+               <label class="label-input">
+                    <input type="text" placeholder="ex.Jardim Morumbi">
+               </label>
+               <p> Estado </p>
+               <label class="label-input">
+                    <input type="text" placeholder="ex. Bahia">
+               </label>
+               <p> cidade </p>
+               <label class="label-input">
+                    <input type="text" placeholder="ex. Salvador">
+               </label>
+               <p> CEP </p>
+               <label class="label-input">
+                    <input type="number" placeholder="ex.00000-000">
+               </label>
+               <p> Complemento </p>
+               <label class="label-input">
+                    <input type="text" placeholder="ex.Trabalho">
+               </label>
+               <p> Ponto de Referência </p>
+               <label class="label-input">
+                     <input type="text" placeholder="ex.Mercado do Jão">
+               </label>
+               <p> Email </p>
+               <label class="label-input">
+                    <input type="email" placeholder="ex.control@tec.com.br">
+               </label>
+               <p> Senha </p>
+               <label class="label-input">
+                    <input type="password" placeholder="ex.********">
+               </label> 
+                <button class="btn"> Cadastre-se </button>
+             </form>
             </div>
-        </div>
-    </header>
+         </div>
+     </section>
+
+     <footer class="footer">
+         <div class="logo">
+          <p> Logo </p>
+         </div>
+         <div class="dados">
+           <p> <h5> Início </h5>
+               Menu <br>
+               Quem Somos <br>  
+            </p>
+         </div>
+         <div class="dados2">
+             <p>
+              <h5> Suporte </h5>
+              FAQ <br>
+              Telefones <br>
+              Chat <br>
+            </p>
+         </div>
+         <div class="media">
+           <p> @2022 Copyright - Control Tec </p>
+         </div>
+     </footer>
 
 
-    <div class="container">
-        <div class="content first-content">
-            <div class="first-column">
-                <h2 class="title title-primary"> Bem vindo de volta a ControlTec! </h2>
-                <p class="description description-primary">Para se manter conectado conosco</p>
-                <p class="description description-primary">por favor faça o login com suas informações pessoais</p>
-                <button id="signin" class="btn btn-primary"> Entrar </button>
-            </div>    
-            <div class="second-column">
-                <h2 class="title title-second"> Criar Conta </h2>
-               <!-- <div class="social-media">
-                    <ul class="list-social-media">
-                        <a class="link-social-media" href="#">
-                            <li class="item-social-media">
-                                <i class="fab fa-google-plus-g"></i>
-                            </li>
-                        </a>
-                        <a class="link-social-media" href="#">
-                            <li class="item-social-media">
-                                <i class="fab fa-linkedin-in"></i>
-                            </li>
-                        </a> 
-                    </ul>
-                </div> social media -->
-              <!-- <p class="description description-second">ou use seu e-mail para cadastro:</p> -->
-              <form class="register-form" method="post" id="form_cadastro" onsubmit="return cadastrar()">
-                    <label class="label-input" for="">
-                        <i class="far fa-user icon-modify"></i>
-                        <input name="nome" type="text" placeholder="Instituicao">
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="far fa-user icon-modify"></i>
-                        <input name="numero" type="text" placeholder="Numero">
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="far fa-user icon-modify"></i>
-                        <input name="rua" type="text" placeholder="Rua">
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="far fa-user icon-modify"></i>
-                        <input name="bairro" type="text" placeholder="Bairro">
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="far fa-user icon-modify"></i>
-                        <input name="cidade" type="text" placeholder="Cidade">
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="far fa-user icon-modify"></i>
-                        <input name="estado" type="text" placeholder="Estado">
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="far fa-user icon-modify"></i>
-                        <input name="cep" type="text" placeholder="CEP" maxlength="9" onKeyPress="MascaraGenerica(this, 'CEP');">
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="far fa-user icon-modify"></i>
-                        <input name="complemento" type="text" placeholder="Complemento">
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="far fa-user icon-modify"></i>
-                        <input name="pontodereferencia" type="text" placeholder="Ponto de Referência">
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="far fa-envelope icon-modify"></i>
-                        <input name="email" type="email" placeholder="Email">
-                    </label>        
-                    <label class="label-input" for="">
-                        <i class="fas fa-lock icon-modify"></i>
-                        <input name="senha" type="password" placeholder="Senha">
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="fas fa-lock icon-modify"></i>
-                        <input name="confirmacao-senha" type="password" placeholder="Confirmar Senha">
-                    </label>
-                    
-                    
-                    <button  class="btn btn-second"> Cadastrar </button>        
-                </form>
-                <div id="div_aguardar" class="loading-div">
-                    
-                </div>
-
-                <div id="div_erros_login">
-                    
-                </div>
-            </div><!-- second column -->
-        </div><!-- first content -->
-        <div class="content second-content">
-            <div class="first-column">
-                <h2 class="title title-primary">Olá amiga(o)!</h2>
-                <p class="description description-primary">Insira seus dados pessoais</p>
-                <p class="description description-primary">e comece sua jornada conosco</p>
-                <button id="signup" class="btn btn-primary">inscrever-se</button>
-            </div>
-            <div class="second-column">
-                <h2 class="title title-second">Entrar </h2>
-               <!-- <div class="social-media">
-                    <ul class="list-social-media">
-                        <a class="link-social-media" href="#">
-                            <li class="item-social-media">
-                                <i class="fab fa-google-plus-g"></i>
-                            </li>
-                        </a>
-                        <a class="link-social-media" href="#">
-                            <li class="item-social-media">
-                                <i class="fab fa-linkedin-in"></i>
-                            </li>
-                        </a>
-                    </ul>
-                </div> social media -->
-              <!-- <p class="description description-second">ou use sua conta de e-mail:</p> --> 
-                  
-                <form id="form_login" method="post" onsubmit="return entrar()">
-                
-                    <label class="label-input" for="">
-                        <i class="far fa-envelope icon-modify"></i>
-                        <input name = "email" type="email" placeholder="Email">
-                    </label>
-                
-                    <label class="label-input" for="">
-                        <i class="fas fa-lock icon-modify"></i>
-                        <input name = "senha" type="password" placeholder="Password">
-                    </label>
-                
-                    <a class="password" href="#">Esqueceu sua senha?</a>
-                    <button type="submit" class="btn btn-second">entrar</button>
-                </form>
-            </div><!-- second column -->
-        </div><!-- second-content -->
-    </div>
-    <script src="app.js"></script>
 </body>
 </html>
-
-<script>
-    
-
-    function limparFormulario() {
-        document.getElementById("form_cadastro").reset();
-    }
-
-    function cadastrar() {
-        aguardar();
-
-        var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
-
-        var nome = formulario.get("nome");
-        var numero = formulario.get("numero");
-        var rua = formulario.get("rua");
-        var bairro = formulario.get("bairro");
-        var cidade = formulario.get("cidade");
-        var estado = formulario.get("estado");
-        var cep = formulario.get("cep");
-        var complemento = formulario.get("complemento");
-        var pontodereferencia = formulario.get("pontodereferencia");
-        var email = formulario.get("email");
-        var senha = formulario.get("senha");
-        var confirmacaoSenha = formulario.get("confirmacao-senha");
-
-        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
-        if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
-            
-            window.alert("Preencha todos os campos para prosseguir!");
-            if (nome == "")  {
-                console.log('nome está em branco')
-            }
-            if (email == "" )  {
-                console.log('email está em branco')
-            }
-            if (senha == "" )  {
-                console.log('senha está em branco')
-            }
-            if (confirmacaoSenha == "" )  {
-                console.log('confirmacaoSenha está em branco')
-            }
-            finalizarAguardar();
-            return false;
-        }
-        
-        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
-            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
-            finalizarAguardar();
-            return false;
-        }
-        
-        if (senha != confirmacaoSenha) {
-            window.alert("As senhas inseridas devem ser iguais para prosseguir!");
-            finalizarAguardar();
-            return false;
-        }
-
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            body: formulario
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                window.alert("Cadastro realizado com sucesso!");
-                window.location = "index.html";
-                limparFormulario();
-                finalizarAguardar();
-            } else {
-                throw("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
-        });
-
-        return false;
-        console.log(formulario)
-    }
-
-    function entrar() {
-        aguardar();
-
-        var formulario = new URLSearchParams(new FormData(document.getElementById("form_login")));
-
-        var email = formulario.get("email");
-        var senha = formulario.get("senha");
-
-        console.log("FORM LOGIN: ", email);
-        console.log("FORM SENHA: ", senha);
-
-        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
-        if (email == "" || senha == "") {
-            window.alert("Preencha todos os campos para prosseguir!");
-            finalizarAguardar();
-            return false;
-        }
-
-        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
-            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
-            finalizarAguardar();
-            return false;
-        }
-
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            body: formulario
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-               
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-                    alert("login realizado com sucesso" + json.nome);
-                    
-
-                    setTimeout(function () {
-                        window.location = "./dashboard/dashboard.html";
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
-    }
-
-</script>
