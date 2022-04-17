@@ -8,7 +8,7 @@ var chart = new Chart(capacidadeMemoria, {
                 label: "Uso da Memória",
                 backgroundColor: '#fff',
                 borderColor: '#f48ec',
-                data: [50, 30, 20, 60, 35, 55, 90, 80, 100],
+                data: [50, 30, 20, 60, 35, 55, 90, 80, 100, 66, 99, 100],
             }
         ]
     }
