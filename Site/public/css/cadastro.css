@@ -50,7 +50,7 @@
 .sessao{
     background-color: rgb(163, 170, 170);
     width: 100vw;
-    height: 100vh;
+    height: 125vh;
     background-color: #ffff;
     display: flex;
     flex-direction: row;
@@ -61,7 +61,7 @@
 
 .pre-form{
     width: 550px;
-    height: 600px;
+    height: 625px;
     background-color: blueviolet;
     border-radius: 20px;
    
