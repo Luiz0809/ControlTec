@@ -43,7 +43,7 @@ public class UsoDeMaquinas {
     }
 
     public void capturarDados(Usuario usuario, Componentes componentes) throws Exception {
-        while (true) {
+        
             
             Long consumo = 0L;
             inicializado = looca.getSistema().getInicializado()
@@ -87,9 +87,9 @@ public class UsoDeMaquinas {
                     inicializado.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")),
                     hora.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
 
-            Thread.sleep(2000L);
+            
         }
-    }
+    
 
     public Usuario getUsuario() {
         return usuario;

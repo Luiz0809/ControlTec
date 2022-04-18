@@ -142,18 +142,17 @@ public class TelaDeLogin extends javax.swing.JFrame {
 
         List<Maquina> listaDeMaquinas = con.query("select * from dbo.Maquina ",
                 new BeanPropertyRowMapper(Maquina.class));
-      
+
         System.out.println(listaDeMaquinas);
-        
-        for(Maquina maquinas : listaDeMaquinas){
+
+        for (Maquina maquinas : listaDeMaquinas) {
             idMaquina = maquinas.getIdMaquina();
         }
         System.out.println(idMaquina);
-        
+
         List<Componentes> listaDeComponentes = con.query("select * from dbo.Componentes where fkMaquina = '" + idMaquina + "'; ",
                 new BeanPropertyRowMapper(Componentes.class));
-        
-        
+
         listaDeComponentes.forEach(x -> System.out.println(x.getIdComponente()));
 
         if (listaDeUsuarios.isEmpty()) {
@@ -163,12 +162,15 @@ public class TelaDeLogin extends javax.swing.JFrame {
 //            listaDeUsuarios.forEach(usuario -> System.out.println(usuario));
 //            listaDeComponentes.forEach(componentes -> System.out.println(componentes));
 //            listaDeMaquinas.forEach(maquinas -> System.out.println(maquinas));
-            
+
             UsoDeMaquinas udm = new UsoDeMaquinas();
             try {
-                for(Componentes componente : listaDeComponentes){
-                    udm.capturarDados(listaDeUsuarios.get(0), listaDeComponentes.get(contador));
-                    contador++;
+                while (true) {
+                    for (Componentes componente : listaDeComponentes) {
+                        udm.capturarDados(listaDeUsuarios.get(0), componente);
+                        
+                    }
+                    Thread.sleep(200L);
                 }
             } catch (Exception ex) {
                 Logger.getLogger(TelaDeLogin.class.getName()).log(Level.SEVERE, null, ex);
