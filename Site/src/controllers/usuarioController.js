@@ -69,7 +69,7 @@ function cadastrar(req, res) {
     var cep = req.body.cep;
     var cidade = req.body.cidade;
     var rua = req.body.rua;
-    var pontodereferencia = req.body.pontodereferencia;
+    var pontoreferencia = req.body.pontoreferencia;
     var complemento = req.body.complemento;
     var numero = req.body.numero;
 
@@ -89,14 +89,14 @@ function cadastrar(req, res) {
         res.status(400).send("Sua cidade está undefined!");
     }else if (rua == undefined) {
         res.status(400).send("Sua rua está undefined!");
-    }else if (pontodereferencia == undefined) {
+    }else if (pontoreferencia == undefined) {
         res.status(400).send("Seu ponto de referencia está undefined!");
     }else if (complemento == undefined) {
         res.status(400).send("Seu complemento está undefined!");
     }else if (numero == undefined) {
         res.status(400).send("Seu numero está undefined!");
     } else {
-        usuarioModel.cadastrar(nome, estado, bairro, cep, cidade, rua, pontodereferencia, complemento, numero, email, senha)
+        usuarioModel.cadastrar(nome, numero, rua, bairro, cidade, estado, cep, complemento, pontoreferencia, email, senha)
         .then(
             function (resultado) {
                 res.json(resultado);
