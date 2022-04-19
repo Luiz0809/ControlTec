@@ -1,235 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Tela de Cadastro </title>
-
-    <script src="./js/funcoes.js"></script>
-
-
-
     <link rel="stylesheet" href="css/cadastro.css">
+    <title> Cadastro </title>
 </head>
+
 <body>
-    
-     <header class="header">
-         <div class="logo"> </div>
-         <div class="navbar">
-             <a class="item" href="index.html"> Menu </a>
-             <a class="item" href=""> Quem Somos </a>
-             <a class="item" href="cadastro.html"> Cadastro </a>
-             <a class="item" href="login.html"> Login </a>
-         </div>
-         
-     </header>
-
-     <div class="titulo">
-        <p class="item-escrito">A criatividade é pensar coisas novas. A inovação é fazer coisas novas.</p>
-<<<<<<< HEAD
-    </div>
-    <section class="sessao">
-        <div class="pre-form">
-            <h1 class="item-escrito2"> Cadastre-se </h1>
-            <form class="form">
-                <div>
-                    <label class="label-input"> Instituição<input type="text" name="instituicao" placeholder="Escola de direito" data-required></label>
-                    <label class="label-input">Rua <input type="text" name="rua" placeholder="Av.Paulista" data-required></label>
-                    <label class="label-input">Número <input type="number" name="numero" placeholder="1000" data-required></label>
-                
-                
-                    <label class="label-input">Bairro<input type="text" name="bairro" placeholder="Jardim Morumbi" data-required></label>
-                    <label class="label-input">Estado<input type="text" name="estado" placeholder="Bahia" data-required></label>
-                    <label class="label-input">cidade <input type="text" name="cidade" placeholder="Salvador" data-required></label>
-                </div>
-                <div>
-                    <label class="label-input">CEP<input type="number" name="cep" placeholder="00000-000" data-required></label>
-                    <label class="label-input">Complemento<input type="text" name="complemento" placeholder="Trabalho" data-required></label>
-                    <label class="label-input">Ponto de Referência<input type="text" name="ponto" placeholder="Mercado do Jão" data-required></label>
-
-                    <label class="label-input">Email<input type="email" name="email" placeholder="control@tec.com.br" data-required   data-email-validate></label>
-                    <label class="label-input">Senha<input type="password" name="senha" placeholder="********" data-required  data-senha-validate></label> 
-                    <label class="label-input">Confirmar Senha<input type="password" name="confirmarsenha" placeholder="********" data-required  data-confirmarsenha-validate></label> 
-                    <button class="btn"> Cadastre-se </button>
-                </div> <br>
-=======
-         <h1 class="item-escrito2"> Cadastre-se </h1>
-     </div>
-     <section class="sessao">
-         <div class="pre-form">
-             <form class="form" id="form_cadastro" method="post" onsubmit="return cadastrar()">
-                <p> Instituição </p>
-                <label class="label-input">
-                    <input type="text" name="instituicao" placeholder="ex.Escola de direito" data-required>
-               </label>
-               <p> Rua </p>
-               <label class="label-input">
-                    <input type="text" name="rua" placeholder="ex.Av.Paulista" data-required>
-               </label>
-               <p> Número </p>
-               <label class="label-input">
-                     <input type="number" name="numero" placeholder="ex.1000" data-required>
-               </label>
-               <p> Bairro </p>
-               <label class="label-input">
-                    <input type="text" name="bairro" placeholder="ex.Jardim Morumbi" data-required>
-               </label>
-               <p> Estado </p>
-               <label class="label-input">
-                    <input type="text" name="estado" placeholder="ex. Bahia" data-required>
-               </label>
-               <p> cidade </p>
-               <label class="label-input">
-                    <input type="text" name="cidade" placeholder="ex. Salvador" data-required>
-               </label>
-               <p> CEP </p>
-               <label class="label-input">
-                    <input type="number" name="cep" placeholder="ex.00000-000" data-required>
-               </label>
-               <p> Complemento </p>
-               <label class="label-input">
-                    <input type="text" name="complemento" placeholder="ex.Trabalho" data-required>
-               </label>
-               <p> Ponto de Referência </p>
-               <label class="label-input">
-                     <input type="text" name="ponto" placeholder="ex.Mercado do Jão" data-required>
-               </label>
-               <p> Email </p>
-               <label class="label-input">
-                    <input type="email" name="email" placeholder="ex.control@tec.com.br" data-required   data-email-validate>
-               </label>
-               <p> Senha </p>
-               <label class="label-input">
-                    <input type="password" name="senha" placeholder="ex.********" data-required  data-senha-validate>
-               </label> 
-               <p> Confirmar Senha </p>
-               <label class="label-input">
-                    <input type="password" name="confirmarsenha" placeholder="ex.********" data-required  data-confirmarsenha-validate>
-               </label> 
-                <button class="btn"> Cadastre-se </button>
->>>>>>> 65fc2255ad58a776ca62832aa679b5dd02725f93
-             </form>
+    <header class="header">
+        <div class="logo"> </div>
+        <div class="navbar">
+            <a class="item" href="index.html"> Menu </a>
+            <a class="item" href=""> Quem Somos </a>
+            <a class="item" href="cadastro.html"> Cadastro </a>
+            <a class="item" href="login.html"> Login </a>
         </div>
-     </section>
+    </header>
 
-     <footer class="footer">
-         <div class="logo">
-          <p> Logo </p>
-         </div>
-         <div class="dados">
-           <p> <h5> Início </h5>
-               Menu <br>
-               Quem Somos <br>  
-            </p>
-         </div>
-         <div class="dados2">
-             <p>
-              <h5> Suporte </h5>
-              FAQ <br>
-              Telefones <br>
-              Chat <br>
-            </p>
-         </div>
-         <div class="media">
-           <p> @2022 Copyright - Control Tec </p>
-         </div>
-     </footer>
+    <div class="container">
+        <div class="form-image">
+            <img src="http://insait.com.br/wp-content/uploads/2020/09/figura-consultoria-e-governanca-de-ti-scitis.png" alt="">
+        </div>
+        <div class="form">
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                    <div class="login-button">
+                        <button><a href="#">Entrar</a></button>
+                    </div>
+                </div>
 
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="firstname">Instituição</label>
+                        <input id="firstname" type="text" name="instituicao" placeholder="Digite o nome da Instituição" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="lastname">Rua</label>
+                        <input id="lastname" type="text" name="rua" placeholder="Digite sua rua" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="number">Número</label>
+                        <input id="number" type="number" name="number" placeholder="Digite o número de casa" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="number">Bairro</label>
+                        <input id="number" type="text" name="bairro" placeholder="Digite o nome do bairro" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="number">Estado</label>
+                        <input id="number" type="text" name="estado" placeholder="Digite estado onde mora" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="number">Cidade</label>
+                        <input id="number" type="text" name="cidade" placeholder="Digite cidade onde mora" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="number">Complemento</label>
+                        <input id="number" type="text" name="complemento" placeholder=".Casa - Trabalho" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="number">Ponto de Referência</label>
+                        <input id="number" type="tel" name="number" placeholder=".Estação Luz" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="confirmPassword">Confirme sua Senha</label>
+                        <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Digite sua senha novamente" required>
+                    </div>
+
+                </div>
+                <div class="continue-button">
+                    <button><a href="#">Cadastrar</a> </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="logo">
+         <p> Logo </p>
+        </div>
+        <div class="dados">
+          <p> <h5> Início </h5>
+              Menu <br>
+              Quem Somos <br>  
+           </p>
+        </div>
+        <div class="dados2">
+            <p>
+             <h5> Suporte </h5>
+             FAQ <br>
+             Telefones <br>
+             Chat <br>
+           </p>
+        </div>
+        <div class="media">
+          <p> @2022 Copyright - Control Tec </p>
+        </div>
+    </footer>
 
 </body>
-</html>
-<script>
 
-     function limparFormulario() {
-         document.getElementById("form").reset();
-     }
- 
-     function cadastrar() {
-          aguardar();
- 
-         var formulario = new URLSearchParams(new FormData(document.getElementById("form")));
- 
-         var instituicao = formulario.get("instituicao");
-         var rua = formulario.get("rua");
-         var numero = formulario.get("numero");
-         var bairro = formulario.get("bairro");
-         var estado = formulario.get("estado");
-         var cidade = formulario.get("cidade");
-         var cep = formulario.get("cep");
-         var email = formulario.get("email");
-         var criar = formulario.get("senha");
-         var confirmar = formulario.get("confirmarsenha");
- 
-         // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
-         if (instituicao == "" || rua == "" || numero == ""|| bairro =="" || estado == "" || cidade == "" || cep == "" || email == "" || criar == "" ||  confirmar == "") {
-             
-             window.alert("Preencha todos os campos para prosseguir!");
-             if (instituicao == "")  {
-                 console.log('Instituição está em branco')
-             }
-             if (rua == "")  {
-                 console.log('Rua está em branco')
-             }
-             if (numero == "")  {
-                 console.log('Número está em branco')
-             }
-             if (bairro == "")  {
-                 console.log('Bairro está em branco')
-             }
-             if (estado == "")  {
-                 console.log('Estado está em branco')
-             }
-             if (cidade == "")  {
-                 console.log('Cidade está em branco')
-             }
-             if (cep == "")  {
-                 console.log(' Cep está em branco')
-             }
-             if (email == "" )  {
-                 console.log('Email está em branco')
-             }
-             if (criar != confirmar )  {
-                 console.log('As senhas não conferem')
-             }
-             finalizarAguardar();
-             return false;
-         }
-         
-         if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
-             window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
-             finalizarAguardar();
-             return false;
-         }
-         
-         if (criar != confirmar) {
-             window.alert("As senhas inseridas devem ser iguais para prosseguir!");
-             finalizarAguardar();
-             return false;
-         }
- 
-         fetch("/usuarios/cadastrar", {
-             method: "POST",
-             body: formulario
-         }).then(function (resposta) {
- 
-             console.log("resposta: ", resposta);
- 
-             if (resposta.ok) {
-                 window.alert("Cadastro realizado com sucesso!");
-                 window.location = "login.html";
-                 limparFormulario();
-                 finalizarAguardar();
-             } else {
-                 throw("Houve um erro ao tentar realizar o cadastro!");
-             }
-         }).catch(function (resposta) {
-             console.log(`#ERRO: ${resposta}`);
-             finalizarAguardar();
-         });
- 
-         return false;
-     }
- 
- </script>
- 
+</html>
