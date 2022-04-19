@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Tela de Cadastro </title>
+
+    <script src="./js/funcoes.js"></script>
+
+
+
     <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
@@ -26,7 +31,7 @@
      </div>
      <section class="sessao">
          <div class="pre-form">
-             <form class="form">
+             <form class="form" id="form_cadastro" method="post" onsubmit="return cadastrar()">
                 <p> Instituição </p>
                 <label class="label-input">
                     <input type="text" name="instituicao" placeholder="ex.Escola de direito" data-required>
@@ -114,7 +119,7 @@
      }
  
      function cadastrar() {
-         // aguardar();
+          aguardar();
  
          var formulario = new URLSearchParams(new FormData(document.getElementById("form")));
  
@@ -157,11 +162,8 @@
              if (email == "" )  {
                  console.log('Email está em branco')
              }
-             if (criar == "" )  {
-                 console.log('Criar senha está em branco')
-             }
-             if (confirmar == "" )  {
-                 console.log('Confirmar senha está em branco')
+             if (criar != confirmar )  {
+                 console.log('As senhas não conferem')
              }
              finalizarAguardar();
              return false;
