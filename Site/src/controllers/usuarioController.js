@@ -61,7 +61,7 @@ function entrar (req, res) {
 }
 
 function cadastrar(req, res) {
-    var nome = req.body.nome;
+    var nome = req.body.instituicao;
     var email = req.body.email;
     var senha = req.body.senha;
     var estado = req.body.estado;
@@ -73,30 +73,8 @@ function cadastrar(req, res) {
     var complemento = req.body.complemento;
     var numero = req.body.numero;
 
-    if (nome == undefined) {
-        res.status(400).send("Seu nome está undefined!");
-    } else if (email == undefined) {
-        res.status(400).send("Seu email está undefined!");
-    } else if (senha == undefined) {
-        res.status(400).send("Sua senha está undefined!");
-    }else if (estado == undefined) {
-        res.status(400).send("Seu estado está undefined!");
-    }else if (bairro == undefined) {
-        res.status(400).send("Seu bairro está undefined!");
-    }else if (cep == undefined) {
-        res.status(400).send("Seu cep está undefined!");
-    }else if (cidade == undefined) {
-        res.status(400).send("Sua cidade está undefined!");
-    }else if (rua == undefined) {
-        res.status(400).send("Sua rua está undefined!");
-    }else if (pontoreferencia == undefined) {
-        res.status(400).send("Seu ponto de referencia está undefined!");
-    }else if (complemento == undefined) {
-        res.status(400).send("Seu complemento está undefined!");
-    }else if (numero == undefined) {
-        res.status(400).send("Seu numero está undefined!");
-    } else {
-        usuarioModel.cadastrar(nome, numero, rua, bairro, cidade, estado, cep, complemento, pontoreferencia, email, senha)
+   
+        usuarioModel.cadastrar(nome, numero, rua, bairro, cidade, estado, complemento, pontoreferencia, email, senha)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -112,7 +90,7 @@ function cadastrar(req, res) {
             }
         );
     }
-}
+
 
 module.exports = {
     entrar,

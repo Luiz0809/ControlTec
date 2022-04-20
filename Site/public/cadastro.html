@@ -26,7 +26,7 @@
             <img src="http://insait.com.br/wp-content/uploads/2020/09/figura-consultoria-e-governanca-de-ti-scitis.png" alt="">
         </div>
         <div class="form">
-            <form action="#" id="form_cadastro" method="post" onsubmit="return cadastrar()">
+            <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastre-se</h1>
@@ -39,48 +39,48 @@
                 <div class="input-group">
                     <div class="input-box">
                         <label for="firstname">Instituição</label>
-                        <input type="text" name="instituicao" placeholder="Digite o nome da Instituição" required>
+                        <input type="text" name="instituicao" placeholder="Digite o nome da Instituição" >
                     </div>
 
                     <div class="input-box">
                         <label for="lastname">Rua</label>
-                        <input type="text" name="rua" placeholder="Digite sua rua" required>
+                        <input type="text" name="rua" placeholder="Digite sua rua" >
                     </div>
                     <div class="input-box">
                         <label for="number">Número</label>
-                        <input  type="number" name="numero" placeholder="Digite o número de casa" required>
+                        <input  type="number" name="numero" placeholder="Digite o número de casa" >
                     </div>
                     <div class="input-box">
                         <label for="number">Bairro</label>
-                        <input  type="text" name="bairro" placeholder="Digite o nome do bairro" required>
+                        <input  type="text" name="bairro" placeholder="Digite o nome do bairro" >
                     </div>
                     <div class="input-box">
                         <label for="number">Estado</label>
-                        <input  type="text" name="estado" placeholder="Digite estado onde mora" required>
+                        <input  type="text" name="estado" placeholder="Digite estado onde mora" >
                     </div>
                     <div class="input-box">
                         <label for="number">Cidade</label>
-                        <input  type="text" name="cidade" placeholder="Digite cidade onde mora" required>
+                        <input  type="text" name="cidade" placeholder="Digite cidade onde mora" >
                     </div>
                     <div class="input-box">
                         <label for="number">Complemento</label>
-                        <input type="text" name="complemento" placeholder=".Casa - Trabalho" required>
+                        <input type="text" name="complemento" placeholder=".Casa - Trabalho" >
                     </div>
                     <div class="input-box">
                         <label for="number">Ponto de Referência</label>
-                        <input type="tel" name="pontoreferencia" placeholder=".Estação Luz" required>
+                        <input type="text" name="pontoreferencia" placeholder=".Estação Luz" >
                     </div>
                     <div class="input-box">
                         <label for="email">E-mail</label>
-                        <input type="email" name="email" placeholder="Digite seu e-mail" required>
+                        <input type="email" name="email" placeholder="Digite seu e-mail" >
                     </div>
                     <div class="input-box">
                         <label for="password">Senha</label>
-                        <input type="password" name="senha" placeholder="Digite sua senha" required>
+                        <input type="password" name="senha" placeholder="Digite sua senha" >
                     </div>
                     <div class="input-box">
                         <label for="confirmPassword">Confirme sua Senha</label>
-                        <input type="password" name="confirmacao-senha" placeholder="Digite sua senha novamente" required>
+                        <input type="password" name="confirmacao-senha" placeholder="Digite sua senha novamente" >
                     </div>
 
                 </div>
@@ -216,6 +216,7 @@
         });
 
         return false;
-    }
 
+        
+    }
 </script>
