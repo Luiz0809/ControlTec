@@ -45,7 +45,7 @@
     height: 140vh;
     display: flex;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-    
+    margin-left: 130px;
 }
 
 .form-image {
@@ -70,8 +70,6 @@
     align-items: center;
     background-color: #fff;
     padding: 3rem;
-     margin: 0 auto;
-    align-self: center;
 }
 
 .form-header {

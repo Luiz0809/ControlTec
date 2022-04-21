@@ -21,12 +21,33 @@ header{
     transition: 0.5 ease;
 }
 
+.div_logo{
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+header .div_logo{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ padding-bottom: 50px;
+ 
+}
+
+#logo{
+    width: 100px;
+    padding-bottom: 50px;
+    margin-top: -5%;
+}
+
 header .brand{
     color: rgb(241, 236, 243);
     font-size: 20px;
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
+    margin-left: -9%;
 }
 
 header .navigation{
@@ -36,6 +57,7 @@ header .navigation{
 .item{
     color: #ffff;
     text-decoration: none;
+    word-spacing: 5px;
 }
 
 .item:hover{
@@ -245,6 +267,11 @@ section{
     justify-content: space-around;
     color: #ffff;
 
+}
+
+.footer #logo{
+    margin-top: 30px;
+    width: 150px;
 }
 
 
