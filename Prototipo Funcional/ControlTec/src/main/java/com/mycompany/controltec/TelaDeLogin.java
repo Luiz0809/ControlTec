@@ -61,6 +61,11 @@ public class TelaDeLogin extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         lblRA.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        lblRA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lblRAActionPerformed(evt);
+            }
+        });
         getContentPane().add(lblRA);
         lblRA.setBounds(200, 90, 120, 20);
 
@@ -74,7 +79,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnEntrar);
-        btnEntrar.setBounds(190, 200, 70, 21);
+        btnEntrar.setBounds(190, 200, 70, 24);
 
         btnExit.setBackground(new java.awt.Color(255, 255, 255));
         btnExit.setForeground(new java.awt.Color(0, 0, 0));
@@ -86,7 +91,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnExit);
-        btnExit.setBounds(270, 200, 70, 21);
+        btnExit.setBounds(270, 200, 70, 24);
 
         nameRA.setBackground(new java.awt.Color(255, 255, 255));
         nameRA.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -117,7 +122,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
 
         lblSenha.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(lblSenha);
-        lblSenha.setBounds(200, 140, 120, 21);
+        lblSenha.setBounds(200, 140, 120, 24);
 
         labelImagem.setMinimumSize(new java.awt.Dimension(626, 300));
         getContentPane().add(labelImagem);
@@ -181,6 +186,10 @@ public class TelaDeLogin extends javax.swing.JFrame {
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void lblRAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblRAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblRAActionPerformed
 
     /**
      * @param args the command line arguments
