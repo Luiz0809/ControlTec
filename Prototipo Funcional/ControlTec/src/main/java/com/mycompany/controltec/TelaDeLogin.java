@@ -50,8 +50,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
         nameSENHA = new javax.swing.JLabel();
         labelEmpresa = new javax.swing.JLabel();
         campoEsqueciSenha = new java.awt.Checkbox();
-        lblSenha = new javax.swing.JFormattedTextField();
-        labelImagem = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela De Login");
@@ -79,7 +78,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnEntrar);
-        btnEntrar.setBounds(190, 200, 70, 24);
+        btnEntrar.setBounds(190, 200, 70, 21);
 
         btnExit.setBackground(new java.awt.Color(255, 255, 255));
         btnExit.setForeground(new java.awt.Color(0, 0, 0));
@@ -91,7 +90,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnExit);
-        btnExit.setBounds(270, 200, 70, 24);
+        btnExit.setBounds(270, 200, 70, 21);
 
         nameRA.setBackground(new java.awt.Color(255, 255, 255));
         nameRA.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -120,13 +119,9 @@ public class TelaDeLogin extends javax.swing.JFrame {
         getContentPane().add(campoEsqueciSenha);
         campoEsqueciSenha.setBounds(200, 170, 140, 20);
 
-        lblSenha.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(lblSenha);
-        lblSenha.setBounds(200, 140, 120, 24);
-
-        labelImagem.setMinimumSize(new java.awt.Dimension(626, 300));
-        getContentPane().add(labelImagem);
-        labelImagem.setBounds(-10, 0, 520, 290);
+        jPasswordField1.setText("jPasswordField1");
+        getContentPane().add(jPasswordField1);
+        jPasswordField1.setBounds(200, 140, 120, 19);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -231,10 +226,9 @@ public class TelaDeLogin extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private java.awt.Checkbox campoEsqueciSenha;
     private javax.swing.JLabel imagensFundo;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel labelEmpresa;
-    private javax.swing.JLabel labelImagem;
     private javax.swing.JFormattedTextField lblRA;
-    private javax.swing.JFormattedTextField lblSenha;
     private javax.swing.JLabel nameRA;
     private javax.swing.JLabel nameSENHA;
     // End of variables declaration//GEN-END:variables
