@@ -50,7 +50,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
         nameSENHA = new javax.swing.JLabel();
         labelEmpresa = new javax.swing.JLabel();
         campoEsqueciSenha = new java.awt.Checkbox();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        lblSenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela De Login");
@@ -119,9 +119,9 @@ public class TelaDeLogin extends javax.swing.JFrame {
         getContentPane().add(campoEsqueciSenha);
         campoEsqueciSenha.setBounds(200, 170, 140, 20);
 
-        jPasswordField1.setText("jPasswordField1");
-        getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(200, 140, 120, 19);
+        lblSenha.setText("jPasswordField1");
+        getContentPane().add(lblSenha);
+        lblSenha.setBounds(200, 140, 120, 19);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -226,9 +226,9 @@ public class TelaDeLogin extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private java.awt.Checkbox campoEsqueciSenha;
     private javax.swing.JLabel imagensFundo;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel labelEmpresa;
     private javax.swing.JFormattedTextField lblRA;
+    private javax.swing.JPasswordField lblSenha;
     private javax.swing.JLabel nameRA;
     private javax.swing.JLabel nameSENHA;
     // End of variables declaration//GEN-END:variables
