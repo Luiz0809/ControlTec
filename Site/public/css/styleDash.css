@@ -209,6 +209,57 @@ body {
 
 /*SECTION CARDS*/
 
+/* .div_informativo {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.div_info {
+    width: 30%;
+    height: 160px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    background-color: var(--color-3);
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_memory {
+    height: 80%;
+    background-color: var(--color-1);
+    width: 80%;
+    border-radius: 2px;
+    
+}
+
+#div_totality{
+    height: 100%;
+    width: 20%;
+    background-color: #100e34;
+}
+
+#div_center {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info_separ {
+  width: 40%;
+  height: 100%;
+}
+
+.info_dash {
+  width: 60%;
+  height: 100%;
+} */
+
 .content .section .cards .card{
     width: 100%;
     height: 120px;
@@ -224,7 +275,7 @@ body {
 }
 
 .content .section .cards .card .desc span {
-    display: block;
+   
     font-size: 32px;
     color: var(--color-1);
     font-weight: 900;
@@ -261,6 +312,90 @@ body {
 
 .content .section .charts .card:hover {
     background-color: var(--color-4);
+}
+
+/*testewill*/
+
+.testewill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+    margin-top: 10px;
+}
+
+.details .recentOrders {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--color-1);
+    padding: 20px;
+    box-shadow: 0 7px 5px rgba(0,0,0,0.08);
+    border-radius: 20px;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardHeader h2 {
+    font-weight: 600;
+    color: var(--color-4);
+}
+
+.btn {
+    position: relative;
+    padding: 5px 10px;
+    background: var(--color-4);
+    text-decoration: none;
+    color: var(--color-1);
+    border-radius: 6px;
+}
+
+.details .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.details .recentOrders table td {
+    font-weight: 600;
+}
+
+.details .recentOrders table tr {
+    border-bottom: 1px solid black;
+    color: #4f48ec;
+}
+
+.details .recentOrders table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.details .recentOrders table tbody tr:hover {
+  background: var(--color-4);
+  color: #fff;
+  cursor: pointer;
+}
+
+.details .recentOrders table tr td {
+    padding: 10px;
+}
+
+.details .recentOrders table tr td:nth-child(2) {
+    text-align: end;
+}
+
+.details .recentOrders table tr td:nth-child(3) {
+    text-align: center;
 }
 
 /*FOOTER*/

@@ -11,105 +11,131 @@
 <body>
     
     <nav class="nav">
-       <a href="" class="logo">
-              <img src="img/control_tec.jfif" alt="" height="50px">
-          <span>Control Tec</span>
-       </a>
-
-       <ul class="menu">
-           <li class="active"><a href=""><i class="bi bi-house-fill"></i><span>Perfil</span></a></li>
-           <li class="active"><a href=""><i class="bi bi-laptop"></i><span>Monitoramento PC</span></a></li>
-           <li class="active"><a href=""><i class="bi bi-lightbulb"></i><span>Brilho</span></a></li>
-           <li class="active"><a href=""><i class="bi bi-thermometer"></i><span>Resfriamento</span></a></li>
-           <li class="active"><a href=""><i class="bi bi-gear"></i><span>Configurações</span></a></li>
-       </ul>
-    </nav>
-
-    <main class="content">
-       <header class="header">
-           <button type="button" class="button toggle-menu active">
-               <i class="bi bi-list"></i>
-               <span>Dashboard</span>
-           </button>
-           <form action="" class="form">
-               <input type="text" placeholder="Busca">
-               <button type="submit"><i class="bi bi-search"></i></button>
-           </form>
-           <div class="box-profile">
-               <img src="img/Usuario.png" alt="">
-               <p class="name">
-                   Usuário
-                   <span>Bem vindo Usuário!</span>
-               </p>
-           </div>
-       </header>
-
-       <section class="section">
-           <div class="container-fluid container-content cards">
-               <div class="row">
-                   <div class="col-xl-3 col-lg-6 col-12">
-                       <div class="card shadow">
-                           <div class="desc">
-                               <span>Alto</span>
-                               <p>Avast! Antivirus</p>
-                           </div>
-                           <i class="bi bi-ui-checks"></i>
-                       </div>
-                   </div>
-
-                   <div class="col-xl-3 col-lg-6 col-12">
-                       <div class="card shadow">
-                          <div class="desc">
-                              <span>Alto</span>
-                              <p>Google Chrome</p>
-                          </div>
-                          <i class="bi bi-ui-checks"></i>
-                       </div>
-                   </div>
-
-                   <div class="col-xl-3 col-lg-6 col-12">
-                    <div class="card shadow">
-                       <div class="desc">
-                           <span>Alto</span>
-                           <p>Visual Studio Code</p>
-                       </div>
-                       <i class="bi bi-ui-checks"></i>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-lg-6 col-12">
-                    <div class="card shadow">
-                       <div class="desc">
-                           <span>Alto</span>
-                           <p>Resso</p>
-                       </div>
-                       <i class="bi bi-ui-checks"></i>
-                    </div>
-                </div>
+        <a href="" class="logo">
+           <span>Control Tec</span>
+        </a>
+ 
+        <ul class="menu">
+         <li class="active"><a href="" class="btn_press"><i class="bi bi-display"></i><span>Monitoramento PC</span></a></li>
+         <li><a href=""><i class="bi bi-list-stars"></i><span>Processos</span></a></li>
+         <li><a href=""><i class="bi bi-lightbulb"></i><span>Brilho</span></a></li>
+         <li><a href=""><i class="bi bi-thermometer"></i><span>Resfriamento</span></a></li>
+         <li><a href=""><i class="bi bi-gear"></i><span>Configurações</span></a></li>
+        </ul>
+     </nav>
+ 
+     <main class="content">
+        <header class="header">
+            <button type="button" class="button toggle-menu active">
+                <i class="bi bi-list"></i>
+                <span>Monitoramento PC</span>
+            </button>
+            <form action="" class="form">
+                <input type="text" placeholder="Busca">
+                <button type="submit"><i class="bi bi-search"></i></button>
+            </form>
+            <div class="box-profile">
+                <img src="img/Usuario.png" alt="">
+                <p class="name">
+                    Usuário
+                    <span>Bem vindo Usuário!</span>
+                </p>
+            </div>
+        </header>
+ 
+        <section class="section">
+            <div class="container-fluid container-content charts">
+                <div class="row">
+                     <div class="col-lg-6 col-md-12 col-12">
+                        <div class="card shadow">
+                            <canvas class="shadow" id="chartMemoria" width="400" height="200"></canvas>
+                         </div>
+                     </div>
+                     
+                     <div class="col-lg-6 col-md-12">
+                         <div class="card shadow">
+                             <canvas class="shadow" id="chartCpu" width="400" height="200"></canvas>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         
+ <!--             <div class="div_informativo">
+               <div class="div_info">
+                 <div id="div_memory">
+                     <div id="div_totality">
+                         
+                     </div>
+                    
+                 </div>
                </div>
-           </div>
-
-           <div class="container-fluid container-content charts">
-               <div class="row">
-                   <div class="col-lg-6 col-md-12 col-12">
-                       <div class="card shadow">
-                           <canvas class="shadow" id="chartMemoria" width="400" height="200"></canvas>
-                       </div>
-                   </div>
-                   <div class="col-lg-6 col-md-12">
-                       <div class="card shadow">
-                           <canvas class="shadow" id="chartCpu" width="400" height="200"></canvas>
-                       </div>
-                   </div>
+ 
+               <div class="div_info">
                </div>
-           </div>
-       </section>
-    </main>
-
-    <footer>
-        <span>Control Tec</span>
-    </footer>
-   
+ 
+               <div class="div_info">
+               </div>
+             </div>
+  -->
+             <div class="testewill">
+              <div class="details">
+                  <div class="recentOrders">
+                      <div class="cardHeader">
+                          <h2>Top Processos</h2>
+                          <a href="" class="btn">View All</a>
+                      </div>
+                      <table>
+                          <thead>
+                              <tr>
+                              <td>Processos</td>
+                              <td>CPU</td>
+                              <td>RAM</td>
+                              <td>Network</td>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td>Microsoft Edge</td>
+                                  <td>21%</td>
+                                  <td>2.4GB</td>
+                                  <td>27KB/s<i class='bx bx-up-arrow-alt'></i></td>
+                              </tr>
+                              <tr>
+                                 <td>Google Chrome</td>
+                                 <td>18%</td>
+                                 <td>3.8GB</td>
+                                 <td>10KB/s<i class='bx bx-down-arrow-alt'></i></td>
+                              </tr>
+                              <tr>
+                                 <td>Visual Studio Code</td>
+                                 <td>2%</td>
+                                 <td>7GB</td>
+                                 <td>10KB/s<i class='bx bx-up-arrow-alt'></i></td>
+                              </tr>
+                              <tr>
+                                 <td>Windows Explorer</td>
+                                 <td>2%</td>
+                                 <td>7GB</td>
+                                 <td>10KB/s<i class='bx bx-up-arrow-alt'></i></td>
+                              </tr>
+                              <tr>
+                                 <td>League of Legends</td>
+                                 <td>1.7%</td>
+                                 <td>4GB</td>
+                                 <td>10KB/s<i class='bx bx-up-arrow-alt'></i></td>
+                              </tr>
+                         </tbody>
+ 
+                      </table>
+                     </div>
+                 </div>
+             </div>
+        </section>
+     </main>
+ 
+     <footer>
+         <span>Control Tec</span>
+     </footer>  
 </body>
 </html>
 
