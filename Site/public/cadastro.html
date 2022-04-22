@@ -30,7 +30,7 @@
                 alt="">
         </div>
         <div class="form">
-            <form id="form_cadastro" method="post" onsubmit="returncadastrar()">
+            <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastre-se</h1>
@@ -52,15 +52,15 @@
                     </div>
                     <div class="input-box">
                         <label for="number">Número</label>
-                        <input type="number" name="numero" placeholder="Digite o número de casa">
+                        <input type="text" name="numero" placeholder="Digite o número de casa">
                     </div>
                     <div class="input-box">
                         <label for="number">Bairro</label>
                         <input type="text" name="bairro" placeholder="Digite o nome do bairro">
                     </div>
                     <div class="input-box">
-                        <label for="number">CEP</label>
-                        <input type="text" name="CEP" placeholder="00000-000">
+                        <label>CEP</label>
+                        <input type="text" name="cep" placeholder="00000-000">
                     </div>
                     <div class="input-box">
                         <label for="number">Estado</label>
@@ -93,7 +93,7 @@
 
                 </div>
                 <div class="continue-button">
-                    <button><a href="login.html">Cadastrar</a> </button>
+                    <button>Cadastrar</button>
                 </div>
             </form>
         </div>
@@ -141,6 +141,7 @@
         var rua = formulario.get("rua");
         var numero = formulario.get("numero");
         var bairro = formulario.get("bairro");
+        var cep = formulario.get("cep");
         var estado = formulario.get("estado");
         var cidade = formulario.get("cidade");
         var complemento = formulario.get("complemento");
@@ -151,7 +152,7 @@
 
         // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
         if (nome == "" || rua == "" || numero == ""
-            || bairro == "" || estado == "" || cidade == "" || complemento == "" ||
+            || bairro == "" || cep == "" || estado == "" || cidade == "" || complemento == "" ||
             pontoreferencia == "" || email == "" || senha == "" || confirmacaoSenha == "") {
 
             window.alert("Preencha todos os campos para prosseguir!");
@@ -166,6 +167,9 @@
             }
             if (bairro == "") {
                 console.log('bairro está em branco')
+            }
+            if (cep == "") {
+                console.log('cep está em branco')
             }
             if (estado == "") {
                 console.log('Estado está em branco')
@@ -213,7 +217,7 @@
 
             if (resposta.ok) {
                 window.alert("Cadastro realizado com sucesso!");
-                window.location = "login.html";
+                //window.location = "login.html";
                 limparFormulario();
                 // finalizarAguardar();
             } else {

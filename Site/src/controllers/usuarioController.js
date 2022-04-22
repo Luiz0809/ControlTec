@@ -74,7 +74,7 @@ function cadastrar(req, res) {
     var numero = req.body.numero;
 
    
-        usuarioModel.cadastrar(nome, numero, rua, bairro, cidade, estado, complemento, pontoreferencia, email, senha)
+        usuarioModel.cadastrar(nome, estado, bairro, cep, cidade, rua, pontoreferencia, complemento, numero, email, senha)
         .then(
             function (resultado) {
                 res.json(resultado);
