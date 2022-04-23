@@ -51,6 +51,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
         labelEmpresa = new javax.swing.JLabel();
         campoEsqueciSenha = new java.awt.Checkbox();
         lblSenha = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela De Login");
@@ -122,6 +123,10 @@ public class TelaDeLogin extends javax.swing.JFrame {
         lblSenha.setText("jPasswordField1");
         getContentPane().add(lblSenha);
         lblSenha.setBounds(200, 140, 120, 19);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\OneDrive\\Documentos\\ControlTec\\ControlTec\\Prototipo Funcional\\ControlTec\\src\\main\\Resources\\tecnologia2.jpg")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(-20, -10, 490, 290);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -226,6 +231,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private java.awt.Checkbox campoEsqueciSenha;
     private javax.swing.JLabel imagensFundo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labelEmpresa;
     private javax.swing.JFormattedTextField lblRA;
     private javax.swing.JPasswordField lblSenha;

@@ -181,5 +181,17 @@
         </Constraint>
       </Constraints>
     </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="C:\Users\Lenovo\OneDrive\Documentos\ControlTec\ControlTec\Prototipo Funcional\ControlTec\src\main\Resources\tecnologia2.jpg"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="-20" y="-10" width="490" height="290"/>
+        </Constraint>
+      </Constraints>
+    </Component>
   </SubComponents>
 </Form>
