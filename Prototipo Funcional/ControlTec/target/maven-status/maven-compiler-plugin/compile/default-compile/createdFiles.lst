@@ -4,10 +4,10 @@ com\mycompany\controltec\entidades\LogsDeErro.class
 com\mycompany\controltec\entidades\Maquina.class
 com\mycompany\controltec\TelaDeLogin$2.class
 com\mycompany\controltec\entidades\Instituicao.class
+com\mycompany\controltec\entidades\UsoDeMaquina.class
 com\mycompany\controltec\TelaDeLogin$5.class
 com\mycompany\controltec\TelaDeLogin$4.class
 com\mycompany\controltec\TelaDeLogin.class
-com\mycompany\controltec\entidades\UsoDeMaquinas.class
 com\mycompany\controltec\entidades\Turma.class
 com\mycompany\controltec\entidades\Usuario.class
 com\mycompany\controltec\jdbc\Conexao.class

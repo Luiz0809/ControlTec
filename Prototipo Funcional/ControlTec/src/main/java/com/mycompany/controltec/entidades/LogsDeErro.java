@@ -8,10 +8,10 @@ public class LogsDeErro {
     private String descricao;
     private String identificadorLog;
     private Instant hora;
-    private UsoDeMaquinas usuario;
-    private UsoDeMaquinas componentes;
+    private UsoDeMaquina usuario;
+    private UsoDeMaquina componentes;
 
-    public LogsDeErro(Long idLogsDeErros, String descricao, String identificadorLog, Instant hora, UsoDeMaquinas usuario, UsoDeMaquinas componentes) {
+    public LogsDeErro(Long idLogsDeErros, String descricao, String identificadorLog, Instant hora, UsoDeMaquina usuario, UsoDeMaquina componentes) {
         this.idLogsDeErros = idLogsDeErros;
         this.descricao = descricao;
         this.identificadorLog = identificadorLog;
@@ -38,11 +38,11 @@ public class LogsDeErro {
         return hora;
     }
 
-    public UsoDeMaquinas getUsuario() {
+    public UsoDeMaquina getUsuario() {
         return usuario;
     }
 
-    public UsoDeMaquinas getComponentes() {
+    public UsoDeMaquina getComponentes() {
         return componentes;
     }
 

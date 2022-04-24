@@ -4,9 +4,10 @@
  */
 package com.mycompany.controltec;
 
+import com.github.britooo.looca.api.core.Looca;
 import com.mycompany.controltec.entidades.Componentes;
 import com.mycompany.controltec.entidades.Maquina;
-import com.mycompany.controltec.entidades.UsoDeMaquinas;
+import com.mycompany.controltec.entidades.UsoDeMaquina;
 import com.mycompany.controltec.entidades.Usuario;
 import com.mycompany.controltec.jdbc.Conexao;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -25,6 +27,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
 
     Conexao conexao = new Conexao();
     JdbcTemplate con = new JdbcTemplate(conexao.getDataSource());
+    Looca looca = new Looca();
 
     /**
      * Creates new form TelaDeLogin
@@ -49,7 +52,6 @@ public class TelaDeLogin extends javax.swing.JFrame {
         nameRA = new javax.swing.JLabel();
         nameSENHA = new javax.swing.JLabel();
         labelEmpresa = new javax.swing.JLabel();
-        campoEsqueciSenha = new java.awt.Checkbox();
         lblSenha = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -97,9 +99,9 @@ public class TelaDeLogin extends javax.swing.JFrame {
         nameRA.setBackground(new java.awt.Color(255, 255, 255));
         nameRA.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         nameRA.setForeground(new java.awt.Color(255, 255, 255));
-        nameRA.setText("RA:");
+        nameRA.setText("LOGIN:");
         getContentPane().add(nameRA);
-        nameRA.setBounds(200, 70, 30, 16);
+        nameRA.setBounds(200, 70, 60, 16);
 
         nameSENHA.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         nameSENHA.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,14 +114,6 @@ public class TelaDeLogin extends javax.swing.JFrame {
         labelEmpresa.setText("Control Tec - Faça seu Login");
         getContentPane().add(labelEmpresa);
         labelEmpresa.setBounds(100, 10, 300, 50);
-
-        campoEsqueciSenha.setBackground(new java.awt.Color(0, 0, 51));
-        campoEsqueciSenha.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        campoEsqueciSenha.setForeground(new java.awt.Color(255, 255, 255));
-        campoEsqueciSenha.setLabel("Esqueceu sua senha?");
-        campoEsqueciSenha.setState(true);
-        getContentPane().add(campoEsqueciSenha);
-        campoEsqueciSenha.setBounds(200, 170, 140, 20);
 
         lblSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,9 +140,9 @@ public class TelaDeLogin extends javax.swing.JFrame {
 
         String ra = lblRA.getText();
         String senha = lblSenha.getText();
-        Maquina maquina = new Maquina();
-        //maquina.informacoesMaquina();
         Long idMaquina = 0L;
+        String identificador = looca.getProcessador().getId();
+        UsoDeMaquina udm = new UsoDeMaquina();
         Integer contador = 0;
 
         List<Usuario> listaDeUsuarios = con.query("select * from dbo.Usuario where email = '" + ra + "' "
@@ -158,32 +152,34 @@ public class TelaDeLogin extends javax.swing.JFrame {
         List<Maquina> listaDeMaquinas = con.query("select * from dbo.Maquina ",
                 new BeanPropertyRowMapper(Maquina.class));
 
-        System.out.println(listaDeMaquinas);
-
         for (Maquina maquinas : listaDeMaquinas) {
-            idMaquina = maquinas.getIdMaquina();
+            if (maquinas.getIdentificador().equals(identificador)) {
+                idMaquina = maquinas.getIdMaquina();
+            }          
         }
-        System.out.println(idMaquina);
-
+        if(idMaquina <= 0){
+           JOptionPane.showMessageDialog(null, "Máquina não encontrada,"
+                   + "Entre em contato com a sua instituição"); 
+        }
+        
         List<Componentes> listaDeComponentes = con.query("select * from dbo.Componentes where fkMaquina = '" + idMaquina + "'; ",
                 new BeanPropertyRowMapper(Componentes.class));
 
-        listaDeComponentes.forEach(x -> System.out.println(x.getIdComponente()));
-
         if (listaDeUsuarios.isEmpty()) {
             System.out.println("Erro");
+            JOptionPane.showMessageDialog(null, "Login e/ou senha inválidos");
         } else {
             System.out.println("Logado com sucesso");
-//            listaDeUsuarios.forEach(usuario -> System.out.println(usuario));
-//            listaDeComponentes.forEach(componentes -> System.out.println(componentes));
-//            listaDeMaquinas.forEach(maquinas -> System.out.println(maquinas));
+            JOptionPane.showMessageDialog(null, String.format("Seja bem vindo %s \n"
+                    + "A captura de dados irá começar assim que o botão 'OK' for clicado"
+                    , listaDeUsuarios.get(0).getNome()));
 
-            UsoDeMaquinas udm = new UsoDeMaquinas();
             try {
                 while (true) {
+                    contador ++;
+                    System.out.println(String.format("Captura de Dados N°%d", contador));
                     for (Componentes componente : listaDeComponentes) {
                         udm.capturarDados(listaDeUsuarios.get(0), componente);
-                        
                     }
                     Thread.sleep(200L);
                 }
@@ -191,6 +187,8 @@ public class TelaDeLogin extends javax.swing.JFrame {
                 Logger.getLogger(TelaDeLogin.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+
+
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
@@ -243,7 +241,6 @@ public class TelaDeLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEntrar;
     private javax.swing.JButton btnExit;
-    private java.awt.Checkbox campoEsqueciSenha;
     private javax.swing.JLabel imagensFundo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

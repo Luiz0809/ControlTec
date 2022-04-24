@@ -72,12 +72,7 @@
             <artifactId>looca-api</artifactId>
             <version>1.0.1</version>
         </dependency>
-        
-        <dependency>
-            <groupId>com.github.oshi</groupId>
-            <artifactId>oshi-core</artifactId>
-            <version>6.1.5</version>
-        </dependency>
+
         
     </dependencies>
 
