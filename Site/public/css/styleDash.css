@@ -207,6 +207,13 @@ body {
    margin-bottom: 30px;
 }
 
+h3 {
+    margin-top: -15px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.
+}
+
 /*SECTION CARDS*/
 
 /* .div_informativo {
@@ -314,6 +321,10 @@ body {
     background-color: var(--color-4);
 }
 
+.active {
+    background-color: white;
+    color: var(--color-3);
+}
 /*testewill*/
 
 .testewill {
@@ -337,7 +348,7 @@ body {
     min-height: 500px;
     background: var(--color-1);
     padding: 20px;
-    box-shadow: 0 7px 5px rgba(0,0,0,0.08);
+    box-shadow: 0 7px 5px rgba(0,0,0,1);
     border-radius: 20px;
 }
 
@@ -400,7 +411,7 @@ body {
 
 /*FOOTER*/
 footer {
-    width: calc(100% - 200px);
+    width: calc(100% - 190px);
     display: flex;
     align-items: center;
     justify-content: center;
