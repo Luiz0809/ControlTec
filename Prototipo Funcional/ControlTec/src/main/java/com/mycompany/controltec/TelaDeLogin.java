@@ -145,6 +145,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
         UsoDeMaquina udm = new UsoDeMaquina();
         Integer contador = 0;
 
+
         List<Usuario> listaDeUsuarios = con.query("select * from dbo.Usuario where email = '" + ra + "' "
                 + "AND senha = '" + senha + "';",
                 new BeanPropertyRowMapper(Usuario.class));
@@ -165,6 +166,8 @@ public class TelaDeLogin extends javax.swing.JFrame {
         List<Componentes> listaDeComponentes = con.query("select * from dbo.Componentes where fkMaquina = '" + idMaquina + "'; ",
                 new BeanPropertyRowMapper(Componentes.class));
 
+        System.out.println(listaDeMaquinas);
+        System.out.println(idMaquina);
         if (listaDeUsuarios.isEmpty()) {
             System.out.println("Erro");
             JOptionPane.showMessageDialog(null, "Login e/ou senha inválidos");
