@@ -144,6 +144,8 @@ public class TelaDeLogin extends javax.swing.JFrame {
         String identificador = looca.getProcessador().getId();
         UsoDeMaquina udm = new UsoDeMaquina();
         Integer contador = 0;
+        Maquina maquina = new Maquina();
+        maquina.informacoesMaquina();
 
 
         List<Usuario> listaDeUsuarios = con.query("select * from dbo.Usuario where email = '" + ra + "' "
