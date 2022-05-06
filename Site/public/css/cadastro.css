@@ -8,9 +8,9 @@
 }
 
 
-header{
+.header{
     background-image: linear-gradient(to right, rgb(77, 77, 228), rgb(177, 35, 177), rgb(42, 42, 131));
-    height: 90px;
+    height: 60px;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -18,7 +18,7 @@ header{
     flex-direction: row;
 }
 
-header .div_logo{
+ .div_logo{
  display: flex;
  flex-direction: row;
  justify-content: space-between;
@@ -33,18 +33,18 @@ header .div_logo{
     margin-top: 50px;
 }
 
-.navigation-items{ 
+/* .navigation-items{ 
     text-align: center;
     text-transform: capitalize;
     margin-top: 80px;
     margin-left: 110%; 
     height: 100px;
     width: 100%;
-}
+} */
 
-header .navigation{
+/* header .navigation{
     position: relative;
-}
+} */
 
 .item{
     color: #ffff;
@@ -74,16 +74,15 @@ header .navigation{
     flex-direction: column;
     align-items: center;
     background-color: #1f0a52d7;
-    padding: 20px;
+    padding: 1rem;
 }
 
 .form-image img {
-    width: 15rem;
+    width: 31rem;
 }
 
 .form {
-    width: 90%;
-    height: 70%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,7 +92,7 @@ header .navigation{
 }
 
 .form-header {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     display: flex;
     justify-content: space-between;
 }
@@ -146,12 +145,12 @@ header .navigation{
 }
 
 .input-box input {
-    margin: 0.6rem 0;
+     margin: 0.6rem 0;
     padding: 0.8rem 1.2rem;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0000001c;
-    font-size: 0.8rem;
+     font-size: 0.8rem;
 }
 
 .input-box input:hover {
