@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-public class UsoDeMaquinas {
+public class UsoDeMaquina {
 
     private Usuario usuario;
     private Componentes componentes;
@@ -27,7 +27,7 @@ public class UsoDeMaquinas {
     Conexao conexao = new Conexao();
     JdbcTemplate con = new JdbcTemplate(conexao.getDataSource());
 
-    public UsoDeMaquinas(Usuario usuario, Componentes componentes, LocalDateTime inicializado, Long tempoEmUso, Double consumoCPU, Long consumoDisco, Long consumoMemoria, Double temperatura, LocalDateTime hora) {
+    public UsoDeMaquina(Usuario usuario, Componentes componentes, LocalDateTime inicializado, Long tempoEmUso, Double consumoCPU, Long consumoDisco, Long consumoMemoria, Double temperatura, LocalDateTime hora) {
         this.usuario = usuario;
         this.componentes = componentes;
         this.inicializado = inicializado;
@@ -39,12 +39,10 @@ public class UsoDeMaquinas {
         this.hora = hora;
     }
 
-    public UsoDeMaquinas() {
+    public UsoDeMaquina() {
     }
 
-    public void capturarDados(Usuario usuario, Componentes componentes) throws Exception {
-        
-            
+    public void capturarDados(Usuario usuario, Componentes componentes) {               
             Long consumo = 0L;
             inicializado = looca.getSistema().getInicializado()
                     .atZone(ZoneId.systemDefault())
@@ -54,7 +52,7 @@ public class UsoDeMaquinas {
             consumoCPU = looca.getProcessador().getUso();
             
             for (Disco disco : discos) {
-                consumo += disco.getTamanhoAtualDaFila();
+                consumo += disco.getBytesDeEscritas()+disco.getBytesDeLeitura();
             }
 
             consumo = consumo;
@@ -67,9 +65,9 @@ public class UsoDeMaquinas {
                     + "Usuario,"
                     + "Componentes,"
                     + "temperatura,"
-                    + "consumoMemoria,"
+                    + "consumoMemoriaEmBytes,"
                     + "consumoCPU,"
-                    + "consumoDisco,"
+                    + "consumoDiscoEmBytes,"
                     + "tempoEmUso,"
                     + "inicializado,"
                     + "hora"
@@ -85,8 +83,8 @@ public class UsoDeMaquinas {
                     consumoDisco,
                     tempoEmUso,
                     inicializado.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")),
-                    hora.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-
+                    hora.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));    
+            
             
         }
     
@@ -127,27 +125,75 @@ public class UsoDeMaquinas {
         return hora;
     }
 
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public void setComponentes(Componentes componentes) {
+        this.componentes = componentes;
+    }
+
+    public void setInicializado(LocalDateTime inicializado) {
+        this.inicializado = inicializado;
+    }
+
+    public void setTempoEmUso(Long tempoEmUso) {
+        this.tempoEmUso = tempoEmUso;
+    }
+
+    public void setConsumoCPU(Double consumoCPU) {
+        this.consumoCPU = consumoCPU;
+    }
+
+    public void setConsumoDisco(Long consumoDisco) {
+        this.consumoDisco = consumoDisco;
+    }
+
+    public void setConsumoMemoria(Long consumoMemoria) {
+        this.consumoMemoria = consumoMemoria;
+    }
+
+    public void setTemperatura(Double temperatura) {
+        this.temperatura = temperatura;
+    }
+
+    public void setHora(LocalDateTime hora) {
+        this.hora = hora;
+    }
+
+    public void setLooca(Looca looca) {
+        this.looca = looca;
+    }
+
+    public void setDiscos(List<Disco> discos) {
+        this.discos = discos;
+    }
+    
+    
+
     @Override
     public String toString() {
-        return String.format("IdUsuario : %d\n"
-                + "idComponente : %d\n"
-                + "Inicializado : %s\n"
-                + "Tempo em uso : %s\n"
-                + "Consumo CPU : %d\n"
-                + "Coonsumo de Memória : %d\n"
-                + "Consumo de Disco : %d\n"
-                + "Temperatura : %.1f\n"
-                + "hora : %s\n"
+        return String.format("""
+                             IdUsuario : %d
+                             idComponente : %d
+                             Inicializado : %s
+                             Tempo em uso : %s
+                             Consumo CPU : %.1f
+                             Coonsumo de Memória : %d
+                             Consumo de Disco : %d
+                             Temperatura : %.1f
+                             hora : %s
+                             """
                 + "-".repeat(30),
-                usuario.getIdUsuario(),
-                componentes.getIdComponente(),
-                inicializado.toString(),
-                tempoEmUso.toString(),
-                consumoCPU,
-                consumoMemoria,
+                4,
+                3,
+                looca.getSistema().getInicializado(),
+                looca.getSistema().getTempoDeAtividade(),
+                looca.getProcessador().getUso(),
+                looca.getMemoria().getEmUso(),
                 consumoDisco,
-                temperatura,
-                hora.toString());
+                looca.getTemperatura().getTemperatura(),
+                LocalDateTime.now().toString());
     }
 
 }

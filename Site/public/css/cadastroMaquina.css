@@ -11,8 +11,52 @@
         --color-2: rgb(131, 30, 131);
     }
     
+    header{
+        background-image: linear-gradient(to right, rgb(77, 77, 228), rgb(177, 35, 177), rgb(42, 42, 131));
+        height: 90px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        margin-bottom: 29px;
+    }
+    
+    header .div_logo{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     padding-bottom: 20px;
+     align-items: center;
+    }
+    
+    #logo{
+        width: 120px;
+        padding-bottom: 50px;
+        margin-left: -90%;
+        margin-top: 50px;
+    }
+    
+    .navigation-items{ 
+        text-align: center;
+        text-transform: capitalize;
+        margin-top: 80px;
+        margin-left: 110%;
+        height: 100px;
+        width: 100%;
+    }
+    
+    header .navigation{
+        position: relative;
+    }
+    
+    .item{
+        color: #ffff;
+        text-decoration: none;
+        word-spacing: 5px;
+    }
+
     body {
-        padding-top: 3vh;
  /*        background-color: gray; vc esta comentado */
         background-image: repeating-linear-gradient(blue, rgb(131, 30, 131), rgb(14, 14, 158));
     }
