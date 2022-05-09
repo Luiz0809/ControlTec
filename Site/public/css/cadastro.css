@@ -7,10 +7,15 @@
     font-family: 'Inter', sans-serif;
 }
 
+body{
+    width: 100%;
+    height: 100vh;
+}
+
 
 .header{
     background-image: linear-gradient(to right, rgb(77, 77, 228), rgb(177, 35, 177), rgb(42, 42, 131));
-    height: 60px;
+    height: 90px;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -18,7 +23,7 @@
     flex-direction: row;
 }
 
- .div_logo{
+header .div_logo{
  display: flex;
  flex-direction: row;
  justify-content: space-between;
@@ -37,14 +42,14 @@
     text-align: center;
     text-transform: capitalize;
     margin-top: 80px;
-    margin-left: 200px; 
+    margin-left: 30%; 
     height: 100px;
     width: 100%;
 } 
 
- header .navigation{
+ /* header .navigation{
     position: relative;
-}
+} */
 
 .item{
     color: #ffff;
@@ -60,18 +65,18 @@
 
 .container {
     width: 80%;
-    height: 115vh;
+    height: 140vh;
     display: flex;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-    margin-left: 130px; 
+    margin-left: 150px; 
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .form-image {
-    width: 60%;
+    width: 50%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     background-color: #1f0a52d7;
     padding: 1rem;
@@ -82,13 +87,14 @@
 }
 
 .form {
-    width: 80%;
+    width: 60%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    padding: 2rem;
+    padding: 3rem;
 }
 
 .form-header {
@@ -195,7 +201,7 @@
 }
 
 .continue-button button {
-    width: 100%;
+    width: 100%; 
     margin-top: 2.5rem;
     border: none;
     background-color: #6c63ff;
@@ -232,36 +238,23 @@
     margin-left: 16px;
 }
 
-@media screen and (max-width: 1000px) {
-    /* .form-image {
+@media screen and (max-width: 1330px) {
+    .form-image {
         display: none;
-    } */
-    .input-group {
-        flex-direction: column;
-        z-index: 5;
-        padding-right: 5rem;
-        max-height: 10rem;
-        overflow-y: scroll;
-        flex-wrap: nowrap;
+    } 
+    .container {
+        width: 50%;
     }
-    .gender-inputs {
-        margin-top: 2rem;
-    }
-    .gender-group {
-        flex-direction: column;
-    }
-    .gender-title h6 {
-        margin: 0;
-    }
-    .gender-input {
-        margin-top: 0.5rem;
-    }
+     .form {
+        width: 100%;
+    } 
+    
 }
 
 @media screen and (max-width: 1064px) {
     .container {
-        width: 90%;
-        height: auto;
+          width: 50%; 
+         height: auto; 
     }
     .input-group {
         flex-direction: column;
