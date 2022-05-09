@@ -7,18 +7,12 @@
     font-family: 'Inter', sans-serif;
 }
 
-body{
-    width: 100%;
-    height: 100vh;
-}
-
-
-.header{
+header{
     background-image: linear-gradient(to right, rgb(77, 77, 228), rgb(177, 35, 177), rgb(42, 42, 131));
     height: 90px;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
 }
@@ -38,26 +32,24 @@ header .div_logo{
     margin-top: 50px;
 }
 
- .navigation-items{ 
+.navigation-items{ 
     text-align: center;
     text-transform: capitalize;
     margin-top: 80px;
-    margin-left: 30%; 
+    margin-left: 110%;
     height: 100px;
     width: 100%;
-} 
+}
 
- header .navigation{
+header .navigation{
     position: relative;
-} 
+}
 
 .item{
     color: #ffff;
     text-decoration: none;
     word-spacing: 5px;
 }
-
-
 .item:hover{
     background-color: rgb(171, 130, 209);
     border-radius: 10px;
@@ -68,8 +60,9 @@ header .div_logo{
     height: 140vh;
     display: flex;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-left: 130px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .form-image {
@@ -181,7 +174,7 @@ header .div_logo{
 }
 
 .input-box input::placeholder {
-    color: #000000be;
+    color: #686464be;
 }
 
 .gender-group {
@@ -230,12 +223,18 @@ header .div_logo{
 .footer{
     background-image: linear-gradient(to right, rgb(77, 77, 228), rgb(177, 35, 177), rgb(42, 42, 131));
     width: 100%;
-    height: 30vh ;
+    height: 40vh ;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     color: #ffff;
+}
+
+.footer #logo{
+    margin-top: 30px;
+    width: 150px;
+    margin-left: 16px;
 }
 
 @media screen and (max-width: 1330px) {
