@@ -45,14 +45,14 @@ header .div_logo{
     text-align: center;
     text-transform: capitalize;
     margin-top: 80px;
-    margin-left: 110%;
+    margin-left: 30%;
     height: 100px;
     width: 100%;
 }
 
-header .navigation{
+ /* header .navigation{
     position: relative;
-}
+}  */
 
 .item{
     color: #ffff;
@@ -71,7 +71,7 @@ header .navigation{
     height: 70vh;
     display: flex;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-    margin-left: 190px;
+    margin-left: 200px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -90,7 +90,7 @@ header .navigation{
 }
 
 .form {
-    width: 60%;
+    /* width: 60%; */
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -257,9 +257,9 @@ header .navigation{
 
 @media screen and (max-width: 1064px) {
     .container {
-        width: 90%;
-        height: auto;
-    }
+        /* width: 90%; */
+        /* height: auto; */
+    } 
 
     .input-group {
         flex-direction: column;
