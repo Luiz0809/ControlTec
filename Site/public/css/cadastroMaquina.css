@@ -1,3 +1,6 @@
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700;900&display=swap');
+    
     * {
         margin: 0;
         padding: 0;
@@ -9,52 +12,87 @@
     :root {
         --color-1: #FF0000;
         --color-2: rgb(131, 30, 131);
+        --color-1: #fff;
+        --color-2: #100e34;
+        --color-3: #4f48ec;
+        --color-4: #38d6eb;
+        --color-5: #eeeeee;
     }
     
-    /* header{
-        background-image: linear-gradient(to right, rgb(77, 77, 228), rgb(177, 35, 177), rgb(42, 42, 131));
-        height: 90px;
+    .nav {
+        display: block;
+        width: 280px;
+        height: 100%;
+        padding: 15px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: var(--color-3);
+    }
+    
+    .nav .logo {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        color: var(--color-1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all .4s ease-in-out;
+    }
+    
+    .nav .logo .bi {
+        margin-right: 15px;
+        font-size: 32px;
+        transition: all .4s ease-in-out;
+    }
+    
+    .nav .logo span {
+        font-weight: 900;
+        font-size: 22px;
+    }
+    
+    .nav .menu {
+        list-style: none;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav .menu li {
+        display: block;
+        padding-left: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .nav .menu li a {
         width: 100%;
         display: flex;
-        justify-content: space-around;
         align-items: center;
-        flex-direction: row;
-        margin-bottom: 29px;
-    }
-    
-    header .div_logo{
-     display: flex;
-     flex-direction: row;
-     justify-content: space-between;
-     padding-bottom: 20px;
-     align-items: center;
-    }
-    
-    #logo{
-        width: 120px;
-        padding-bottom: 50px;
-        margin-left: -90%;
-        margin-top: 50px;
-    }
-    
-    .navigation-items{ 
-        text-align: center;
-        text-transform: capitalize;
-        margin-top: 80px;
-        margin-left: 110%;
-        height: 100px;
-        width: 100%;
-    }
-    
-    header .navigation{
-        position: relative;
-    }
-    
-    .item{
-        color: #ffff;
+        color: var(--color-1);
+        text-transform: uppercase;
+        font-size: 16px;
+        padding: 10px;
         text-decoration: none;
-        word-spacing: 5px;
-    } */
+        border-radius: 30px 0 0 30px;
+        transition: all ease-in-out .4s;
+    }
+    
+    .nav .menu li a .bi {
+        margin-right: 15px;
+    }
+    
+    .nav .menu li a:hover {
+        color: var(--color-3);
+        background-color: var(--color-1);
+    }
+    
+    .nav .menu li.active a {
+        color: var(--color-3);
+        background-color: var(--color-1);
+    }
 
     body {
  /*        background-color: gray; vc esta comentado */
@@ -75,11 +113,12 @@
 
     #main-container {
         width: 900px;
-        margin-left: auto;
+        margin-left: 25%;
         margin-right: auto;
         margin-top: 45px;
         background-color: #FFF;
         border-radius: 10px;
+
         padding: 25px;
     }
 
