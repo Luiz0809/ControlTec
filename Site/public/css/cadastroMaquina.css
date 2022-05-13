@@ -10,13 +10,13 @@
     }
 
     :root {
-        --color-1: #FF0000;
-        --color-2: rgb(131, 30, 131);
+        --color-0: #FF0000;
         --color-1: #fff;
         --color-2: #100e34;
         --color-3: #4f48ec;
         --color-4: #38d6eb;
         --color-5: #eeeeee;
+        --color-6: rgb(131, 30, 131);
     }
     
     .nav {
@@ -108,7 +108,7 @@
     }
 
     a {
-        color: var(--color-1);
+        color: var(--color-0);
     }
 
     #main-container {
@@ -164,7 +164,7 @@
     }
 
     input[type="submit"] {
-     background-color: var(--color-2);
+     background-color: var(--color-6);
      color: #FFF;
      border: none;
      border-radius: 20px;
