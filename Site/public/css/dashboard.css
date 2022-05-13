@@ -2,25 +2,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700;900&display=swap');
 
 :root {
-   --color-1: #fff;
-   --color-2: #100e34;
-   --color-3: #4f48ec;
-   --color-4: #38d6eb;
-   --color-5: #eeeeee;
+    --color-1: #fff;
+    --color-2: #100e34;
+    --color-3: #4f48ec;
+    --color-4: #38d6eb;
+    --color-5: #eeeeee;
 }
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
 }
 
 /*NAV*/
+
 .nav {
     display: block;
     width: 280px;
@@ -91,9 +92,9 @@ body {
     background-color: var(--color-1);
 }
 
-.nav .menu li.active a{
-color: var(--color-3);
-background-color: var(--color-1);
+.nav .menu li.active a {
+    color: var(--color-3);
+    background-color: var(--color-1);
 }
 
 /*CONTENT*/
@@ -158,8 +159,8 @@ background-color: var(--color-1);
 }
 
 .content .header .form input,
-.content .header .form  buttom {
-    outline: none!important;
+.content .header .form buttom {
+    outline: none !important;
 }
 
 .content .header .form input:focus {
@@ -206,108 +207,7 @@ background-color: var(--color-1);
     padding-top: 40px;
     padding-bottom: 40px;
 }
-.content .section .container-content .title{
-   font-size: 22px;
-   font-weight: 900;
-   color: var(--color-2);
-   margin-bottom: 30px;
-}
 
-h3 {
-    margin-top: -15px;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    line-height: 1.
-}
-
-/*SECTION CARDS*/
-
-/* .div_informativo {
-    width: 100%;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.div_info {
-    width: 30%;
-    height: 160px;
-    padding: 15px 30px;
-    border-radius: 8px;
-    background-color: var(--color-3);
-    margin-left: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#div_memory {
-    height: 80%;
-    background-color: var(--color-1);
-    width: 80%;
-    border-radius: 2px;
-    
-}
-
-#div_totality{
-    height: 100%;
-    width: 20%;
-    background-color: #100e34;
-}
-
-#div_center {
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.info_separ {
-  width: 40%;
-  height: 100%;
-}
-
-.info_dash {
-  width: 60%;
-  height: 100%;
-} */
-
-.content .section .cards .card{
-    width: 100%;
-    height: 120px;
-    padding: 15px 30px;
-    border-radius: 8px;
-    background-color: var(--color-3);
-    border: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    transition: ease-in-out .4s;
-}
-
-.content .section .cards .card .desc span {
-   
-    font-size: 32px;
-    color: var(--color-1);
-    font-weight: 900;
-}
-
-.content .section .cards .card .desc p{
-    color: var(--color-1);
-}
-
-.content .section .cards .card .bi {
-    color: var(--color-1);
-    font-size: 32px;
-}
-
-.content .section .cards .card:hover {
-    background-color: var(--color-4);
-} 
-
-/*SECTION CHARTS*/
 .content .section .charts .card {
     width: 100%;
     padding: 30px;
@@ -327,13 +227,17 @@ h3 {
     background-color: var(--color-4);
 }
 
-/* .active {
-    background-color: white;
-    color: var(--color-3);
-} */
-/*testewill*/
 
-.testewill {
+/* .content .section .container-content .title {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--color-2);
+    margin-bottom: 30px;
+} */
+
+/*PROCESSOS*/
+
+.processDetails {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -348,7 +252,7 @@ h3 {
     margin-top: 10px;
 }
 
-.details .recentOrders {
+.details .div_informativo {
     position: relative;
     display: grid;
     min-height: 500px;
@@ -384,38 +288,39 @@ h3 {
     margin-top: 10px;
 }
 
-.details .recentOrders table td {
+.details .div_informativo table td {
     font-weight: 600;
 }
 
-.details .recentOrders table tr {
+.details .div_informativo table tr {
     border-bottom: 1px solid black;
     color: #4f48ec;
 }
 
-.details .recentOrders table tbody tr:last-child {
+.details .div_informativo table tbody tr:last-child {
     border-bottom: none;
 }
 
-.details .recentOrders table tbody tr:hover {
+.details .div_informativo table tbody tr:hover {
   background: var(--color-4);
   color: #fff;
   cursor: pointer;
 }
 
-.details .recentOrders table tr td {
+.details .div_informativo table tr td {
     padding: 10px;
 }
 
-.details .recentOrders table tr td:nth-child(2) {
+.details .div_informativo table tr td:nth-child(2) {
     text-align: end;
 }
 
-.details .recentOrders table tr td:nth-child(3) {
+.details .div_informativo table tr td:nth-child(3) {
     text-align: center;
 }
 
 /*FOOTER*/
+
 footer {
     width: calc(100% - 190px);
     display: flex;
@@ -425,4 +330,85 @@ footer {
     float: right;
     background-color: var(--color-4);
     color: var(--color-1);
+}
+
+/*TENTATIVA RESPONSIVIDADE*/
+
+@media (max-width: 1399.98px) {
+    .content .section .cards .card .desc span {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .nav {
+        width: 200px;
+    }
+
+    .content,
+    .footer {
+        width: calc(100% - 200px);
+    }
+
+    .content .section {
+        padding: 30px 15px;
+    }
+
+    .content .header .form {
+        width: 280px;
+    }
+
+    .content .section .cards .card {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    nav {
+        width: 80px;
+    }
+
+    .content,
+    .footer {
+        width: calc(100% - 80px);
+    }
+
+    .nav .menu li span,
+    .logo span {
+        opacity: 0;
+        display: none;
+    }
+
+    .nav .logo .bi {
+        margin: 0;
+    }
+
+    .content section .container-content {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .content .section .chats .card {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .content .header {
+        flex-wrap: wrap;
+        height: auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: 0;
+    }
+
+    .content .header .form {
+        order: 3;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .content .section .charts .card {
+        padding: 10px
+    }
 }

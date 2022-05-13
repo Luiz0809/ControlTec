@@ -1,4 +1,5 @@
 var capacidadeMemoria = document.getElementById('chartMemoria').getContext('2d');
+
 var chart = new Chart(capacidadeMemoria, {
     type: 'line',
     data: {
@@ -41,11 +42,25 @@ var chart = new Chart(desempenhoCpu, {
         labels: ['0 s', '', '', '', '', '', '', '', '', '', '', '60 s'],
         datasets: [
             {
-                label: "% de Utilização",
+                label: "",
                 backgroundColor: '#fff',
                 borderColor: '#38d6eb',
                 data: [2, 10, 4, 12, 8, 18, 12, 4, 14, 8, 16, 8],
             }
         ]
+    },
+    options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Consumo da CPU',
+            padding: {
+              top: 10,
+            },
+            font: {
+              size: 18
+            }
+          }
+        }
     }
 });
