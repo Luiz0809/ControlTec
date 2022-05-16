@@ -11,73 +11,57 @@
 </head>
 
 <body>
-    <header>
-        <div class="div_logo"><img id="logo" src="imagens/imagem sem fundo (1).png" alt="">
-            <div class="navigation">
-                <div class="navigation-items">
-                    <a class="item" href="index.html"> Home </a>
-                    <a class="item" href=""> Quem Somos </a>
-                    <a class="item" href="cadastro.html"> Cadastro</a>
-                    <a class="item" href="login.html"> Login </a>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div class="container">
-        <div class="form-image">
-            <img src="http://insait.com.br/wp-content/uploads/2020/09/figura-consultoria-e-governanca-de-ti-scitis.png"
-                alt="">
-        </div>
-        <div class="form">
-            <form id="form_cadastro" method="post" onsubmit="returncadastrar()">
-                <div class="form-header">
-                    <div class="title">
-                        <h1>Cadastre-se</h1>
-                    </div>
-                </div>
-                <div class="input-box">
-                    <label for="lastname">Nome</label>
-                    <input type="text" name="nome" placeholder="Digite seu nome">
-                </div>
-                <div class="input-box">
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" placeholder="Digite seu e-mail">
-                </div>
-                <div class="input-box">
-                    <label for="password">Senha</label>
-                    <input type="password" name="senha" placeholder="Digite sua senha">
-                </div>
-        </div>
-        <div class="continue-button">
-            <button>Cadastrar</button>
-        </div>
+
+    <nav class="nav">
+        <a href="" class="logo">
+            <span>ControlTec</span>
+        </a>
+        <ul class="menu">
+         <li class="active"><a href=""><i class="bi bi-display "></i><span class="active">Monitoramento PC</span></a></li>
+         <li><a href=""><i class="bi bi-list-stars"></i><span>Processos</span></a></li>
+         <li><a href=""><i class="bi bi-display"></i><span>Cadastro de Máquina</span></a></li>
+         <li><a href=""><i class="bi bi-display"></i><span> Cadastro de Usuário</span></a></li>
+         <li><a href=""><i class="bi bi-display"></i><span> Suporte</span></a></li>
+         <li><a href=""><i class="bi bi-gear"></i><span>Configurações</span></a></li>
+        </ul>
+    </nav>
+    
+        <div id="main-container">
+            <h1>Cadastre seu Usuário</h1>
+            
+            <form method="post" id="form_cadastro" onsubmit="return cadastrar()">
+               <h3>Usuário</h3>
+              
+               <div class="div_container">
+               <div class="half-box">
+                   <input id="ipt_identify" placeholder="Nome">
+               </div>
+               <div class="half-box">
+                   <input id="ipt_system" placeholder="Data de Nascimento">
+               </div>
+               <div class="half-box">
+                <input id="ipt_system" placeholder="Email">
+               </div>
+               <div class="half-box">
+                <input id="ipt_system" placeholder="Senha">
+               </div>
+               <select class="half-box">
+                   <option id="ipt_system" value=""> Tipo de Usuário</option>
+                   <option id="ipt_system" value=""> Professor </option>
+                   <option id="ipt_system" value=""> Aluno </option>
+               </select>
+               </div>
+               <div class="full-box1">
+                <input type="checkbox" id="agreement">
+                <label for="agreement" id="agreement-label">Eu li e aceito os <a href="">termos de uso</a></label>
+               </div>
+               <div class="full-box">
+                <input type="submit" id="btn-submit" value="Registrar">
+               </div>
         </form>
     </div>
     </div>
-    <footer class="footer">
-        <div class="logo">
-            <img id="logo" src="imagens/imagem sem fundo (1).png" alt="">
-        </div>
-        <div class="dados">
-            <p>
-            <h5> Início </h5>
-            Menu <br>
-            Quem Somos <br>
-            </p>
-        </div>
-        <div class="dados2">
-            <p>
-            <h5> Suporte </h5>
-            FAQ <br>
-            Telefones <br>
-            Chat <br>
-            </p>
-        </div>
-        <div class="media">
-            <p> @2022 Copyright - Control Tec </p>
-        </div>
-    </footer>
-
+    </div>
 </body>
 
 </html>
