@@ -61,14 +61,13 @@ temperatura float,
 primary key(Usuario, Componentes, hora)
 );
 
-create table LogsDeErro (
-idLogDoErro int primary key identity(1,1),
-descricao varchar(100),
-identificadorLog varchar(45),
+create table Alertas (
+idAlerta int primary key identity(1,1),
+descricao varchar(200),
 hora datetime default current_timestamp,
 Usuario int,
-foreign key (Usuario) references UsoDeMaquina(Usuario),
-Componentes int,
-foreign key (Componentes) references UsoDeMaquina(Componentes)
+foreign key (Usuario) references Usuario(IdUsuario),
+Componente int,
+foreign key (Componente) references Componentes(IdComponente)
 );
 
