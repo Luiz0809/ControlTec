@@ -185,17 +185,15 @@ public class UsoDeMaquina {
 
     @Override
     public String toString() {
-        return String.format("""
-                             IdUsuario : %d
-                             idComponente : %d
-                             Inicializado : %s
-                             Tempo em uso : %s
-                             Consumo CPU : %.1f
-                             Coonsumo de Memória : %d
-                             Consumo de Disco : %d
-                             Temperatura : %.1f
-                             hora : %s
-                             """
+        return String.format("IdUsuario : %d\n" +
+"                             idComponente : %d\n" +
+"                             Inicializado : %s\n" +
+"                             Tempo em uso : %s\n" +
+"                             Consumo CPU : %.1f\n" +
+"                             Coonsumo de Memória : %d\n" +
+"                             Consumo de Disco : %d\n" +
+"                             Temperatura : %.1f\n" +
+"                             hora : %s"
                 + "-".repeat(30),
                 4,
                 3,
