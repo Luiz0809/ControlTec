@@ -144,8 +144,6 @@ public class TelaDeLogin extends javax.swing.JFrame {
         String identificador = looca.getProcessador().getId();
         UsoDeMaquina udm = new UsoDeMaquina();
         Integer contador = 0;
-        Maquina maquina = new Maquina();
-        maquina.informacoesMaquina();
 
 
         List<Usuario> listaDeUsuarios = con.query("select * from dbo.Usuario where email = '" + ra + "' "
@@ -168,8 +166,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
         List<Componentes> listaDeComponentes = con.query("select * from dbo.Componentes where fkMaquina = '" + idMaquina + "'; ",
                 new BeanPropertyRowMapper(Componentes.class));
 
-        System.out.println(listaDeMaquinas);
-        System.out.println(idMaquina);
+        
         if (listaDeUsuarios.isEmpty()) {
             System.out.println("Erro");
             JOptionPane.showMessageDialog(null, "Login e/ou senha inválidos");
@@ -198,6 +195,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void lblRAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblRAActionPerformed

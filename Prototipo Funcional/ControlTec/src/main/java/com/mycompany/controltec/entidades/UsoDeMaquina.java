@@ -4,6 +4,8 @@ import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.Disco;
 import com.github.britooo.looca.api.group.discos.DiscosGroup;
 import com.mycompany.controltec.jdbc.Conexao;
+import com.mycompany.controltec.slack.SlackIntegrationTest;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -42,52 +44,66 @@ public class UsoDeMaquina {
     public UsoDeMaquina() {
     }
 
-    public void capturarDados(Usuario usuario, Componentes componentes) {               
-            Long consumo = 0L;
-            inicializado = looca.getSistema().getInicializado()
-                    .atZone(ZoneId.systemDefault())
-                    .toLocalDateTime();
-                    
-            tempoEmUso = looca.getSistema().getTempoDeAtividade();
-            consumoCPU = looca.getProcessador().getUso();
-            
-            for (Disco disco : discos) {
-                consumo += disco.getBytesDeEscritas()+disco.getBytesDeLeitura();
-            }
+    public void capturarDados(Usuario usuario, Componentes componentes) throws IOException {
 
-            consumo = consumo;
-            consumoDisco = consumo;
-            consumoMemoria = looca.getMemoria().getEmUso();
-            temperatura = looca.getTemperatura().getTemperatura();
-            hora = LocalDateTime.now();
+        inicializado = looca.getSistema()
+                .getInicializado()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDateTime();
 
-            String insertLogs = "INSERT INTO dbo.UsoDeMaquina ("
-                    + "Usuario,"
-                    + "Componentes,"
-                    + "temperatura,"
-                    + "consumoMemoriaEmBytes,"
-                    + "consumoCPU,"
-                    + "consumoDiscoEmBytes,"
-                    + "tempoEmUso,"
-                    + "inicializado,"
-                    + "hora"
-                    + ") values"
-                    + " (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        tempoEmUso = looca.getSistema().getTempoDeAtividade();
+        consumoCPU = looca.getProcessador().getUso();
 
-            con.update(insertLogs,
-                    usuario.getIdUsuario(),
-                    componentes.getIdComponente(),
-                    temperatura,
-                    consumoMemoria,
-                    consumoCPU,
-                    consumoDisco,
-                    tempoEmUso,
-                    inicializado.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")),
-                    hora.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));    
-            
-            
+        Long consumo = 0L;
+        for (Disco disco : discos) {
+            consumo += disco.getBytesDeEscritas() + disco.getBytesDeLeitura();
         }
-    
+
+        consumo = consumo;
+        consumoDisco = consumo;
+        consumoMemoria = looca.getMemoria().getEmUso();
+        temperatura = looca.getTemperatura().getTemperatura();
+        hora = LocalDateTime.now();
+
+        String insertLogs = "INSERT INTO dbo.UsoDeMaquina ("
+                + "Usuario,"
+                + "Componentes,"
+                + "temperatura,"
+                + "consumoMemoriaEmBytes,"
+                + "consumoCPU,"
+                + "consumoDiscoEmBytes,"
+                + "tempoEmUso,"
+                + "inicializado,"
+                + "hora"
+                + ") values"
+                + " (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        con.update(insertLogs,
+                usuario.getIdUsuario(),
+                componentes.getIdComponente(),
+                temperatura,
+                consumoMemoria,
+                consumoCPU,
+                consumoDisco,
+                tempoEmUso,
+                inicializado.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")),
+                hora.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+        
+        if(consumoCPU > 75){
+            SlackIntegrationTest.sendMessageToSlack("Sr.(a) "+ usuario.getNome()
+                    + ", sua máquina está com consumo de CPU acima de 75%"
+                    + ", nosso Script de correção será ativado automáticamente");
+        }
+        
+        Long porcentagemMemoria = (consumoMemoria*100/looca.getMemoria().getTotal()*100)/100;
+        System.out.println(porcentagemMemoria);
+        if(porcentagemMemoria > 75){
+            SlackIntegrationTest.sendMessageToSlack("Sr.(a) "+ usuario.getNome()
+                    + ", sua máquina está com consumo de Memória acima de 75%"
+                    + ", nosso Script de correção será ativado automáticamente");
+        }
+
+    }
 
     public Usuario getUsuario() {
         return usuario;
@@ -168,8 +184,6 @@ public class UsoDeMaquina {
     public void setDiscos(List<Disco> discos) {
         this.discos = discos;
     }
-    
-    
 
     @Override
     public String toString() {
