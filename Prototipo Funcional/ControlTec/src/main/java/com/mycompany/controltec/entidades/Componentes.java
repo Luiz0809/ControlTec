@@ -18,6 +18,7 @@ public class Componentes {
         this.fkMaquina = fkMaquina;
     }
 
+    
     public Long getIdComponente() {
         return idComponente;
     }

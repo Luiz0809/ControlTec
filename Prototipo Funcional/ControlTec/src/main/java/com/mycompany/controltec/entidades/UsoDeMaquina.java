@@ -58,8 +58,7 @@ public class UsoDeMaquina {
         for (Disco disco : discos) {
             consumo += disco.getBytesDeEscritas() + disco.getBytesDeLeitura();
         }
-
-        consumo = consumo;
+        
         consumoDisco = consumo;
         consumoMemoria = looca.getMemoria().getEmUso();
         temperatura = looca.getTemperatura().getTemperatura();
@@ -96,7 +95,6 @@ public class UsoDeMaquina {
         }
         
         Long porcentagemMemoria = (consumoMemoria*100/looca.getMemoria().getTotal()*100)/100;
-        System.out.println(porcentagemMemoria);
         if(porcentagemMemoria > 75){
             SlackIntegrationTest.sendMessageToSlack("Sr.(a) "+ usuario.getNome()
                     + ", sua máquina está com consumo de Memória acima de 75%"
