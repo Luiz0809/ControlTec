@@ -76,7 +76,7 @@ header .div_logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1f0a52d7;
+    background-image: linear-gradient(to right, rgb(77, 77, 228), rgb(148, 114, 211));
     padding: 1rem;
 }
 
