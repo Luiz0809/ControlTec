@@ -1,9 +1,12 @@
 
 package com.mycompany.controltec.entidades;
 
+import java.util.List;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
 import com.github.britooo.looca.api.core.Looca;
 import com.mycompany.controltec.jdbc.Conexao;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 public class Maquina {
     
@@ -11,6 +14,7 @@ public class Maquina {
     private String identificador;
     private String sistemaOperacional;
     private Integer fkTurma;
+    private List<Componentes> componentes;
     private Looca looca = new Looca();
     Conexao conexao = new Conexao();
     JdbcTemplate con = new JdbcTemplate(conexao.getDataSource());
@@ -64,6 +68,24 @@ public class Maquina {
     public void setFkTurma(Integer fkTurma) {
         this.fkTurma = fkTurma;
     }
+    
+    public void adicionarComponentes(Componentes c) {
+    	if(c != null) {
+    		componentes.add(c);
+    	}
+    }
+    
+    public Componentes getComponente(Long id) {
+		for (Componentes componente : componentes) {
+			if (componente.getIdComponente().equals(id)) {
+				return componente;
+			}
+
+		}
+
+		return null;
+
+	}
     
     
 

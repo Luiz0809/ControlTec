@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Usuario {
     
-    private Long idUsuario;
+    protected Long idUsuario;
     private String nome;
     private Date dataNascimento;
     private String codigoInstituicao;
@@ -85,9 +85,6 @@ public class Usuario {
     public void setTipoUsuario(String tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }
-
-    
-
     
     @Override
     public String toString() {
@@ -95,7 +92,5 @@ public class Usuario {
                 + "nome : %s\n ", idUsuario, nome);
                 
     }
-
-    
     
 }
