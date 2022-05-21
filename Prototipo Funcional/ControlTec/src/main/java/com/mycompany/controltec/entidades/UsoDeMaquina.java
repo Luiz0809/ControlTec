@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class UsoDeMaquina {
@@ -78,7 +79,7 @@ public class UsoDeMaquina {
                 + "hora"
                 + ") values"
                 + " (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        
+
         String insertLogsLocal = "INSERT INTO UsoDeMaquina ("
                 + "Usuario,"
                 + "Componentes,"
@@ -102,7 +103,7 @@ public class UsoDeMaquina {
                 tempoEmUso,
                 inicializado.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")),
                 hora.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-        
+
         conLocal.update(insertLogsLocal,
                 usuario.getIdUsuario(),
                 componentes.getIdComponente(),
@@ -127,6 +128,44 @@ public class UsoDeMaquina {
                     + ", nosso Script de correção será ativado automáticamente");
         }
 
+    }
+
+    public void criarTabelaUsoDeMaquina() {
+        String criacaoTabela = "create table if not exists UsoDeMaquina (\n"
+                + "Usuario int,\n"
+                + "Componentes int,\n"
+                + "hora datetime,\n"
+                + "inicializado datetime,\n"
+                + "tempoEmUso bigint,\n"
+                + "consumoCPU bigint,\n"
+                + "consumoMemoriaEmBytes bigint,\n"
+                + "consumoDiscoEmBytes bigint,\n"
+                + "temperatura float,\n"
+                + "primary key(Usuario, Componentes, hora)\n"
+                + ");";
+
+        String insercaoLocal = "Insert into UsoDeMaquina values (?,?,?,?,?,?,?,?,?)";
+        conLocal.execute(criacaoTabela);
+        List<UsoDeMaquina> listaDeUsoDeMaquina = con.query("select *from dbo.UsoDeMaquina;",
+                new BeanPropertyRowMapper(UsoDeMaquina.class));
+
+        List<UsoDeMaquina> listaDeUsoDeMaquinaLocal = conLocal.query("select *from UsoDeMaquina;",
+                new BeanPropertyRowMapper(UsoDeMaquina.class));
+
+        if (listaDeUsoDeMaquinaLocal.isEmpty()) {
+            for (UsoDeMaquina usoDeMaquina : listaDeUsoDeMaquina) {
+                conLocal.update(insercaoLocal,
+                        usoDeMaquina.getUsuario(),
+                        usoDeMaquina.getComponentes(),
+                        usoDeMaquina.getHora(),
+                        usoDeMaquina.getInicializado(),
+                        usoDeMaquina.getTempoEmUso(),
+                        usoDeMaquina.getConsumoCPU(),
+                        usoDeMaquina.getConsumoMemoria(),
+                        usoDeMaquina.getConsumoDisco(),
+                        usoDeMaquina.getTemperatura());
+            }
+        }
     }
 
     public Usuario getUsuario() {

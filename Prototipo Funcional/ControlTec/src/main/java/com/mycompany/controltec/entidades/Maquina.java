@@ -47,14 +47,13 @@ public class Maquina {
                 + "idMaquina int primary key auto_increment,\n"
                 + "identificador varchar(100),\n"
                 + "sistemaOperacional varchar(45),\n"
-                + "fkTurma int,\n"
-                + "foreign key (fkTurma) references Turma(idTurma)\n"
+                + "fkTurma int\n"
                 + ");";
 
         String insercaoLocal = "Insert into Maquina values (?,?,?,?)";
         conLocal.execute(criacaoTabela);
         List<Maquina> listaDeMaquina = con.query("select *from dbo.Maquina;",
-                new BeanPropertyRowMapper(Componentes.class));
+                new BeanPropertyRowMapper(Maquina.class));
 
         List<Maquina> listaDeMaquinaLocal = conLocal.query("select *from Maquina;",
                 new BeanPropertyRowMapper(Maquina.class));

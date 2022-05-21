@@ -66,17 +66,18 @@ public class ControlTec {
             System.out.println("Login e/ou senha inválidos");
         } else {
             System.out.println("Logado com sucesso");
-            instituicao.criarTabelaInstituicao();
-            turma.criarTabelaTurma();
+            
             usuario.criarTabelaUsuario();
             maquina.criarTabelaMaquina();
             comp.criarTabelaComponentes();
-//            while (true) {
-//                for (Componentes componente : listaDeComponentes) {
-//                    udm.capturarDados(listaDeUsuarios.get(0), componente);
-//                }
-//                Thread.sleep(200L);
-//            }
+            udm.criarTabelaUsoDeMaquina();
+            
+            while (true) {
+                for (Componentes componente : listaDeComponentes) {
+                    udm.capturarDados(listaDeUsuarios.get(0), componente);
+                }
+                Thread.sleep(200L);
+            }
         }
     }
 

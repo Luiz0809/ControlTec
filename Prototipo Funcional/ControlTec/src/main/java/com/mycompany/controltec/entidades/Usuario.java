@@ -51,12 +51,12 @@ public class Usuario {
 
         String insercaoLocal = "Insert into Usuario values (?,?,?,?,?,?,?)";
         conLocal.execute(criacaoTabela);
-        List<Usuario> listaDeUsuarios = con.query("select *from dbo.Usuario;",
+        List<Usuario> listaDeUsuarios = con.query("select *from dbo.Usuario where email = ' "+ email +"' AND senha = '" + senha + "';",
                 new BeanPropertyRowMapper(Usuario.class));
 
         List<Usuario> listaDeUsuariosLocal = conLocal.query("select *from Usuario;",
                 new BeanPropertyRowMapper(Usuario.class));
-
+        System.out.println(listaDeUsuarios);
         if (listaDeUsuariosLocal.isEmpty()) {
             for (Usuario usuario : listaDeUsuarios) {
                 conLocal.update(insercaoLocal,
