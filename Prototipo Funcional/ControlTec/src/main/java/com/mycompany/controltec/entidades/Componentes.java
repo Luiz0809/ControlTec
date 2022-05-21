@@ -1,14 +1,25 @@
 package com.mycompany.controltec.entidades;
-public class Componentes {
-    
+
+import com.mycompany.controltec.jdbc.Conexao;
+import com.mycompany.controltec.jdbc.ConexaoLocal;
+import java.util.List;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class Componentes extends Maquina{
+
     private Long idComponente;
     private String nomeComponente;
     private String modeloComponente;
     private Long tamanhoComponenteEmBytes;
-    private  Long fkMaquina;
+    private Long fkMaquina;
+    ConexaoLocal conexaoLocal = new ConexaoLocal();
+    JdbcTemplate conLocal = new JdbcTemplate(conexaoLocal.getDataSource());
+    Conexao conexao = new Conexao();
+    JdbcTemplate con = new JdbcTemplate(conexao.getDataSource());
 
-
-   public Componentes(){}
+    public Componentes() {
+    }
 
     public Componentes(Long idComponente, String nomeComponente, String modeloComponente, Long tamanhoComponenteEmBytes, Long fkMaquina) {
         this.idComponente = idComponente;
@@ -18,7 +29,36 @@ public class Componentes {
         this.fkMaquina = fkMaquina;
     }
 
-    
+    public void criarTabelaComponentes() {
+        String criacaoTabela = "create table if not exists Componentes (\n"
+                + "idComponente int primary key auto_increment,\n"
+                + "nomeComponente varchar(45),\n"
+                + "modeloComponente varchar(45),\n"
+                + "tamanhoComponenteEmBytes bigint,\n"
+                + "fkMaquina int,\n"
+                + "foreign key (fkMaquina) references Maquina(idMaquina)\n"
+                + ");";
+
+        String insercaoLocal = "Insert into Componentes values (?,?,?,?,?)";
+        conLocal.execute(criacaoTabela);
+        List<Componentes> listaDeComponentes = con.query("select *from dbo.Componentes;",
+                new BeanPropertyRowMapper(Componentes.class));
+
+        List<Componentes> listaDeComponentesLocal = conLocal.query("select *from Componentes;",
+                new BeanPropertyRowMapper(Componentes.class));
+
+        if (listaDeComponentesLocal.isEmpty()) {
+            for (Componentes componentes : listaDeComponentes) {
+                conLocal.update(insercaoLocal,
+                        componentes.getIdComponente(),
+                        componentes.getNomeComponente(),
+                        componentes.getModeloComponente(),
+                        componentes.getTamanhoComponenteEmBytes(),
+                        componentes.getFkMaquina());
+            }
+        }
+    }
+
     public Long getIdComponente() {
         return idComponente;
     }
@@ -64,6 +104,4 @@ public class Componentes {
         return "Componentes{" + "idComponente=" + idComponente + ", nomeComponente=" + nomeComponente + ", modeloComponente=" + modeloComponente + ", tamanhoComponenteEmBytes=" + tamanhoComponenteEmBytes + ", fkMaquina=" + fkMaquina + '}';
     }
 
-    
-   
 }

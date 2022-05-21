@@ -4,6 +4,7 @@ import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.Disco;
 import com.github.britooo.looca.api.group.discos.DiscosGroup;
 import com.mycompany.controltec.jdbc.Conexao;
+import com.mycompany.controltec.jdbc.ConexaoLocal;
 import com.mycompany.controltec.slack.SlackIntegrationTest;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -28,6 +29,8 @@ public class UsoDeMaquina {
     private List<Disco> discos = grupoDeDiscos.getDiscos();
     Conexao conexao = new Conexao();
     JdbcTemplate con = new JdbcTemplate(conexao.getDataSource());
+    ConexaoLocal conexaoLocal = new ConexaoLocal();
+    JdbcTemplate conLocal = new JdbcTemplate(conexaoLocal.getDataSource());
 
     public UsoDeMaquina(Usuario usuario, Componentes componentes, LocalDateTime inicializado, Long tempoEmUso, Double consumoCPU, Long consumoDisco, Long consumoMemoria, Double temperatura, LocalDateTime hora) {
         this.usuario = usuario;
@@ -50,7 +53,6 @@ public class UsoDeMaquina {
                 .getInicializado()
                 .atZone(ZoneId.systemDefault())
                 .toLocalDateTime();
-
         tempoEmUso = looca.getSistema().getTempoDeAtividade();
         consumoCPU = looca.getProcessador().getUso();
 
@@ -58,13 +60,26 @@ public class UsoDeMaquina {
         for (Disco disco : discos) {
             consumo += disco.getBytesDeEscritas() + disco.getBytesDeLeitura();
         }
-        
+
         consumoDisco = consumo;
         consumoMemoria = looca.getMemoria().getEmUso();
         temperatura = looca.getTemperatura().getTemperatura();
         hora = LocalDateTime.now();
 
         String insertLogs = "INSERT INTO dbo.UsoDeMaquina ("
+                + "Usuario,"
+                + "Componentes,"
+                + "temperatura,"
+                + "consumoMemoriaEmBytes,"
+                + "consumoCPU,"
+                + "consumoDiscoEmBytes,"
+                + "tempoEmUso,"
+                + "inicializado,"
+                + "hora"
+                + ") values"
+                + " (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        
+        String insertLogsLocal = "INSERT INTO UsoDeMaquina ("
                 + "Usuario,"
                 + "Componentes,"
                 + "temperatura,"
@@ -88,15 +103,26 @@ public class UsoDeMaquina {
                 inicializado.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")),
                 hora.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
         
-        if(consumoCPU > 75){
-            SlackIntegrationTest.sendMessageToSlack("Sr.(a) "+ usuario.getNome()
+        conLocal.update(insertLogsLocal,
+                usuario.getIdUsuario(),
+                componentes.getIdComponente(),
+                temperatura,
+                consumoMemoria,
+                consumoCPU,
+                consumoDisco,
+                tempoEmUso,
+                inicializado.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")),
+                hora.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+
+        if (consumoCPU > 75) {
+            SlackIntegrationTest.sendMessageToSlack("Sr.(a) " + usuario.getNome()
                     + ", sua máquina está com consumo de CPU acima de 75%"
                     + ", nosso Script de correção será ativado automáticamente");
         }
-        
-        Long porcentagemMemoria = (consumoMemoria*100/looca.getMemoria().getTotal()*100)/100;
-        if(porcentagemMemoria > 75){
-            SlackIntegrationTest.sendMessageToSlack("Sr.(a) "+ usuario.getNome()
+
+        Long porcentagemMemoria = (consumoMemoria * 100 / looca.getMemoria().getTotal() * 100) / 100;
+        if (porcentagemMemoria > 75) {
+            SlackIntegrationTest.sendMessageToSlack("Sr.(a) " + usuario.getNome()
                     + ", sua máquina está com consumo de Memória acima de 75%"
                     + ", nosso Script de correção será ativado automáticamente");
         }
@@ -185,15 +211,15 @@ public class UsoDeMaquina {
 
     @Override
     public String toString() {
-        return String.format("IdUsuario : %d\n" +
-"                             idComponente : %d\n" +
-"                             Inicializado : %s\n" +
-"                             Tempo em uso : %s\n" +
-"                             Consumo CPU : %.1f\n" +
-"                             Coonsumo de Memória : %d\n" +
-"                             Consumo de Disco : %d\n" +
-"                             Temperatura : %.1f\n" +
-"                             hora : %s"
+        return String.format("IdUsuario : %d\n"
+                + "                             idComponente : %d\n"
+                + "                             Inicializado : %s\n"
+                + "                             Tempo em uso : %s\n"
+                + "                             Consumo CPU : %.1f\n"
+                + "                             Coonsumo de Memória : %d\n"
+                + "                             Consumo de Disco : %d\n"
+                + "                             Temperatura : %.1f\n"
+                + "                             hora : %s"
                 + "-".repeat(30),
                 4,
                 3,

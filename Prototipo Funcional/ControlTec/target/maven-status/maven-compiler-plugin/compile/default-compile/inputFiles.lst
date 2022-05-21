@@ -1,11 +1,14 @@
-/home/aluno/Documents/ControlTec/Prototipo Funcional/ControlTec/src/main/java/com/mycompany/controltec/slack/SlackIntegrationTest.java
-/home/aluno/Documents/ControlTec/Prototipo Funcional/ControlTec/src/main/java/com/mycompany/controltec/entidades/Usuario.java
-/home/aluno/Documents/ControlTec/Prototipo Funcional/ControlTec/src/main/java/com/mycompany/controltec/entidades/Instituicao.java
-/home/aluno/Documents/ControlTec/Prototipo Funcional/ControlTec/src/main/java/com/mycompany/controltec/entidades/Turma.java
-/home/aluno/Documents/ControlTec/Prototipo Funcional/ControlTec/src/main/java/com/mycompany/controltec/entidades/LogsDeErro.java
-/home/aluno/Documents/ControlTec/Prototipo Funcional/ControlTec/src/main/java/com/mycompany/controltec/TelaDeLogin.java
-/home/aluno/Documents/ControlTec/Prototipo Funcional/ControlTec/src/main/java/com/mycompany/controltec/entidades/Maquina.java
-/home/aluno/Documents/ControlTec/Prototipo Funcional/ControlTec/src/main/java/com/mycompany/controltec/entidades/UsoDeMaquina.java
-/home/aluno/Documents/ControlTec/Prototipo Funcional/ControlTec/src/main/java/com/mycompany/controltec/entidades/Componentes.java
-/home/aluno/Documents/ControlTec/Prototipo Funcional/ControlTec/src/main/java/com/mycompany/controltec/jdbc/Conexao.java
-/home/aluno/Documents/ControlTec/Prototipo Funcional/ControlTec/src/main/java/com/mycompany/controltec/ControlTec.java
+C:\Users\luizf\OneDrive\Documentos\SPTech Digital School\ControlTec\Prototipo Funcional\ControlTec\src\main\java\com\mycompany\controltec\entidades\Aluno.java
+C:\Users\luizf\OneDrive\Documentos\SPTech Digital School\ControlTec\Prototipo Funcional\ControlTec\src\main\java\com\mycompany\controltec\entidades\UsoDeMaquina.java
+C:\Users\luizf\OneDrive\Documentos\SPTech Digital School\ControlTec\Prototipo Funcional\ControlTec\src\main\java\com\mycompany\controltec\entidades\Componentes.java
+C:\Users\luizf\OneDrive\Documentos\SPTech Digital School\ControlTec\Prototipo Funcional\ControlTec\src\main\java\com\mycompany\controltec\entidades\Instituicao.java
+C:\Users\luizf\OneDrive\Documentos\SPTech Digital School\ControlTec\Prototipo Funcional\ControlTec\src\main\java\com\mycompany\controltec\jdbc\ConexaoLocal.java
+C:\Users\luizf\OneDrive\Documentos\SPTech Digital School\ControlTec\Prototipo Funcional\ControlTec\src\main\java\com\mycompany\controltec\entidades\Usuario.java
+C:\Users\luizf\OneDrive\Documentos\SPTech Digital School\ControlTec\Prototipo Funcional\ControlTec\src\main\java\com\mycompany\controltec\entidades\Professor.java
+C:\Users\luizf\OneDrive\Documentos\SPTech Digital School\ControlTec\Prototipo Funcional\ControlTec\src\main\java\com\mycompany\controltec\entidades\Turma.java
+C:\Users\luizf\OneDrive\Documentos\SPTech Digital School\ControlTec\Prototipo Funcional\ControlTec\src\main\java\com\mycompany\controltec\jdbc\Conexao.java
+C:\Users\luizf\OneDrive\Documentos\SPTech Digital School\ControlTec\Prototipo Funcional\ControlTec\src\main\java\com\mycompany\controltec\TelaDeLogin.java
+C:\Users\luizf\OneDrive\Documentos\SPTech Digital School\ControlTec\Prototipo Funcional\ControlTec\src\main\java\com\mycompany\controltec\entidades\Maquina.java
+C:\Users\luizf\OneDrive\Documentos\SPTech Digital School\ControlTec\Prototipo Funcional\ControlTec\src\main\java\com\mycompany\controltec\entidades\LogsDeErro.java
+C:\Users\luizf\OneDrive\Documentos\SPTech Digital School\ControlTec\Prototipo Funcional\ControlTec\src\main\java\com\mycompany\controltec\ControlTec.java
+C:\Users\luizf\OneDrive\Documentos\SPTech Digital School\ControlTec\Prototipo Funcional\ControlTec\src\main\java\com\mycompany\controltec\slack\SlackIntegrationTest.java

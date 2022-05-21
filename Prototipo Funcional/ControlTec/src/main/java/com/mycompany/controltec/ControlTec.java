@@ -2,10 +2,13 @@ package com.mycompany.controltec;
 
 import com.github.britooo.looca.api.core.Looca;
 import com.mycompany.controltec.entidades.Componentes;
+import com.mycompany.controltec.entidades.Instituicao;
 import com.mycompany.controltec.entidades.Maquina;
+import com.mycompany.controltec.entidades.Turma;
 import com.mycompany.controltec.entidades.UsoDeMaquina;
 import com.mycompany.controltec.entidades.Usuario;
 import com.mycompany.controltec.jdbc.Conexao;
+import com.mycompany.controltec.jdbc.ConexaoLocal;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
@@ -20,9 +23,16 @@ public class ControlTec {
         Looca looca = new Looca();
         Conexao conexao = new Conexao();
         JdbcTemplate con = new JdbcTemplate(conexao.getDataSource());
+        ConexaoLocal conexaoLocal = new ConexaoLocal();
+        JdbcTemplate conLocal = new JdbcTemplate(conexaoLocal.getDataSource());
         Long idMaquina = 0L;
         String identificador = looca.getProcessador().getId();
         UsoDeMaquina udm = new UsoDeMaquina();
+        Usuario usuario = new Usuario();
+        Instituicao instituicao = new Instituicao();
+        Turma turma = new Turma();
+        Maquina maquina = new Maquina();
+        Componentes comp = new Componentes();
 
         System.out.println("Login: ");
         String login = sc.nextLine();
@@ -56,13 +66,17 @@ public class ControlTec {
             System.out.println("Login e/ou senha inválidos");
         } else {
             System.out.println("Logado com sucesso");
-
-            while (true) {
-                for (Componentes componente : listaDeComponentes) {
-                    udm.capturarDados(listaDeUsuarios.get(0), componente);
-                }
-                Thread.sleep(200L);
-            }
+            instituicao.criarTabelaInstituicao();
+            turma.criarTabelaTurma();
+            usuario.criarTabelaUsuario();
+            maquina.criarTabelaMaquina();
+            comp.criarTabelaComponentes();
+//            while (true) {
+//                for (Componentes componente : listaDeComponentes) {
+//                    udm.capturarDados(listaDeUsuarios.get(0), componente);
+//                }
+//                Thread.sleep(200L);
+//            }
         }
     }
 

@@ -1,0 +1,75 @@
+Create database ControlTec;
+use ControlTec;
+
+create table Instituicao(
+idInstituicao int primary key auto_increment,
+nome varchar(100),
+numeroEndereco int,
+Rua varchar(45),
+Bairro varchar(45),
+CEP varchar(45),
+Complemento varchar(100),
+pontoReferencia varchar(100)
+);
+
+create table Turma(
+idTurma int primary key auto_increment,
+nome varchar(45),
+descricao varchar(45),
+sala varchar(10),
+fkInstituicao int,
+foreign key (fkInstituicao) references Instituicao(idInstituicao)
+);
+
+create table Usuario (
+idUsuario int primary key auto_increment,
+nome varchar(45),
+dataNascimento date,
+email varchar(50),
+senha varchar(50),
+tipo_usuario varchar(20),
+fkInstituicao int,
+foreign key (fkInstituicao) references Instituicao(idInstituicao)
+);
+
+create table Maquina (
+idMaquina int primary key auto_increment,
+identificador varchar(100),
+sistemaOperacional varchar(45),
+fkTurma int,
+foreign key (fkTurma) references Turma(idTurma)
+);
+
+create table Componentes (
+idComponente int primary key auto_increment,
+nomeComponente varchar(45),
+modeloComponente varchar(45),
+tamanhoComponenteEmBytes bigint,
+fkMaquina int,
+foreign key (fkMaquina) references Maquina(idMaquina)
+);
+
+
+create table UsoDeMaquina (
+Usuario int,
+Componentes int,
+hora datetime,
+inicializado datetime,
+tempoEmUso bigint,
+consumoCPU bigint,
+consumoMemoria bigint,
+consumoDisco bigint,
+temperatura float,
+primary key(Usuario, Componentes, hora)
+);
+
+create table Alertas (
+idAlerta int primary key auto_increment,
+descricao varchar(200),
+hora datetime default current_timestamp,
+Usuario int,
+foreign key (Usuario) references Usuario(IdUsuario),
+Componente int,
+foreign key (Componente) references Componentes(IdComponente)
+);
+
