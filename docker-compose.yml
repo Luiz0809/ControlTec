@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: ControlTec
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 102025fe
+      MYSQL_ROOT_PASSWORD: 102025fe
+    networks:
+      - compose-bridge
+    ports:
+      -8080:8080
+
+  controltec:
+    image: luiz0809/controltec:1.1
+    container_name: controltec
+    networks:
+      - compose-bridge
+
+networks:
+  compose-bridge:
+    driver: bridge

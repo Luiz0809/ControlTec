@@ -57,8 +57,8 @@ hora datetime,
 inicializado datetime,
 tempoEmUso bigint,
 consumoCPU bigint,
-consumoMemoria bigint,
-consumoDisco bigint,
+consumoMemoriaEmBytes bigint,
+consumoDiscoEmBytes bigint,
 temperatura float,
 primary key(Usuario, Componentes, hora)
 );

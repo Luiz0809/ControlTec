@@ -56,6 +56,8 @@ public class ControlTec {
         if (idMaquina <= 0) {
             System.out.println("Máquina não encontrada,"
                     + "Entre em contato com a sua instituição");
+            
+            maquina.informacoesMaquina();
         }
 
         List<Componentes> listaDeComponentes = con.query("select * from dbo.Componentes where fkMaquina = '" + 4 + "'; ",

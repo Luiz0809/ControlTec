@@ -144,28 +144,7 @@ public class UsoDeMaquina {
                 + "primary key(Usuario, Componentes, hora)\n"
                 + ");";
 
-        String insercaoLocal = "Insert into UsoDeMaquina values (?,?,?,?,?,?,?,?,?)";
         conLocal.execute(criacaoTabela);
-        List<UsoDeMaquina> listaDeUsoDeMaquina = con.query("select *from dbo.UsoDeMaquina;",
-                new BeanPropertyRowMapper(UsoDeMaquina.class));
-
-        List<UsoDeMaquina> listaDeUsoDeMaquinaLocal = conLocal.query("select *from UsoDeMaquina;",
-                new BeanPropertyRowMapper(UsoDeMaquina.class));
-
-        if (listaDeUsoDeMaquinaLocal.isEmpty()) {
-            for (UsoDeMaquina usoDeMaquina : listaDeUsoDeMaquina) {
-                conLocal.update(insercaoLocal,
-                        usoDeMaquina.getUsuario(),
-                        usoDeMaquina.getComponentes(),
-                        usoDeMaquina.getHora(),
-                        usoDeMaquina.getInicializado(),
-                        usoDeMaquina.getTempoEmUso(),
-                        usoDeMaquina.getConsumoCPU(),
-                        usoDeMaquina.getConsumoMemoria(),
-                        usoDeMaquina.getConsumoDisco(),
-                        usoDeMaquina.getTemperatura());
-            }
-        }
     }
 
     public Usuario getUsuario() {
