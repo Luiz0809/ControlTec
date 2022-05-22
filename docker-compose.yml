@@ -12,7 +12,7 @@ services:
     networks:
       - compose-bridge
     ports:
-      -["3306:3306"]
+      -"3306:3306"
 
   controltec:
     image: luiz0809/controltec:1.1
