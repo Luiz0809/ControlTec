@@ -6,10 +6,10 @@ services:
         command: --default-authentication-plugin=mysql_native_password
         restart: always
         environment:
-        MYSQL_DATABASE: 'ControlTec'
-        MYSQL_USER: 'root'
-        MYSQL_PASSWORD: '102025fe'
-        MYSQL_ROOT_PASSWORD: '102025fe'
+          - MYSQL_DATABASE: 'ControlTec'
+          - MYSQL_USER: 'root'
+          - MYSQL_PASSWORD: '102025fe'
+          - MYSQL_ROOT_PASSWORD: '102025fe'
         networks:
           - compose-bridge
         ports:
