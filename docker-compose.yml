@@ -1,6 +1,6 @@
 version: '3.9'
 services:
-    mysql2:
+    bd:
         image: mysql:8.0
         container_name: mysql
         command: --default-authentication-plugin=mysql_native_password
