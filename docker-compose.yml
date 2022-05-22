@@ -7,8 +7,7 @@ services:
         restart: always
         environment:
            MYSQL_DATABASE: ControlTec
-           MYSQL_USER: root
-           MYSQL_PASSWORD: 102025fe
+           MYSQL_ROOT_USER: root
            MYSQL_ROOT_PASSWORD: 102025fe
         networks:
           - compose-bridge
