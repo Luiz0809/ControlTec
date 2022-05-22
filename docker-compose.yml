@@ -17,7 +17,7 @@ services:
           - "3306"
 
     controltec:
-        image: luiz0809/controltec-app:1.1
+        image: luiz0809/controltec-app:1.2
         container_name: controltec
         networks:
           - compose-bridge
