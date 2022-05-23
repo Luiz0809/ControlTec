@@ -24,4 +24,11 @@ services:
           atlante-network:
             ipv4_address: 172.20.20.4
 
+networks:
+  atlante-network:
+    driver: bridge
+    ipam:
+      config:
+        -subnet : 172.20.20.4/16
+
 
