@@ -10,7 +10,7 @@ services:
            MYSQL_ROOT_USER: root
            MYSQL_ROOT_PASSWORD: 102025fe
         networks:
-          atlante-network:
+          compose-bridge:
             ipv4_address: 172.20.20.4
         ports:
           - "3306:3306"
@@ -21,14 +21,14 @@ services:
         image: luiz0809/controltec-app:1.2
         container_name: controltec
         networks:
-          atlante-network:
+          compose-bridge:
             ipv4_address: 172.20.20.4
 
-networks:
-  atlante-network:
-    driver: bridge
-    ipam:
-      config:
-        -subnet : 172.20.20.4/16
+networks: 
+    compose-bridge: 
+        driver: bridge
+        ipam:
+          config:
+            -subnet: 172.20.20.4/16
 
 
