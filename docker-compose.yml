@@ -27,8 +27,6 @@ services:
 networks: 
     compose-bridge: 
         driver: bridge
-        ipam:
-          config:
-            -subnet: 172.20.20.4/16
+
 
 
