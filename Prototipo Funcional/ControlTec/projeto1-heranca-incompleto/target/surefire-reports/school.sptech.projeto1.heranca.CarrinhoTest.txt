@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------------
+Test set: school.sptech.projeto1.heranca.CarrinhoTest
+-------------------------------------------------------------------------------
+Tests run: 22, Failures: 6, Errors: 1, Skipped: 0, Time elapsed: 0.203 s <<< FAILURE! - in school.sptech.projeto1.heranca.CarrinhoTest
+quandoItensNaoDuplicadosFindNomeRepetidosDeveRetornarUmaListaVazia  Time elapsed: 0.095 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[]> but was: <null>
+	at school.sptech.projeto1.heranca.CarrinhoTest.quandoItensNaoDuplicadosFindNomeRepetidosDeveRetornarUmaListaVazia(CarrinhoTest.java:231)
+
+quandoLivrariECaixaAltaRemoverTodosOsProdutosDaCategoriaDeveRemoverOsProdutosCorrespondentes  Time elapsed: 0.005 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at school.sptech.projeto1.heranca.CarrinhoTest.quandoLivrariECaixaAltaRemoverTodosOsProdutosDaCategoriaDeveRemoverOsProdutosCorrespondentes(CarrinhoTest.java:201)
+
+quandoItensDuplicadosFindNomeRepetidosDeveRetornarAListaDeNomesDuplicados  Time elapsed: 0.004 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[Playstation 2, Cartão de Memória]> but was: <null>
+	at school.sptech.projeto1.heranca.CarrinhoTest.quandoItensDuplicadosFindNomeRepetidosDeveRetornarAListaDeNomesDuplicados(CarrinhoTest.java:218)
+
+quandoIdTresMetodoFindProdutoPorIdDeveRetornarOProdutoCorrespondente  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <school.sptech.projeto1.heranca.Produto@e7edb54> but was: <null>
+	at school.sptech.projeto1.heranca.CarrinhoTest.quandoIdTresMetodoFindProdutoPorIdDeveRetornarOProdutoCorrespondente(CarrinhoTest.java:172)
+
+quandoVideogameRemoverTodosOsProdutosDaCategoriaDeveRemoverOsProdutosCorrespondentes  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at school.sptech.projeto1.heranca.CarrinhoTest.quandoVideogameRemoverTodosOsProdutosDaCategoriaDeveRemoverOsProdutosCorrespondentes(CarrinhoTest.java:193)
+
+quandoIdQuarentaEDoisMetodoFindProdutoPorIdDeveRetornarOProdutoCorrespondente  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <school.sptech.projeto1.heranca.Produto@c333c60> but was: <null>
+	at school.sptech.projeto1.heranca.CarrinhoTest.quandoIdQuarentaEDoisMetodoFindProdutoPorIdDeveRetornarOProdutoCorrespondente(CarrinhoTest.java:179)
+
+quandoIdQuatroENomeGarfoMetodoUpdateNomeProdutoPeloIdDeveMudarONomeDoProdutoCorrepondente  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.NullPointerException
+	at school.sptech.projeto1.heranca.CarrinhoTest.quandoIdQuatroENomeGarfoMetodoUpdateNomeProdutoPeloIdDeveMudarONomeDoProdutoCorrepondente(CarrinhoTest.java:186)
+

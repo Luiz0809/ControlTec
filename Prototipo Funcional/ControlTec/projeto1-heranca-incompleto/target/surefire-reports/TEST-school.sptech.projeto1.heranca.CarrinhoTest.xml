@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="school.sptech.projeto1.heranca.CarrinhoTest" time="0.203" tests="22" errors="1" skipped="0" failures="6">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\erick\OneDrive\Área de Trabalho\ControlTec\ControlTec\Prototipo Funcional\ControlTec\projeto1-heranca-incompleto\target\test-classes;C:\Users\erick\OneDrive\Área de Trabalho\ControlTec\ControlTec\Prototipo Funcional\ControlTec\projeto1-heranca-incompleto\target\classes;C:\Users\erick\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\erick\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\erick\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\erick\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\erick\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.2\junit-jupiter-params-5.8.2.jar;C:\Users\erick\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\erick\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://openjdk.java.net/"/>
+    <property name="user.timezone" value="America/Sao_Paulo"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.11\bin"/>
+    <property name="sun.java.command" value="C:\Users\erick\AppData\Local\Temp\surefire549760694321005740\surefirebooter2425825549459476592.jar C:\Users\erick\AppData\Local\Temp\surefire549760694321005740 2022-05-24T12-46-30_668-jvmRun1 surefire10667350526181117616tmp surefire_010017117387097949196tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="school.sptech.projeto1.heranca.CarrinhoTest"/>
+    <property name="surefire.test.class.path" value="C:\Users\erick\OneDrive\Área de Trabalho\ControlTec\ControlTec\Prototipo Funcional\ControlTec\projeto1-heranca-incompleto\target\test-classes;C:\Users\erick\OneDrive\Área de Trabalho\ControlTec\ControlTec\Prototipo Funcional\ControlTec\projeto1-heranca-incompleto\target\classes;C:\Users\erick\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\erick\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\erick\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\erick\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\erick\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.2\junit-jupiter-params-5.8.2.jar;C:\Users\erick\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\erick\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\erick"/>
+    <property name="user.language" value="pt"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2021-04-20"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-11.0.11"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\erick\OneDrive\Área de Trabalho\ControlTec\ControlTec\Prototipo Funcional\ControlTec\projeto1-heranca-incompleto"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\erick\AppData\Local\Temp\surefire549760694321005740\surefirebooter2425825549459476592.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="11.0.11+9-LTS-194"/>
+    <property name="user.name" value="erick"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="18.9"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-12.0\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="localRepository" value="C:\Users\erick\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\erick\AppData\Local\Temp\"/>
+    <property name="java.version" value="11.0.11"/>
+    <property name="user.dir" value="C:\Users\erick\OneDrive\Área de Trabalho\ControlTec\ControlTec\Prototipo Funcional\ControlTec\projeto1-heranca-incompleto"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.11\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk-11.0.11\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\erick\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2021.3.3\bin;C:\Users\erick\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\erick\AppData\Roaming\npm;C:\Users\erick\AppData\Local\gitkraken\bin;."/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vm.version" value="11.0.11+9-LTS-194"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="55.0"/>
+  </properties>
+  <testcase name="quandoItensNaoDuplicadosFindNomeRepetidosDeveRetornarUmaListaVazia" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.095">
+    <failure message="expected: &lt;[]&gt; but was: &lt;null&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <[]> but was: <null>
+	at school.sptech.projeto1.heranca.CarrinhoTest.quandoItensNaoDuplicadosFindNomeRepetidosDeveRetornarUmaListaVazia(CarrinhoTest.java:231)
+]]></failure>
+  </testcase>
+  <testcase name="dadoUmValorValidoMetodoAdicionarProdutoDeveAdicionarOProdutoNoCarrinho" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0"/>
+  <testcase name="quandoLivrariECaixaAltaRemoverTodosOsProdutosDaCategoriaDeveRemoverOsProdutosCorrespondentes" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.005">
+    <failure message="expected: &lt;false&gt; but was: &lt;true&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at school.sptech.projeto1.heranca.CarrinhoTest.quandoLivrariECaixaAltaRemoverTodosOsProdutosDaCategoriaDeveRemoverOsProdutosCorrespondentes(CarrinhoTest.java:201)
+]]></failure>
+  </testcase>
+  <testcase name="dadoUmValorInvalidoMetodoAdicionarProdutoNaoDeveAdicionarOProdutoNoCarrinho" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.001"/>
+  <testcase name="quandoNomeInvalidoMetodoFindProdutoPeloNomeDeveRetornarNull" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.005"/>
+  <testcase name="quandoIndiceInvalidoMetodoFindProdutoPeloIndiceDeveRetornarNull" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.002"/>
+  <testcase name="quandoNomeValidoCaixaBaixaMetodoFindProdutoPeloNomeDeveRetornarOProdutoEncontrado" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.003"/>
+  <testcase name="quandoItensDuplicadosFindNomeRepetidosDeveRetornarAListaDeNomesDuplicados" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.004">
+    <failure message="expected: &lt;[Playstation 2, Cartão de Memória]&gt; but was: &lt;null&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <[Playstation 2, Cartão de Memória]> but was: <null>
+	at school.sptech.projeto1.heranca.CarrinhoTest.quandoItensDuplicadosFindNomeRepetidosDeveRetornarAListaDeNomesDuplicados(CarrinhoTest.java:218)
+]]></failure>
+  </testcase>
+  <testcase name="aoPassarUmValorValidoMetodoRemoverProdutoDeveRemoverOProdutoDaLista" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.002"/>
+  <testcase name="aoAdicionarProdutosMetodoParcelarProdutoDeveCalcularOValorDosItensParceladoEmTresVezes" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.002"/>
+  <testcase name="quando4ProdutosInternacionaisAdicionadosMetodoCountProdutosInternacionaisDeveRetornar4" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.002"/>
+  <testcase name="quandoCategoriaInvalidaMetodoFindProdutoPorCategoriaDeveRetornarUmaListaVazia" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.003"/>
+  <testcase name="quandoIndiceValidoMetodoFindProdutoPeloIndiceDeveRetornarOProdutoEncontrado" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.003"/>
+  <testcase name="quandoCategoriaValidaECaixaAltaMetodoFindProdutoPorCategoriaDeveRetornarOsProdutosEncontrados" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.001"/>
+  <testcase name="quandoIdTresMetodoFindProdutoPorIdDeveRetornarOProdutoCorrespondente" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.003">
+    <failure message="expected: &lt;school.sptech.projeto1.heranca.Produto@e7edb54&gt; but was: &lt;null&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <school.sptech.projeto1.heranca.Produto@e7edb54> but was: <null>
+	at school.sptech.projeto1.heranca.CarrinhoTest.quandoIdTresMetodoFindProdutoPorIdDeveRetornarOProdutoCorrespondente(CarrinhoTest.java:172)
+]]></failure>
+  </testcase>
+  <testcase name="quandoNomeValidoMetodoFindProdutoPeloNomeDeveRetornarOProdutoEncontrado" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.002"/>
+  <testcase name="aoAdicionarProdutosMetodoCalcularTotalDeveCalcularOValorDosItensDoCarrinho" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.002"/>
+  <testcase name="quandoVideogameRemoverTodosOsProdutosDaCategoriaDeveRemoverOsProdutosCorrespondentes" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.002">
+    <failure message="expected: &lt;false&gt; but was: &lt;true&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at school.sptech.projeto1.heranca.CarrinhoTest.quandoVideogameRemoverTodosOsProdutosDaCategoriaDeveRemoverOsProdutosCorrespondentes(CarrinhoTest.java:193)
+]]></failure>
+  </testcase>
+  <testcase name="quandoIdQuarentaEDoisMetodoFindProdutoPorIdDeveRetornarOProdutoCorrespondente" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.002">
+    <failure message="expected: &lt;school.sptech.projeto1.heranca.Produto@c333c60&gt; but was: &lt;null&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <school.sptech.projeto1.heranca.Produto@c333c60> but was: <null>
+	at school.sptech.projeto1.heranca.CarrinhoTest.quandoIdQuarentaEDoisMetodoFindProdutoPorIdDeveRetornarOProdutoCorrespondente(CarrinhoTest.java:179)
+]]></failure>
+  </testcase>
+  <testcase name="quandoCategoriaValidaMetodoFindProdutoPorCategoriaDeveRetornarOsProdutosEncontrados" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.001"/>
+  <testcase name="quandoProdutosInternacionaisNaoAdicionadosMetodoCountProdutosInternacionaisDeveRetornar0" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.001"/>
+  <testcase name="quandoIdQuatroENomeGarfoMetodoUpdateNomeProdutoPeloIdDeveMudarONomeDoProdutoCorrepondente" classname="school.sptech.projeto1.heranca.CarrinhoTest" time="0.003">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at school.sptech.projeto1.heranca.CarrinhoTest.quandoIdQuatroENomeGarfoMetodoUpdateNomeProdutoPeloIdDeveMudarONomeDoProdutoCorrepondente(CarrinhoTest.java:186)
+</error>
+  </testcase>
+</testsuite>

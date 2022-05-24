@@ -133,6 +133,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
         String identificador = looca.getProcessador().getId();
         UsoDeMaquina udm = new UsoDeMaquina();
         Integer contador = 0;
+        Maquina maquina = new Maquina();
 
 
         List<Usuario> listaDeUsuarios = con.query("select * from dbo.Usuario where email = '" + ra + "' "
@@ -150,8 +151,16 @@ public class TelaDeLogin extends javax.swing.JFrame {
         if(idMaquina <= 0){
            JOptionPane.showMessageDialog(null, "Máquina não encontrada,"
                    + "Entre em contato com a sua instituição"); 
+           maquina.informacoesMaquina();
+           
+        }
+        for (Maquina maquinas : listaDeMaquinas) {
+            if (maquinas.getIdentificador().equals(identificador)) {
+                idMaquina = maquinas.getIdMaquina();
+            }          
         }
         
+        maquina.adicionarComponentesTabela(idMaquina);
         List<Componentes> listaDeComponentes = con.query("select * from dbo.Componentes where fkMaquina = '" + idMaquina + "'; ",
                 new BeanPropertyRowMapper(Componentes.class));
 

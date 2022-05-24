@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import com.github.britooo.looca.api.core.Looca;
 import com.mycompany.controltec.jdbc.Conexao;
 import com.mycompany.controltec.jdbc.ConexaoLocal;
+import java.time.format.DateTimeFormatter;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 
 public class Maquina {
@@ -40,6 +41,12 @@ public class Maquina {
                 + "sistemaOperacional,"
                 + "fkTurma) values (?,?,?)";
         con.update(insertMaquina, identificador, sistemaOperacional, 1);
+        
+        String insertMaquinaLocal = "Insert into dbo.maquina ("
+                + "identificador,"
+                + "sistemaOperacional,"
+                + "fkTurma) values (?,?,?)";
+        con.update(insertMaquinaLocal, identificador, sistemaOperacional, 1);
     }
 
     public void criarTabelaMaquina() {
@@ -69,6 +76,51 @@ public class Maquina {
         }
     }
 
+    public void adicionarComponentesTabela(Long idMaquina){
+        String insertComponentes = "INSERT INTO dbo.Componentes ("
+                + "idComponente,"
+                + "nomeComponente,"
+                + "modeloComponente,"
+                + "tamanhoComponenteEmBytes,"
+                + "fkMaquina);";
+
+        String insertComponentesLocal = "INSERT INTO Componentes ("
+                + "idComponente,"
+                + "nomeComponente,"
+                + "modeloComponente,"
+                + "tamanhoComponenteEmBytes,"
+                + "fkMaquina);";
+        
+       
+
+        con.update(insertComponentes,
+                null,
+                "Memória",
+                "Hard-Disk",
+                looca.getMemoria().getTotal(),
+                idMaquina);
+        
+        con.update(insertComponentes,
+                null,
+                "Disco",
+                "HD",
+                looca.getGrupoDeDiscos().getTamanhoTotal(),
+                idMaquina);
+
+        conLocal.update(insertComponentesLocal,
+                null,
+                "Memória",
+                "Hard-Disk",
+                looca.getMemoria().getTotal(),
+                idMaquina);
+        
+        con.update(insertComponentesLocal,
+                null,
+                "Disco",
+                "HD",
+                looca.getGrupoDeDiscos().getTamanhoTotal(),
+                idMaquina);
+    }
     public Long getIdMaquina() {
         return idMaquina;
     }
