@@ -151,16 +151,16 @@ public class TelaDeLogin extends javax.swing.JFrame {
         if(idMaquina <= 0){
            JOptionPane.showMessageDialog(null, "Máquina não encontrada,"
                    + "Entre em contato com a sua instituição"); 
-           maquina.informacoesMaquina();
+
            
         }
         for (Maquina maquinas : listaDeMaquinas) {
             if (maquinas.getIdentificador().equals(identificador)) {
-                idMaquina = maquinas.getIdMaquina();
+
             }          
         }
         
-        maquina.adicionarComponentesTabela(idMaquina);
+        idMaquina = 1L;
         List<Componentes> listaDeComponentes = con.query("select * from dbo.Componentes where fkMaquina = '" + idMaquina + "'; ",
                 new BeanPropertyRowMapper(Componentes.class));
 
