@@ -181,7 +181,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
                     for (Componentes componente : listaDeComponentes) {
                         udm.capturarDados(listaDeUsuarios.get(0), componente);
                     }
-                    Thread.sleep(200L);
+                    
                 }
             } catch (Exception ex) {
                 Logger.getLogger(TelaDeLogin.class.getName()).log(Level.SEVERE, null, ex);
