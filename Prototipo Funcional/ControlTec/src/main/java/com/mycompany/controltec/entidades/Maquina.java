@@ -33,7 +33,7 @@ public class Maquina {
         this.fkTurma = fkTurma;
     }
 
-    public void informacoesMaquina() {
+    public void informacoesMaquina(Long fkTurma) {
         identificador = looca.getProcessador().getId();
         sistemaOperacional = looca.getSistema().getSistemaOperacional();
         String insertMaquina = "Insert into dbo.maquina ("
@@ -46,7 +46,7 @@ public class Maquina {
                 + "identificador,"
                 + "sistemaOperacional,"
                 + "fkTurma) values (?,?,?)";
-        con.update(insertMaquinaLocal, identificador, sistemaOperacional, 1);
+        con.update(insertMaquinaLocal, identificador, sistemaOperacional, fkTurma);
     }
 
     public void criarTabelaMaquina() {

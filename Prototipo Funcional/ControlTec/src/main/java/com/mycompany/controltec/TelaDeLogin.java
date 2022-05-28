@@ -135,7 +135,6 @@ public class TelaDeLogin extends javax.swing.JFrame {
         Integer contador = 0;
         Maquina maquina = new Maquina();
 
-
         List<Usuario> listaDeUsuarios = con.query("select * from dbo.Usuario where email = '" + ra + "' "
                 + "AND senha = '" + senha + "';",
                 new BeanPropertyRowMapper(Usuario.class));
@@ -146,48 +145,51 @@ public class TelaDeLogin extends javax.swing.JFrame {
         for (Maquina maquinas : listaDeMaquinas) {
             if (maquinas.getIdentificador().equals(identificador)) {
                 idMaquina = maquinas.getIdMaquina();
-            }          
+            }
         }
-        if(idMaquina <= 0){
-           JOptionPane.showMessageDialog(null, "Máquina não encontrada,"
-                   + "Entre em contato com a sua instituição"); 
+        if (idMaquina <= 0) {
+            JOptionPane.showMessageDialog(null, "Máquina não encontrada,"
+                    + "Entre em contato com a sua instituição");
 
-           
         }
         for (Maquina maquinas : listaDeMaquinas) {
             if (maquinas.getIdentificador().equals(identificador)) {
 
-            }          
+            }
         }
-        
-        idMaquina = 1L;
+
         List<Componentes> listaDeComponentes = con.query("select * from dbo.Componentes where fkMaquina = '" + idMaquina + "'; ",
                 new BeanPropertyRowMapper(Componentes.class));
 
-        
         if (listaDeUsuarios.isEmpty()) {
             System.out.println("Erro");
             JOptionPane.showMessageDialog(null, "Login e/ou senha inválidos");
         } else {
             System.out.println("Logado com sucesso");
-            JOptionPane.showMessageDialog(null, String.format("Seja bem vindo %s \n"
-                    + "A captura de dados irá começar assim que o botão 'OK' for clicado"
-                    , listaDeUsuarios.get(0).getNome()));
 
-            try {
-                while (true) {
-                    contador ++;
-                    System.out.println(String.format("Captura de Dados N°%d", contador));
-                    for (Componentes componente : listaDeComponentes) {
-                        udm.capturarDados(listaDeUsuarios.get(0), componente);
+            if (listaDeUsuarios.get(0).getTipoUsuario().equalsIgnoreCase("Aluno")) {
+                JOptionPane.showMessageDialog(null, String.format("Seja bem vindo %s \n"
+                        + "A captura de dados irá começar assim que o botão 'OK' for clicado",
+                         listaDeUsuarios.get(0).getNome()));
+
+                try {
+                    while (true) {
+                        contador++;
+                        System.out.println(String.format("Captura de Dados N°%d", contador));
+                        for (Componentes componente : listaDeComponentes) {
+                            udm.capturarDados(listaDeUsuarios.get(0), componente);
+                        }
+
                     }
-                    
+                } catch (Exception ex) {
+                    Logger.getLogger(TelaDeLogin.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            } catch (Exception ex) {
-                Logger.getLogger(TelaDeLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            else if(listaDeUsuarios.get(0).getTipoUsuario().equalsIgnoreCase("Professor")){
+                TelaDeCadastro frame = new TelaDeCadastro();
+                frame.setVisible(true);
             }
         }
-
 
     }//GEN-LAST:event_btnEntrarActionPerformed
 

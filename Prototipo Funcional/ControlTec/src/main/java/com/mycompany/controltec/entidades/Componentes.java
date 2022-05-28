@@ -1,12 +1,13 @@
 package com.mycompany.controltec.entidades;
 
+import com.github.britooo.looca.api.core.Looca;
 import com.mycompany.controltec.jdbc.Conexao;
 import com.mycompany.controltec.jdbc.ConexaoLocal;
 import java.util.List;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-public class Componentes extends Maquina{
+public class Componentes extends Maquina {
 
     private Long idComponente;
     private String nomeComponente;
@@ -17,6 +18,7 @@ public class Componentes extends Maquina{
     JdbcTemplate conLocal = new JdbcTemplate(conexaoLocal.getDataSource());
     Conexao conexao = new Conexao();
     JdbcTemplate con = new JdbcTemplate(conexao.getDataSource());
+    Looca looca = new Looca();
 
     public Componentes() {
     }
@@ -27,6 +29,30 @@ public class Componentes extends Maquina{
         this.modeloComponente = modeloComponente;
         this.tamanhoComponenteEmBytes = tamanhoComponenteEmBytes;
         this.fkMaquina = fkMaquina;
+    }
+
+    public void cadastrarComponente(String nomeComponente, String modeloComponente, String tipoComponente, Long Maquina) {
+        String insercao = "Insert into dbo.Componentes ("
+                + "nomeComponente,"
+                + "modeloComponente,"
+                + "tamanhoComponenteEmBytes,"
+                + "fkMaquina)"
+                + " values (?,?,?,?)";
+
+        if (tipoComponente.equalsIgnoreCase("Memória")) {
+            con.update(insercao,
+                    nomeComponente,
+                    modeloComponente,
+                    looca.getMemoria().getTotal(),
+                    Maquina);
+        }
+        if (tipoComponente.equalsIgnoreCase("Disco")) {
+            con.update(insercao,
+                    nomeComponente,
+                    modeloComponente,
+                    looca.getGrupoDeDiscos().getDiscos().get(0).getTamanho(),
+                    Maquina);
+        }
     }
 
     public void criarTabelaComponentes() {
