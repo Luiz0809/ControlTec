@@ -127,7 +127,7 @@ public class UsoDeMaquina {
                     + ", sua máquina está com consumo de CPU acima de 75%"
                     + ", nosso Script de correção será ativado automáticamente");
             for (Processo processo : processos) {
-                if (processo.getUsoCpu() < 1.0) {
+                if (processo.getUsoCpu() > 1.0) {
                     consumidorDeCPU.add(processo);
                 }
             }
@@ -145,7 +145,7 @@ public class UsoDeMaquina {
         }
 
         for (Processo processo : processos) {
-            if (processo.getUsoMemoria() < 1.0) {
+            if (processo.getUsoMemoria() > 1.0) {
                 consumidorDeMemoria.add(processo);
             }
         }
