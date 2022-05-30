@@ -1,0 +1,259 @@
+Data e hora: HOSTID-20220530_184731
+
+                      Memória em uso: 7775936512
+
+                      Uso do processador: 10,151552
+
+                      Temperatura: 0,000000
+
+                      Quantidade de discos: 1
+ 
+                      Serviços ativos: [PID:10456
+Nome: Informações sobre Aplicativos
+Estado: RUNNING, PID:54680
+Nome: Serviço de Implantação AppX (AppXSVC)
+Estado: RUNNING, PID:2728
+Nome: Construtor de Pontos de Extremidade de Áudio do Windows
+Estado: RUNNING, PID:2892
+Nome: Áudio do Windows
+Estado: RUNNING, PID:4008
+Nome: Mecanismo de Filtragem Básica
+Estado: RUNNING, PID:904
+Nome: Serviço de Infraestrutura de Tarefas de Segundo Plano
+Estado: RUNNING, PID:16096
+Nome: Serviço AVCTP
+Estado: RUNNING, PID:2088
+Nome: Serviço do Gerenciador de Acesso de Recurso
+Estado: RUNNING, PID:7404
+Nome: Serviço de Plataforma de Dispositivos Conectados
+Estado: RUNNING, PID:11156
+Nome: Microsoft Office Click-to-Run Service
+Estado: RUNNING, PID:2032
+Nome: CoreMessaging
+Estado: RUNNING, PID:1736
+Nome: Intel(R) Content Protection HECI Service
+Estado: RUNNING, PID:1464
+Nome: Intel(R) Content Protection HDCP Service
+Estado: RUNNING, PID:4392
+Nome: Serviços de criptografia
+Estado: RUNNING, PID:904
+Nome: Inicializador do Processo de Servidor DCOM
+Estado: RUNNING, PID:4264
+Nome: Serviço de Associação de Dispositivo
+Estado: RUNNING, PID:1968
+Nome: Cliente DHCP
+Estado: RUNNING, PID:4400
+Nome: Experiências do Usuário Conectado e Telemetria
+Estado: RUNNING, PID:2596
+Nome: Exibir Serviço de Política
+Estado: RUNNING, PID:1432
+Nome: Serviço de Aprimoramento de Exibição
+Estado: RUNNING, PID:3004
+Nome: Cliente DNS
+Estado: RUNNING, PID:4384
+Nome: Serviço de Política de Diagnóstico
+Estado: RUNNING, PID:6628
+Nome: Serviço de Compartilhamento de Dados
+Estado: RUNNING, PID:3012
+Nome: Uso de Dados
+Estado: RUNNING, PID:4528
+Nome: Intel(R) Dynamic Tuning service
+Estado: RUNNING, PID:2480
+Nome: ELAN Service
+Estado: RUNNING, PID:1668
+Nome: Log de Eventos do Windows
+Estado: RUNNING, PID:2444
+Nome: COM+ evento do sistema
+Estado: RUNNING, PID:41120
+Nome: Host de Provedor da Descoberta de Função
+Estado: RUNNING, PID:46728
+Nome: Publicação de Recursos de Descoberta de Função
+Estado: RUNNING, PID:4452
+Nome: Fortemedia APO Control Service
+Estado: RUNNING, PID:2736
+Nome: Serviço de Cache de Fontes do Windows
+Estado: RUNNING, PID:3344
+Nome: Windows Presentation Foundation Font Cache 3.0.0.0
+Estado: RUNNING, PID:11048
+Nome: Serviço de Dispositivos de Interface Humana
+Estado: RUNNING, PID:4424
+Nome: Intel(R) Graphics Command Center Service
+Estado: RUNNING, PID:2692
+Nome: Intel(R) HD Graphics Control Panel Service
+Estado: RUNNING, PID:4352
+Nome: Módulos de Criação de Chaves IKE e AuthIP do IPSec
+Estado: RUNNING, PID:1072
+Nome: Serviço de Instalação da Microsoft Store
+Estado: RUNNING, PID:4612
+Nome: Intel(R) Audio Service
+Estado: RUNNING, PID:4332
+Nome: Auxiliar de IP
+Estado: RUNNING, PID:5176
+Nome: Intel(R) Dynamic Application Loader Host Interface Service
+Estado: RUNNING, PID:620
+Nome: Isolamento de Chave CNG
+Estado: RUNNING, PID:5356
+Nome: Server
+Estado: RUNNING, PID:4156
+Nome: Estação de trabalho
+Estado: RUNNING, PID:8828
+Nome: Serviço de Geolocalização
+Estado: RUNNING, PID:10336
+Nome: Serviço de Gerenciador de Licença do Windows
+Estado: RUNNING, PID:61696
+Nome: Auxiliar NetBIOS TCP/IP
+Estado: RUNNING, PID:4980
+Nome: Intel(R) Management and Security Application Local Management Service
+Estado: RUNNING, PID:1116
+Nome: Gerenciador de Sessão Local
+Estado: RUNNING, PID:11172
+Nome: McAfee WebAdvisor
+Estado: RUNNING, PID:7800
+Nome: McAfee AP Service
+Estado: RUNNING, PID:7648
+Nome: McAfee CSP Service
+Estado: RUNNING, PID:4620
+Nome: McAfee Service Controller
+Estado: RUNNING, PID:4620
+Nome: McAfee Validation Trust Protection Service
+Estado: RUNNING, PID:4652
+Nome: McAfee Module Core Service
+Estado: RUNNING, PID:4008
+Nome: Windows Defender Firewall
+Estado: RUNNING, PID:1344
+Nome: Agente de Conexão de Rede
+Estado: RUNNING, PID:10344
+Nome: Conexões de Rede
+Estado: RUNNING, PID:2256
+Nome: Serviço da Lista de Redes
+Estado: RUNNING, PID:8216
+Nome: Contêiner do Microsoft Passport
+Estado: RUNNING, PID:63032
+Nome: Microsoft Passport
+Estado: RUNNING, PID:2008
+Nome: Reconhecimento de Locais de Rede
+Estado: RUNNING, PID:1896
+Nome: Serviço de Interface de Repositório de Rede
+Estado: RUNNING, PID:2176
+Nome: NVIDIA Display Container LS
+Estado: RUNNING, PID:11964
+Nome: Serviço Auxiliar de Compatibilidade de Programas
+Estado: RUNNING, PID:4692
+Nome: McAfee PEF Service
+Estado: RUNNING, PID:904
+Nome: Plug and Play
+Estado: RUNNING, PID:5948
+Nome: Agente de Política IPsec
+Estado: RUNNING, PID:4460
+Nome: postgresql-x64-14 - PostgreSQL Server 14
+Estado: RUNNING, PID:904
+Nome: Ligar/Desligar
+Estado: RUNNING, PID:1512
+Nome: Serviço de Perfil de Usuário
+Estado: RUNNING, PID:16196
+Nome: Quality Windows Audio Video Experience
+Estado: RUNNING, PID:5528
+Nome: Gerenciador de conexão de acesso remoto
+Estado: RUNNING, PID:7804
+Nome: Serviço de Gerenciamento de Rádio
+Estado: RUNNING, PID:1052
+Nome: Mapeador de Ponto de Extremidade RPC
+Estado: RUNNING, PID:1052
+Nome: RPC (Chamada de Procedimento Remoto)
+Estado: RUNNING, PID:4676
+Nome: Intel(R) Storage Middleware Service
+Estado: RUNNING, PID:4468
+Nome: Realtek Audio Universal Service
+Estado: RUNNING, PID:620
+Nome: Gerente de Contas de Segurança
+Estado: RUNNING, PID:1532
+Nome: Agendador de Tarefas
+Estado: RUNNING, PID:896
+Nome: Serviço de Segurança do Windows
+Estado: RUNNING, PID:1620
+Nome: Gerenciador de NFC/SE e Pagamentos
+Estado: RUNNING, PID:2588
+Nome: Serviço de Notificação de Eventos do Sistema
+Estado: RUNNING, PID:1448
+Nome: System Guard Runtime Monitor Broker
+Estado: RUNNING, PID:3468
+Nome: Detecção do hardware do shell
+Estado: RUNNING, PID:3876
+Nome: Spooler de Impressão
+Estado: RUNNING, PID:14004
+Nome: Descoberta SSDP
+Estado: RUNNING, PID:4344
+Nome: Serviço SSTP
+Estado: RUNNING, PID:2364
+Nome: Serviço de Repositório de Estado
+Estado: RUNNING, PID:13620
+Nome: Serviço de Armazenamento
+Estado: RUNNING, PID:2428
+Nome: SysMain
+Estado: RUNNING, PID:904
+Nome: Agente de Eventos do Sistema
+Estado: RUNNING, PID:3948
+Nome: Serviço de Teclado Virtual e Painel de Manuscrito
+Estado: RUNNING, PID:2436
+Nome: Temas
+Estado: RUNNING, PID:1384
+Nome: Agente de Tempo
+Estado: RUNNING, PID:3764
+Nome: Gerenciador de Conta da Web
+Estado: RUNNING, PID:4340
+Nome: Cliente de rastreamento de link distribuído
+Estado: RUNNING, PID:1780
+Nome: Gerenciador de Usuários
+Estado: RUNNING, PID:14380
+Nome: Atualizar o Serviço Orchestrator
+Estado: RUNNING, PID:620
+Nome: Gerenciador de Credenciais
+Estado: RUNNING, PID:46688
+Nome: Serviço de Biometria do Windows
+Estado: RUNNING, PID:2996
+Nome: Gerenciador de Conexões do Windows
+Estado: RUNNING, PID:4872
+Nome: Host do Serviço de Diagnóstico
+Estado: RUNNING, PID:15352
+Nome: Host do Sistema de Diagnósticos
+Estado: RUNNING, PID:10196
+Nome: Serviço de Inspeção de Rede do Microsoft Defender Antivírus
+Estado: RUNNING, PID:16732
+Nome: Cliente da Web
+Estado: RUNNING, PID:4644
+Nome: Serviço Microsoft Defender Antivírus
+Estado: RUNNING, PID:3080
+Nome: Serviço de Descoberta Automática de Proxy da Web do WinHTTP
+Estado: RUNNING, PID:4164
+Nome: Testador de instrumentação de gerenciam. do Windows
+Estado: RUNNING, PID:3148
+Nome: Configuração Automática de WLAN
+Estado: RUNNING, PID:21764
+Nome: Assistente de Conexão de Conta da Microsoft
+Estado: RUNNING, PID:4360
+Nome: Serviço do Sistema de Notificações por Push do Windows
+Estado: RUNNING, PID:2524
+Nome: Central de Segurança
+Estado: RUNNING, PID:8364
+Nome: Windows Search
+Estado: RUNNING, PID:40752
+Nome: Serviço de Usuário da Área de Transferência_1912ab93
+Estado: RUNNING, PID:55968
+Nome: Serviço de Usuário da Plataforma de Dispositivos Conectados_1912ab93
+Estado: RUNNING, PID:66736
+Nome: Host de Sincronização_1912ab93
+Estado: RUNNING, PID:66736
+Nome: Dados de Contato_1912ab93
+Estado: RUNNING, PID:61244
+Nome: Serviço de usuário UDK_1912ab93
+Estado: RUNNING, PID:66736
+Nome: Armazenamento de Dados de Usuário_1912ab93
+Estado: RUNNING, PID:66736
+Nome: Acesso a Dados de Usuário_1912ab93
+Estado: RUNNING, PID:59196
+Nome: Serviço de Usuário de Notificações por Push do Windows_1912ab93
+Estado: RUNNING]
+
+                      Numero de processos: 239
+
+ 

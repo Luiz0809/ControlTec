@@ -13,8 +13,8 @@ com\mycompany\controltec\slack\SlackIntegrationTest.class
 com\mycompany\controltec\entidades\Usuario.class
 com\mycompany\controltec\TelaDeCadastro$2.class
 com\mycompany\controltec\jdbc\Conexao.class
-com\mycompany\controltec\Teste.class
 com\mycompany\controltec\entidades\Aluno.class
+com\sptech\projetotestelog\Logs.class
 com\mycompany\controltec\TelaDeLogin$2.class
 com\mycompany\controltec\TelaDeCadastro$5.class
 com\mycompany\controltec\entidades\UsoDeMaquina.class
