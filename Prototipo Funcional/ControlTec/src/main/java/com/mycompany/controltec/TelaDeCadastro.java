@@ -7,16 +7,21 @@ package com.mycompany.controltec;
 import com.github.britooo.looca.api.core.Looca;
 import com.mycompany.controltec.entidades.Componentes;
 import com.mycompany.controltec.entidades.Maquina;
+import com.mycompany.controltec.entidades.UsoDeMaquina;
+import com.mycompany.controltec.entidades.Usuario;
 import com.mycompany.controltec.jdbc.Conexao;
+import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JComboBox;
+import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  *
- * @author luizf
+ * @author Lenovo
  */
 public class TelaDeCadastro extends javax.swing.JFrame {
 
@@ -26,7 +31,7 @@ public class TelaDeCadastro extends javax.swing.JFrame {
     Long idMaquina = 0L;
 
     /**
-     * Creates new form TelaDeCadastro
+     * Creates new form TelaDeLogin
      */
     public TelaDeCadastro() {
         initComponents();
@@ -41,37 +46,90 @@ public class TelaDeCadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        lblTurma = new javax.swing.JTextField();
+        imagensFundo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        lblNomeComponente = new javax.swing.JTextField();
+        lblTurma = new javax.swing.JFormattedTextField();
+        cadastrarMaquina = new javax.swing.JButton();
+        cadastrarComponentes = new javax.swing.JButton();
+        nameRA = new javax.swing.JLabel();
+        labelEmpresa = new javax.swing.JLabel();
+        lblNomeComponente = new javax.swing.JPasswordField();
         lblModeloComponente = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
         tipoComponente = new javax.swing.JComboBox<>();
+        nameSENHA3 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel2.setText("jLabel2");
 
-        jButton1.setText("Cadastrar Máquina");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Tela De Login");
+        setLocationByPlatform(true);
+        setMinimumSize(new java.awt.Dimension(500, 300));
+        setResizable(false);
+        getContentPane().setLayout(null);
+
+        lblTurma.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        lblTurma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                lblTurmaActionPerformed(evt);
             }
         });
+        getContentPane().add(lblTurma);
+        lblTurma.setBounds(190, 60, 120, 20);
 
-        jButton2.setText("Cadastrar Componentes");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        cadastrarMaquina.setBackground(new java.awt.Color(255, 255, 255));
+        cadastrarMaquina.setForeground(new java.awt.Color(0, 0, 0));
+        cadastrarMaquina.setText("Cadastrar Máquina");
+        cadastrarMaquina.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        cadastrarMaquina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                cadastrarMaquinaActionPerformed(evt);
             }
         });
+        getContentPane().add(cadastrarMaquina);
+        cadastrarMaquina.setBounds(200, 90, 100, 21);
 
-        jLabel1.setText("Turma");
+        cadastrarComponentes.setBackground(new java.awt.Color(255, 255, 255));
+        cadastrarComponentes.setForeground(new java.awt.Color(0, 0, 0));
+        cadastrarComponentes.setText("Cadastrar Componentes");
+        cadastrarComponentes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        cadastrarComponentes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarComponentesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cadastrarComponentes);
+        cadastrarComponentes.setBounds(190, 210, 130, 21);
 
-        jLabel2.setText("Nome do Componente");
+        nameRA.setBackground(new java.awt.Color(255, 255, 255));
+        nameRA.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        nameRA.setForeground(new java.awt.Color(255, 255, 255));
+        nameRA.setText("Turma:");
+        getContentPane().add(nameRA);
+        nameRA.setBounds(230, 40, 60, 16);
 
-        jLabel3.setText("Modelo do Componente");
+        labelEmpresa.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 18)); // NOI18N
+        labelEmpresa.setForeground(new java.awt.Color(255, 255, 255));
+        labelEmpresa.setText("Control Tec");
+        getContentPane().add(labelEmpresa);
+        labelEmpresa.setBounds(200, 0, 110, 50);
+
+        lblNomeComponente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lblNomeComponenteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(lblNomeComponente);
+        lblNomeComponente.setBounds(90, 150, 120, 19);
+        getContentPane().add(lblModeloComponente);
+        lblModeloComponente.setBounds(310, 150, 120, 20);
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Modelo do Componente");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(300, 130, 140, 16);
 
         tipoComponente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Memória", "Disco" }));
         tipoComponente.addActionListener(new java.awt.event.ActionListener() {
@@ -79,72 +137,24 @@ public class TelaDeCadastro extends javax.swing.JFrame {
                 tipoComponenteActionPerformed(evt);
             }
         });
+        getContentPane().add(tipoComponente);
+        tipoComponente.setBounds(220, 180, 68, 24);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(176, 176, 176)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addComponent(lblTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(jButton2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(32, 149, Short.MAX_VALUE)
-                .addComponent(tipoComponente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(142, 142, 142))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblNomeComponente, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblModeloComponente, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addGap(32, 32, 32))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblModeloComponente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNomeComponente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addComponent(tipoComponente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(27, 27, 27))
-        );
+        nameSENHA3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        nameSENHA3.setForeground(new java.awt.Color(255, 255, 255));
+        nameSENHA3.setText("Nome do Componente");
+        getContentPane().add(nameSENHA3);
+        nameSENHA3.setBounds(90, 130, 130, 16);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tecnologia2.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, -20, 540, 480);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void cadastrarMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarMaquinaActionPerformed
         Maquina maquina = new Maquina();
         String identificador = looca.getProcessador().getId();
         Long fkTurma = Long.valueOf(lblTurma.getText());
@@ -165,10 +175,12 @@ public class TelaDeCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Máquina cadastrada com sucesso");
         }
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_cadastrarMaquinaActionPerformed
+
+    private void cadastrarComponentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarComponentesActionPerformed
         // TODO add your handling code here:
+                // TODO add your handling code here:
 
         if (lblNomeComponente.getText().isEmpty() != true && lblModeloComponente.getText().isEmpty() != true) {
             String identificador = looca.getProcessador().getId();
@@ -198,7 +210,15 @@ public class TelaDeCadastro extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Algum campo do cadastro está em branco");
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_cadastrarComponentesActionPerformed
+
+    private void lblTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblTurmaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblTurmaActionPerformed
+
+    private void lblNomeComponenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblNomeComponenteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblNomeComponenteActionPerformed
 
     private void tipoComponenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoComponenteActionPerformed
         // TODO add your handling code here:
@@ -215,7 +235,7 @@ public class TelaDeCadastro extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -230,6 +250,9 @@ public class TelaDeCadastro extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TelaDeCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -240,14 +263,18 @@ public class TelaDeCadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton cadastrarComponentes;
+    private javax.swing.JButton cadastrarMaquina;
+    private javax.swing.JLabel imagensFundo;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel labelEmpresa;
     private javax.swing.JTextField lblModeloComponente;
-    private javax.swing.JTextField lblNomeComponente;
-    private javax.swing.JTextField lblTurma;
+    private javax.swing.JPasswordField lblNomeComponente;
+    private javax.swing.JFormattedTextField lblTurma;
+    private javax.swing.JLabel nameRA;
+    private javax.swing.JLabel nameSENHA3;
     private javax.swing.JComboBox<String> tipoComponente;
     // End of variables declaration//GEN-END:variables
 }
