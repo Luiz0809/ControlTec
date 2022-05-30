@@ -8,6 +8,7 @@ import com.github.britooo.looca.api.group.processos.ProcessosGroup;
 import com.mycompany.controltec.jdbc.Conexao;
 import com.mycompany.controltec.jdbc.ConexaoLocal;
 import com.mycompany.controltec.slack.SlackIntegrationTest;
+import com.sptech.projetotestelog.Logs;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -51,7 +52,7 @@ public class UsoDeMaquina {
     public UsoDeMaquina() {
     }
 
-    public void capturarDados(Usuario usuario, Componentes componentes) throws IOException {
+    public void capturarDados(Usuario usuario, Componentes componentes) throws IOException, Exception {
 
         inicializado = looca.getSistema()
                 .getInicializado()
@@ -126,6 +127,8 @@ public class UsoDeMaquina {
             SlackIntegrationTest.sendMessageToSlack("Sr.(a) " + usuario.getNome()
                     + ", sua máquina está com consumo de CPU acima de 75%"
                     + ", nosso Script de correção será ativado automáticamente");
+            Logs log = new Logs();
+            log.gerarLogs();
             for (Processo processo : processos) {
                 if (processo.getUsoCpu() > 100) {
                     consumidorDeCPU.add(processo);
@@ -142,6 +145,8 @@ public class UsoDeMaquina {
             SlackIntegrationTest.sendMessageToSlack("Sr.(a) " + usuario.getNome()
                     + ", sua máquina está com consumo de Memória acima de 75%"
                     + ", nosso Script de correção será ativado automáticamente");
+            Logs log = new Logs();
+            log.gerarLogs();
         }
 
         for (Processo processo : processos) {

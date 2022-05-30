@@ -34,7 +34,7 @@ public class Logs {
     static DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     static Date date = new Date();
 
-    public static void main(String[] args) throws Exception {
+    public void gerarLogs() throws Exception {
 
         while (true) {
             String captacao = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
