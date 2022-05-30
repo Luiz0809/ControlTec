@@ -11,8 +11,8 @@ import java.util.logging.Logger;
 
 public class SlackIntegrationTest {
     
-    private static String webHookUrl = "https://hooks.slack.com/services/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";
-    private static String oAuthToken = "xoxb-3492305501682-3485679261766-bac5g4xe9ff8ebQcU9TPrQSQ";
+    private static String webHookUrl = "https://hooks.slack.com/services/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";
+    private static String oAuthToken = "xoxb-3492305501682-3594263803749-Jrc5uKRL3YlL8OuYREKITxtQ";
     private static String slackChannel = "automationdemochannel";
     
   public static void sendMessageToSlack(String message) throws IOException{
