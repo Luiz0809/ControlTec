@@ -8,13 +8,13 @@ import com.github.britooo.looca.api.group.processos.ProcessosGroup;
 import com.mycompany.controltec.jdbc.Conexao;
 import com.mycompany.controltec.jdbc.ConexaoLocal;
 import com.mycompany.controltec.slack.SlackIntegrationTest;
-import com.sptech.projetotestelog.Logs;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import logs.Logs;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -127,16 +127,18 @@ public class UsoDeMaquina {
             SlackIntegrationTest.sendMessageToSlack("Sr.(a) " + usuario.getNome()
                     + ", sua máquina está com consumo de CPU acima de 75%"
                     + ", nosso Script de correção será ativado automáticamente");
-            Logs log = new Logs();
-            log.gerarLogs();
+            logs.Logs log = new Logs();
+            log.captarLogs("Consumo de CPU acima de 75%");
             for (Processo processo : processos) {
                 if (processo.getUsoCpu() > 100) {
                     consumidorDeCPU.add(processo);
                 }
             }
             for (Processo processo : consumidorDeCPU) {
-                Process process = Runtime.getRuntime().exec("kill -9 " + processo.getPid() + "");
-                System.out.println(String.format("Processo PID %d encerrado", processo.getPid()));
+                if (looca.getSistema().getSistemaOperacional().equalsIgnoreCase("Ubuntu")) {
+                    Process process = Runtime.getRuntime().exec("kill -9 " + processo.getPid() + "");
+                    System.out.println(String.format("Processo PID %d encerrado", processo.getPid()));
+                }
             }
         }
 
@@ -145,8 +147,8 @@ public class UsoDeMaquina {
             SlackIntegrationTest.sendMessageToSlack("Sr.(a) " + usuario.getNome()
                     + ", sua máquina está com consumo de Memória acima de 75%"
                     + ", nosso Script de correção será ativado automáticamente");
-            Logs log = new Logs();
-            log.gerarLogs();
+            logs.Logs log = new Logs();
+            log.captarLogs(" Consumo de Memória acima de 75%");
         }
 
         for (Processo processo : processos) {
@@ -155,8 +157,10 @@ public class UsoDeMaquina {
             }
         }
         for (Processo processo : consumidorDeMemoria) {
-            Process process = Runtime.getRuntime().exec("kill -9 " + processo.getPid() + "");
-            System.out.println(String.format("Processo PID %d encerrado", processo.getPid()));
+            if (looca.getSistema().getSistemaOperacional().equalsIgnoreCase("Ubuntu")) {
+                Process process = Runtime.getRuntime().exec("kill -9 " + processo.getPid() + "");
+                System.out.println(String.format("Processo PID %d encerrado", processo.getPid()));
+            }
         }
 
     }
